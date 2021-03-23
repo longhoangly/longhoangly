@@ -1,22 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-    <a class="navbar-brand" href="/">
-        <img src="../assets/images/camera.svg" width="30" height="30" alt="">
-    </a>
-
+    <!-- Navigation bar -->
     <div class="collapse navbar-collapse" id="navbarText">
-
+        <!-- Navbar items -->
         <ul class="navbar-nav mr-auto">
             {% for item in site.data.navigation %}
+            {% if item.name != 'Authors' %}
             <li {% if page.url==item.link %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
                 <a class="nav-link" href="{{ item.link }}">
                     {{ item.name }}
                 </a>
             </li>
+            {% endif %}
             {% endfor %}
         </ul>
-
+        <!-- Download template button -->
         <button class="btn btn-outline-warning" type="submit">Download</button>
-
     </div>
+    <!-- Navigation bar -->
 </nav>
