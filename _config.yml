@@ -1,5 +1,7 @@
+url: longhoangly.github.io
+
 sass:
-   sass_dir: assets/css
+  sass_dir: assets/css
 
 collections:
   authors:
@@ -26,7 +28,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
-Fmarkdown: kramdown
+markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
