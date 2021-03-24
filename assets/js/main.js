@@ -1,75 +1,54 @@
 
 $(document).ready(function () {
+
+    let isNight = localStorage.getItem("isNight")
+    console.log("get localStorage isNight", isNight)
+
+    setNavBarNightMode(isNight)
+    setBodyNightMode(isNight)
+    setFooterNightMode(isNight)
+
     $("#nightMode").on('click', function () {
-        var isNight = $(this).attr('aria-pressed')
+
+        // everytime users click on night mode button, it means they want to change mode, then reverse the value isNight!
+        let isNight = (!$("#body").hasClass('bg-dark')).toString()
+        console.log("save localStorage isNight", isNight)
+        localStorage.setItem("isNight", isNight)
 
         setNavBarNightMode(isNight)
         setBodyNightMode(isNight)
-        // setFooterNightMode(isNight)
+        setFooterNightMode(isNight)
     })
-});
 
-function setNavBarNightMode(isNight) {
-    if (isNight === "false") {
-        $("#navbar").removeClass("bg-light")
-        $("#navbar").removeClass("navbar-light")
-        $("#navbar.div.button").each(function (index, obj) {
-            $(this).removeClass("btn-outline-dark")
-        });
-
-        $("#navbar").addClass("bg-dark")
-        $("#navbar").addClass("navbar-dark")
-        $("#navbar.div.button").each(function (index, obj) {
-            $(this).addClass("btn-outline-light")
-        });
-    } else {
-        $("#navbar").removeClass("bg-dark")
-        $("#navbar").removeClass("navbar-dark")
-        $("#navbar.div.button").each(function (index, obj) {
-            $(this).removeClass("btn-outline-light")
-        });
-
-        $("#navbar").addClass("bg-light")
-        $("#navbar").addClass("navbar-light")
-        $("#navbar.div.button").each(function (index, obj) {
-            $(this).addClass("btn-outline-dark")
-        });
-    }
-}
+})
 
 function setBodyNightMode(isNight) {
 
-    if (isNight === "false") {
-        $("#body").removeClass("bg-light")
-        $("#body").removeClass("text-dark")
-
-        $("#body").addClass("bg-dark")
-        $("#body").addClass("text-light")
+    if (isNight == "true") {
+        $("#body").addClass("bg-dark text-light").removeClass("bg-light text-dark")
     } else {
-        $("#body").removeClass("bg-dark")
-        $("#body").removeClass("text-light")
+        $("#body").addClass("bg-light text-dark").removeClass("bg-dark text-light")
+    }
+}
 
-        $("#body").addClass("bg-light")
-        $("#body").addClass("text-dark")
+function setNavBarNightMode(isNight) {
+
+    if (isNight == "true") {
+        $("#navbar").addClass("bg-dark navbar-dark").removeClass("bg-light navbar-light")
+        $("#navbar>div>button").addClass("btn-outline-light").removeClass("btn-outline-dark")
+    } else {
+        $("#navbar").addClass("bg-light navbar-light").removeClass("bg-dark navbar-dark")
+        $("#navbar>div>button").addClass("btn-outline-dark").removeClass("btn-outline-light")
     }
 }
 
 function setFooterNightMode(isNight) {
-    if (isNight === "false") {
-        $("#footer").removeClass("bg-light")
-        $("#footer").removeClass("text-dark")
-        $("#footer_section.a").removeClass("text-dark")
 
-        $("#footer").addClass("bg-dark")
-        $("#footer").addClass("text-light")
-        $("#footer_section.a").attr("data-mdb-ripple-color", "light")
+    if (isNight == "true") {
+        $("#footer").addClass("bg-dark text-light").removeClass("bg-light text-dark")
+        $("#footer_section>a").addClass("text-light").removeClass("text-dark").attr("data-mdb-ripple-color", "light")
     } else {
-        $("#footer").removeClass("bg-dark")
-        $("#footer").removeClass("text-light")
-        $("#footer_section.a").removeClass("text-light")
-
-        $("#footer").addClass("bg-light")
-        $("#footer").addClass("text-dark")
-        $("#footer_section.a").attr("data-mdb-ripple-color", "dark")
+        $("#footer").addClass("bg-light text-dark").removeClass("bg-dark text-light")
+        $("#footer_section>a").addClass("text-dark").removeClass("text-light").attr("data-mdb-ripple-color", "dark")
     }
 }
