@@ -2,13 +2,16 @@
 
 {% include header.html %}
 
-<body class="bg-secondary text-light">
-    {% include navigation.html %}
-    
-    <div class="d-flex justify-content-center">...</div>
+<body class="bg-light text-dark">
 
-    <div class="d-flex justify-content-center p-5">
-        {{content}}
+    {% include navigation.html %}
+
+    <div class="container">
+        <div class="d-flex flex-row justify-content-center">
+            <div class="col-lg-8 m-2">
+                {{content}}
+            </div>
+        </div>
     </div>
 
 </body>

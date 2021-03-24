@@ -3,77 +3,19 @@ layout: default
 title: Home
 ---
 
-Hello! I’m Jami Gibbs and I'm a software developer from Chicago. I founded Rescue Themes which specializes in nonprofit and niche website templates. When I'm not contributing to a cool side project or sharpening my JS skills, I'm kicking up road dust and pouring down a few craft brews.
+<div class="row justify-content-center">
+    <picture class="m-4" style="max-width:30%">
+        <img src="{{site.url}}/assets/images/avatar_3.jpg" class="rounded-circle img-thumbnail shadow" alt="Long Ly">
+    </picture>
+</div>
 
-Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
-
-
-Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
-
-
-Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
+Hello! I’m Long Ly and I'm a software engineer in test from Ho Chi Minh city.
+To me, value is the most important thing when we live our life or work in a community,
+I always want to work and contribute to the software advancetage via open source projects.
+Given that my contribution is small, but together we can make it. Keep it up and do right things.
 
 
 Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
 
-
-Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
-
-
-Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
-
-
-Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
-
-
-
-Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
-
-
-
-Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
-
-
-
-
-Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
-
-
-Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
-
-
-
-
-Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
-
-
-
-
-
-Latest Work
-Text Revealer
-Text Revealer is a browser script to assist in revealing deeper information about highlighted text on a page. When text is selected or highlighted, a popover displays useful details about the text such as Wikipedia entires and dictionary definition. Available as a standalone script or Chrome Extension.
+- AnkiFlash
+AnkiFlash is a tool to generate flashcards for learning vocabularies in multiple languages.
