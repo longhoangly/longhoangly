@@ -13,19 +13,27 @@ function setNavBarNightMode(isNight) {
     if (isNight === "false") {
         $("#navbar").removeClass("bg-light")
         $("#navbar").removeClass("navbar-light")
-        $("#navbar.div.button").removeClass("btn-outline-light")
+        $("#navbar.div.button").each(function (index, obj) {
+            $(this).removeClass("btn-outline-dark")
+        });
 
         $("#navbar").addClass("bg-dark")
         $("#navbar").addClass("navbar-dark")
-        $("#navbar.div.button").addClass("btn-outline-dark")
+        $("#navbar.div.button").each(function (index, obj) {
+            $(this).addClass("btn-outline-light")
+        });
     } else {
         $("#navbar").removeClass("bg-dark")
         $("#navbar").removeClass("navbar-dark")
-        $("#navbar.div.button").removeClass("btn-outline-dark")
+        $("#navbar.div.button").each(function (index, obj) {
+            $(this).removeClass("btn-outline-light")
+        });
 
         $("#navbar").addClass("bg-light")
         $("#navbar").addClass("navbar-light")
-        $("#navbar.div.button").addClass("btn-outline-light")
+        $("#navbar.div.button").each(function (index, obj) {
+            $(this).addClass("btn-outline-dark")
+        });
     }
 }
 
