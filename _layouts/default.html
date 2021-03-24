@@ -2,9 +2,18 @@
 
 {% include header.html %}
 
-<body class="bg-secondary text-light">
+<body class="bg-light text-dark">
+
     {% include navigation.html %}
-    {{content}}
+
+    <div class="container">
+        <div class="d-flex flex-row justify-content-center">
+            <div class="col-lg-8 m-2">
+                {{content}}
+            </div>
+        </div>
+    </div>
+
 </body>
 
 {% include footer.html %}

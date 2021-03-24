@@ -4,9 +4,9 @@
 - 💞️ I’m looking to collaborate on open source projects
 - 🌱 I’m currently learning python, and software automation testing frameworks
 - 📫 How to reach me: longhoangly [at] gmail.com
-
-Contribution is the most important word to me.  
-I always want to work and contribute to the world advancetage via open source projects.  
+  
+To me, value is the most important thing when we live our life or work in a community,  
+I always want to work and contribute to the software advancetage via open source projects.  
 Given that my contribution is small, but together we can make it. Keep it up and do right things.  
 
 
