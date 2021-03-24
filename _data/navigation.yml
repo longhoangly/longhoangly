@@ -4,8 +4,8 @@
 - name: Works
   link: /works.html
 
-- name: Quotes
-  link: /quotes.html
+- name: Blog
+  link: /blog.html
 
 - name: Authors
   link: /authors.html

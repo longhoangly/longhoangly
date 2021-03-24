@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Navigation bar -->
     <div class="collapsed navbar-collapse">
         <!-- Navbar items -->
@@ -13,8 +13,11 @@
             {% endif %}
             {% endfor %}
         </ul>
-        <!-- Download template button -->
-        <button class="btn btn-outline-secondary" type="submit">Download</button>
+
+        <button class="btn btn-outline-dark mr-2" type="button">Download</button>
+        <button id="nightMode" class="btn btn-outline-dark" type="button" aria-pressed="false">
+            Night Mode
+        </button>
     </div>
     <!-- Navigation bar -->
 </nav>
