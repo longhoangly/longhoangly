@@ -20,6 +20,7 @@ $(document).ready(function () {
         setFooterNightMode(isNight)
     })
 
+    $("#body").attr('style', 'display: block !important');
 })
 
 function setBodyNightMode(isNight) {
@@ -36,9 +37,11 @@ function setNavBarNightMode(isNight) {
     if (isNight == "true") {
         $("#navbar").addClass("bg-dark navbar-dark").removeClass("bg-light navbar-light")
         $("#navbar>div>button").addClass("btn-outline-light").removeClass("btn-outline-dark")
+        $("#nightMode").text("Light Mode")
     } else {
         $("#navbar").addClass("bg-light navbar-light").removeClass("bg-dark navbar-dark")
         $("#navbar>div>button").addClass("btn-outline-dark").removeClass("btn-outline-light")
+        $("#nightMode").text("Night Mode")
     }
 }
 
