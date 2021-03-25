@@ -1,17 +1,10 @@
 
 $(document).ready(function () {
 
-    let isNight = localStorage.getItem("isNight")
-    console.log("get localStorage isNight", isNight)
+    $("#nightMode").on("click", function () {
 
-    setNavBarNightMode(isNight)
-    setBodyNightMode(isNight)
-    setFooterNightMode(isNight)
-
-    $("#nightMode").on('click', function () {
-
-        // everytime users click on night mode button, it means they want to change mode, then reverse the value isNight!
-        let isNight = (!$("#body").hasClass('bg-dark')).toString()
+        // Everytime users click on night mode button, it means they want to change mode, then reversed current night mode value is user's expectation!
+        let isNight = (!$("body").hasClass("bg-dark")).toString()
         console.log("save localStorage isNight", isNight)
         localStorage.setItem("isNight", isNight)
 
@@ -20,15 +13,31 @@ $(document).ready(function () {
         setFooterNightMode(isNight)
     })
 
-    $("#body").attr('style', 'display: block !important');
+
+    // Monitor / set night mode for website
+    let isNight = localStorage.getItem("isNight")
+    console.log("get localStorage isNight", isNight)
+
+    setNavBarNightMode(isNight)
+    setBodyNightMode(isNight)
+    setFooterNightMode(isNight)
+    $("body").attr("style", "display: block !important");
+
+
+    // Set sticky responsive footer
+    var offsetHeight = $("#footer").height() + $("#navbar").height()
+    var minHeight = `calc(100vh - ${offsetHeight}px)`
+
+    $("#main").attr("style", `min-height: ${minHeight};`);
+    console.log("main minHeight", minHeight)
 })
 
 function setBodyNightMode(isNight) {
 
     if (isNight == "true") {
-        $("#body").addClass("bg-dark text-light").removeClass("bg-light text-dark")
+        $("body").addClass("bg-dark text-light").removeClass("bg-light text-dark")
     } else {
-        $("#body").addClass("bg-light text-dark").removeClass("bg-dark text-light")
+        $("body").addClass("bg-light text-dark").removeClass("bg-dark text-light")
     }
 }
 

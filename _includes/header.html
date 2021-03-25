@@ -1,22 +1,23 @@
-<head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+<nav id="navbar" class="navbar navbar-expand-sm navbar-light bg-light">
+    <!-- Navigation bar -->
+    <div class="collapsed navbar-collapse">
+        <!-- Navbar items -->
+        <ul class="navbar-nav mr-auto">
+            {% for item in site.data.navigation %}
+            {% if item.name != "Authors" %}
+            <li {% if page.url==item.link %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+                <a class="nav-link" href="{{ item.link }}">
+                    {{ item.name }}
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="{{ site.url }}/assets/js/main.js"></script>
-
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css">
-
-    {% feed_meta %}
-    {% seo %}
-</head>
+        <button class="btn btn-outline-dark mr-2" type="button">Download</button>
+        <button id="nightMode" class="btn btn-outline-dark" type="button" aria-pressed="false">
+            Night Mode
+        </button>
+    </div>
+    <!-- Navigation bar -->
+</nav>
