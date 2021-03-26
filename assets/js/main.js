@@ -13,23 +13,24 @@ $(document).ready(function () {
         setFooterNightMode(isNight)
     })
 
-
-    // Monitor / set night mode for website
+    // Set night mode for website based on local storage memory
     let isNight = localStorage.getItem("isNight")
     console.log("get localStorage isNight", isNight)
 
     setNavBarNightMode(isNight)
     setBodyNightMode(isNight)
     setFooterNightMode(isNight)
-    $("body").attr("style", "display: block !important");
+    $("body").attr("style", "visibility: visible !important");
+})
 
+$(window).on("load", function () {
 
     // Set sticky responsive footer
-    var offsetHeight = $("#footer").height() + $("#navbar").height()
+    var offsetHeight = $("footer").outerHeight() + $("nav").outerHeight()
     var minHeight = `calc(100vh - ${offsetHeight}px)`
 
     $("#main").attr("style", `min-height: ${minHeight};`);
-    console.log("main minHeight", minHeight)
+    console.log("main min-height", minHeight)
 })
 
 function setBodyNightMode(isNight) {
@@ -44,12 +45,12 @@ function setBodyNightMode(isNight) {
 function setNavBarNightMode(isNight) {
 
     if (isNight == "true") {
-        $("#navbar").addClass("bg-dark navbar-dark").removeClass("bg-light navbar-light")
-        $("#navbar>div>button").addClass("btn-outline-light").removeClass("btn-outline-dark")
+        $("nav").addClass("bg-dark navbar-dark").removeClass("bg-light navbar-light")
+        $("nav>div>button").addClass("btn-outline-light").removeClass("btn-outline-dark")
         $("#nightMode").text("Light Mode")
     } else {
-        $("#navbar").addClass("bg-light navbar-light").removeClass("bg-dark navbar-dark")
-        $("#navbar>div>button").addClass("btn-outline-dark").removeClass("btn-outline-light")
+        $("nav").addClass("bg-light navbar-light").removeClass("bg-dark navbar-dark")
+        $("nav>div>button").addClass("btn-outline-dark").removeClass("btn-outline-light")
         $("#nightMode").text("Night Mode")
     }
 }
@@ -57,10 +58,10 @@ function setNavBarNightMode(isNight) {
 function setFooterNightMode(isNight) {
 
     if (isNight == "true") {
-        $("#footer").addClass("bg-dark text-light").removeClass("bg-light text-dark")
-        $("#footer_section>a").addClass("text-light").removeClass("text-dark").attr("data-mdb-ripple-color", "light")
+        $("footer").addClass("bg-dark text-light").removeClass("bg-light text-dark")
+        $("footer section>a").addClass("text-light").removeClass("text-dark").attr("data-mdb-ripple-color", "light")
     } else {
-        $("#footer").addClass("bg-light text-dark").removeClass("bg-dark text-light")
-        $("#footer_section>a").addClass("text-dark").removeClass("text-light").attr("data-mdb-ripple-color", "dark")
+        $("footer").addClass("bg-light text-dark").removeClass("bg-dark text-light")
+        $("footer section>a").addClass("text-dark").removeClass("text-light").attr("data-mdb-ripple-color", "dark")
     }
 }

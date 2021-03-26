@@ -1,6 +1,9 @@
 ---
 title: Blog
 ---
+
+This page will show all blog posts!
+
 <h1>Latest Posts</h1>
 
 <ul>

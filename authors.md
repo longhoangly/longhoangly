@@ -1,6 +1,9 @@
 ---
 title: Authors
 ---
+
+All authors for this blog!
+
 <h1>Authors</h1>
 
 <ul>

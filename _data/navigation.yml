@@ -7,8 +7,8 @@
 - name: Blog
   link: /blog.html
 
-- name: Authors
-  link: /authors.html
-
 - name: Thanks
   link: /thanks.html
+
+- name: Authors
+  link: /authors.html
