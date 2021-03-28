@@ -1,6 +1,8 @@
 ---
 ---
 
+@import "../../_sass/bootstrap/bootstrap";
+
 body {
   font-family: "Mali", monospace !important;
   font-size: large !important;
@@ -17,5 +19,3 @@ nav {
   z-index: 100;
   position: sticky;
 }
-
-@import "../../_sass/bootstrap/bootstrap";
