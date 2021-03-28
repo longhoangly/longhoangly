@@ -1,6 +1,13 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
+
+    <button id="changeToggle" class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+    </button>
+
     <!-- Navigation bar -->
-    <div class="collapsed navbar-collapse">
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <!-- Navbar items -->
         <ul class="navbar-nav mr-auto">
             {% for item in site.data.navigation %}
@@ -14,9 +21,9 @@
             {% endfor %}
         </ul>
 
-        <button class="btn btn-outline-dark mr-2" type="button">Download</button>
-        <button id="nightMode" class="btn btn-outline-dark" type="button" aria-pressed="false">
-            Night Mode
+        <button id="download" class="btn btn-outline-dark mr-2" type="button">Download</button>
+        <button id="nightMode" class="btn btn-outline-dark btn-sq-xs" type="button" data-placement="bottom">
+            <i class="fas fa-moon"></i>
         </button>
     </div>
     <!-- Navigation bar -->
