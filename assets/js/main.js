@@ -9,14 +9,19 @@ $(document).ready(function () {
         // Everytime users click on night mode button, it means they want to change mode
         // Then reversed current night mode value is user's expectation!
         let isNight = (!$("body").hasClass("bg-dark")).toString()
+
         localStorage.setItem("isNight", isNight)
+        console.log("set isNight from localStorage", isNight)
+
         setNavBarNightMode(isNight)
         setBodyNightMode(isNight)
         setFooterNightMode(isNight)
     })
 
     // Set night mode for website based on local storage memory
-    let isNight = localStorage.getItem("isNight")
+    let isNight = localStorage.getItem("isNight") || false.toString()
+    console.log("get isNight from localStorage", isNight)
+
     setNavBarNightMode(isNight)
     setBodyNightMode(isNight)
     setFooterNightMode(isNight)
