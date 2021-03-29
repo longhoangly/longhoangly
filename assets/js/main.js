@@ -8,7 +8,7 @@ $(document).ready(function () {
     $("#nightMode").on("click", function () {
         // Everytime users click on night mode button, it means they want to change mode
         // Then reversed current night mode value is user's expectation!
-        let isNight = (!$("body").hasClass("bg-dark")).toString()
+        let isNight = (!$("nav").hasClass("bg-dark")).toString()
 
         localStorage.setItem("isNight", isNight)
         console.log("set isNight from localStorage", isNight)
