@@ -20,6 +20,18 @@ nav {
   position: sticky;
 }
 
-a, a:hover {
+a,
+a:hover {
   color: inherit;
+}
+
+a {
+  font-weight: bold;
+}
+
+hr {
+  height: 2px;
+  border-width: 0;
+  color: gray;
+  background-color: gray;
 }

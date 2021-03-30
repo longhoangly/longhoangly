@@ -9,7 +9,7 @@ title: Résumé
             <h1 style="font-size: 90px">Long Ly</h1>
         </div>
 
-        <div class="col-6 col-md-4" style="font-size: 16px">
+        <div class="col-6 col-md-4">
             Web: https://longhoangly.com<br>
             Phone: +84 947 222 600<br>
             Email: longhoangly [at] gmail.com<br>
@@ -20,13 +20,17 @@ title: Résumé
 
     <div class="row no-gutters mt-4">
         <div class="col-12 col-sm-6 col-md-8">
-            {% capture resume_left %}{% include resume_left.md %}{% endcapture %}
-            {{ resume_left | markdownify }}
+            {% for resume in site.resumes %}
+            <h5>{{ resume.title }}</h5>
+            <h6>{{ resume.company | upcase }}</h6>
+            <h6>{{ resume.timeline }}</h6>
+            <p>{{ resume.content | markdownify }}</p>
+            <hr>
+            {% endfor %}
         </div>
 
         <div class="col-6 col-md-4">
-            {% capture resume_right %}{% include resume_right.md %}{% endcapture %}
-            {% include resume_right.md %}
+
         </div>
     </div>
 

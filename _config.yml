@@ -4,8 +4,11 @@ sass:
   sass_dir: assets/css
   style: compressed
 
+collections_dir: colllections
 collections:
   authors:
+    output: true
+  resumes:
     output: true
 
 defaults:

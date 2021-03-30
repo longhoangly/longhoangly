@@ -2,15 +2,13 @@
 title: Authors
 ---
 
-All authors for this blog!
-
-<h1>Authors</h1>
+# All authors for this blog!
 
 <ul>
     {% for author in site.authors %}
     <li>
-        <h2><a href="{{ author.url }}">{{ author.name }}</a></h2>
-        <h3>{{ author.position }}</h3>
+        <a href="{{ author.url }}">{{ author.name }}</a>
+        <div>{{ author.position }}</div>
         <p>{{ author.content | markdownify }}</p>
     </li>
     {% endfor %}
