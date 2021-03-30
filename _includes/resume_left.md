@@ -1,0 +1,4 @@
+- EXPERIENCE
+  - Senior Software Engineer (Test)
+  - Carousell Group
+  - Octorber 2018 - March 2020
