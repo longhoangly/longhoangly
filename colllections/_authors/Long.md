@@ -4,4 +4,5 @@ name: Long Ly H.
 position: QA enginner / the site owner
 ---
 
-Long is a QA Enginer who love coding and creating useful tools / stuff to help others. He based in the Ho Chi Minh City, the south of Viet Nam.
+Long is a QA Enginer who love coding and creating useful tools / libraries to help others. 
+He based in the Ho Chi Minh City, the South of Viet Nam.

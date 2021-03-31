@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Long Ly - Home
+title: Home | Long Ly
 ---
 
 <div class="row justify-content-center">

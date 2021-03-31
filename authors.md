@@ -1,5 +1,5 @@
 ---
-title: Authors
+title: Authors | Long Ly
 ---
 
 # All authors for this blog!

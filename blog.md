@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: Blog | Long Ly
 ---
 
 # Latest Posts

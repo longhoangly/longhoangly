@@ -1,5 +1,5 @@
 ---
-title: Résumé
+title: Résumé | Long Ly
 ---
 
 <div class="container">
@@ -19,18 +19,32 @@ title: Résumé
     </div>
 
     <div class="row no-gutters mt-4">
-        <div class="col-12 col-sm-6 col-md-8">
+        <div class="col-12 col-sm-6 col-md-8 pr-5">
+            EXPERIENCE
+            <hr>
             {% for resume in site.resumes %}
-            <h5>{{ resume.title }}</h5>
-            <h6>{{ resume.company | upcase }}</h6>
-            <h6>{{ resume.timeline }}</h6>
+            {% if resume.type == "experience" %}
+            <div style="font-weight: bold;">{{ resume.title }}</div>
+            <div style="font-weight: lighter;">{{ resume.company | upcase }}</div>
+            <div style="font-weight: lighter;">{{ resume.timeline }} | {{ resume.based }}</div>
             <p>{{ resume.content | markdownify }}</p>
             <hr>
+            {% endif %}
             {% endfor %}
         </div>
 
         <div class="col-6 col-md-4">
-
+            ACADEMICS
+            <hr>
+            {% for resume in site.resumes %}
+            {% if resume.type == "academic" %}
+            <div style="font-weight: bold;">{{ resume.title }}</div>
+            <div style="font-weight: lighter;">{{ resume.company | upcase }}</div>
+            <div style="font-weight: lighter;">{{ resume.timeline }} | {{ resume.based }}</div>
+            <p>{{ resume.content | markdownify }}</p>
+            <hr>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
 
