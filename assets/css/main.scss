@@ -5,6 +5,7 @@
 
 body {
   font-family: "Mali", monospace !important;
+  font-weight: 300;
   font-size: large !important;
   visibility: hidden;
 }
@@ -26,12 +27,12 @@ a:hover {
 }
 
 a {
-  font-weight: bold;
+  font-weight: 500;
+  font-style: italic;
 }
 
 hr {
-  height: 2px;
-  border-width: 0;
+  height: 1px;
   color: gray;
   background-color: gray;
 }

@@ -24,9 +24,9 @@ title: Résumé | Long Ly
             <hr>
             {% for resume in site.resumes %}
             {% if resume.type == "experience" %}
-            <div style="font-weight: bold;">{{ resume.title }}</div>
-            <div style="font-weight: lighter;">{{ resume.company | upcase }}</div>
-            <div style="font-weight: lighter;">{{ resume.timeline }} | {{ resume.based }}</div>
+            <div>{{ resume.title }}</div>
+            <div>{{ resume.company | upcase }}</div>
+            <div style="font-weight: 200;">{{ resume.timeline }} | {{ resume.based }}</div>
             <p>{{ resume.content | markdownify }}</p>
             <hr>
             {% endif %}
@@ -38,9 +38,9 @@ title: Résumé | Long Ly
             <hr>
             {% for resume in site.resumes %}
             {% if resume.type == "academic" %}
-            <div style="font-weight: bold;">{{ resume.title }}</div>
-            <div style="font-weight: lighter;">{{ resume.company | upcase }}</div>
-            <div style="font-weight: lighter;">{{ resume.timeline }} | {{ resume.based }}</div>
+            <div>{{ resume.title }}</div>
+            <div>{{ resume.company | upcase }}</div>
+            <div style="font-weight: 200;">{{ resume.timeline }} | {{ resume.based }}</div>
             <p>{{ resume.content | markdownify }}</p>
             <hr>
             {% endif %}
