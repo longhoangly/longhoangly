@@ -6,14 +6,27 @@ timeline: March 2013 - June 2016
 based: Ho Chi Minh City
 ---
 
-At TMA Solutions, what did I do?
+At TMA Solutions, I worked as a manual tester first, then moving to automation.
+I'm enthusiastic to learn programming languages, as well as automation frameworks.
 
-- Work as manual tester
-  - Review PRD
-  - Design test plan
-  - Writing test case
-  - Execute test
-    .... so on
+_Manual Test_
 
-- Work as automation engineer
-  - To be continue...
+- Works with developers and BA team to clarify requirement
+- Develops test plan, test cases based on clarified requirement
+- Executes Web UI tests, also API tests
+- Reported defects and verifies the fixes
+- _Writes technical documents_
+- _Conduct many sharing sessions about automation_
+- A Main member of Toastmaster club
+
+_Automation Test_
+
+- Writes automation test scripts using Bash Shell and Perl
+- Write automation scripts with ATS - TMA’s automation framework
+- Executes automation tests scripts
+
+_Business domain:_ Human resource, Manage resource real time via web
+
+_Tech Stacks_
+
+- Bash, Perl, Java, .NET, SpecFlow, Selenium, Serenity, Github, MySQL

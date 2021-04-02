@@ -63,7 +63,8 @@ function setNavBarNightMode(isNight) {
     $("#nightMode>i").toggleClass("fa-moon", isNight == "false")
     $("#nightMode>i").toggleClass("fa-sun", isNight == "true")
 
-    $("#nightMode").attr("title", isNight == "true" ? "Switch to the light theme" : "Switch to the dark theme")
+    var theme = isNight == "true" ? "light" : "dark"
+    $("#nightMode").attr("title", `Switch to the ${theme} theme`)
 }
 
 function setBodyNightMode(isNight) {

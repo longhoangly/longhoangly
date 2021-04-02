@@ -2,7 +2,7 @@
 title: Thanks | Long Ly
 ---
 
-# Thanks
+##### Thanks
 
 Thanks for your attention and visit my site.  
 Please feel free to drop me a message via links in <a href="#footer">_the footer below_</a>  
