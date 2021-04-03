@@ -1,5 +1,6 @@
 ---
 type: experience
+index: 1
 title: Senior Automation Test Engineer
 company: TMA Solutions
 timeline: March 2013 - June 2016
@@ -17,15 +18,18 @@ _Manual Test_
 - Reported defects and verifies the fixes
 - _Writes technical documents_
 - _Conduct many sharing sessions about automation_
-- A Main member of Toastmaster club
+- _A main member of Toastmaster club_
 
 _Automation Test_
 
-- Writes automation test scripts using Bash Shell and Perl
+- Writes automation test scripts using **Bash Shell and Perl**
 - Write automation scripts with ATS - TMA’s automation framework
 - Executes automation tests scripts
 
-_Business domain:_ Human resource, Manage resource real time via web
+_Business domain_
+
+- Human resource
+- Manage resources real time via web
 
 _Tech Stacks_
 

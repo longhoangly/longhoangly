@@ -22,43 +22,44 @@ title: Résumé | Long Ly
         <div class="col-12 col-sm-6 col-md-8 pr-5">
             EXPERIENCE
             <hr>
-            {% for resume in site.resumes %}
-            {% if resume.type == "experience" %}
-            <div style="font-weight: 400; margin-top: 4px;">{{ resume.title }}</div>
-            <div>{{ resume.company | upcase }}</div>
-            {% if resume.timeline == blank %}
-            <div style="font-weight: 200;">{{ resume.timeline }} | {{ resume.based }}</div>
-            {% endif %}
-            <p>{{ resume.content | markdownify }}</p>
+            {% assign experiences = site.resumes | where: "type", "experience" | sort: 'index' | reverse %}
+            {% for experience in experiences %}
+            <div style="font-weight: bold; margin-top: 4px;">{{ experience.title }}</div>
+            <div>{{ experience.company | upcase }}</div>
+            <div style="font-weight: lighter;">{{ experience.timeline }} | {{ experience.based }}</div>
+            <p>{{ experience.content | markdownify }}</p>
             <hr>
-            {% endif %}
             {% endfor %}
         </div>
 
         <div class="col-6 col-md-4">
+            MYSELF
+            <hr>
+            {% assign intros = site.resumes | where: "type", "intro" | sort: 'index' | reverse %}
+            {% for intro in intros %}
+            <p>{{ intro.content | markdownify }}</p>
+            {% endfor %}
+            <br>
+
             ACADEMICS
             <hr>
-            {% for resume in site.resumes %}
-            {% if resume.type == "academic" %}
-            <div style="font-weight: 400; margin-top: 4px;">{{ resume.title }}</div>
-            <div>{{ resume.company | upcase }}</div>
-            {% if resume.timeline == blank %}
-            <div style="font-weight: 200;">{{ resume.timeline }} | {{ resume.based }}</div>
-            {% endif %}
-            <p>{{ resume.content | markdownify }}</p>
-            {% endif %}
+            {% assign academics = site.resumes | where: "type", "academic" | sort: 'index' | reverse %}
+            {% for academic in academics %}
+            <div style="font-weight: bold; margin-top: 4px;">{{ academic.title }}</div>
+            <div>{{ academic.company | upcase }}</div>
+            <div style="font-weight: lighter;">{{ academic.timeline }} | {{ academic.based }}</div>
+            <p>{{ academic.content | markdownify }}</p>
             {% endfor %}
-
             <br>
+
             SKILLS
             <hr>
-            {% for resume in site.resumes %}
-            {% if resume.type == "skills" %}
-            <p>{{ resume.content | markdownify }}</p>
-            <hr>
-            {% endif %}
+            {% assign skills = site.resumes | where: "type", "skills" | sort: 'index' | reverse %}
+            {% for skill in skills %}
+            <p>{{ skill.content | markdownify }}</p>
             {% endfor %}
         </div>
     </div>
 
 </div>
+<br>

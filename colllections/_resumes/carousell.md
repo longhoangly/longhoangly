@@ -1,5 +1,6 @@
 ---
 type: experience
+index: 3
 title: Senior Software Engineer (Test)
 company: Carousell Group
 timeline: Octorber 2018 - March 2020
@@ -10,7 +11,7 @@ At Carousell Group, I not only worked as an automation QA engineer, but also too
 
 _Release manager_
 
-- Workes as a release manager to manage _mobile release process_
+- **Workes as a release manager to manage _mobile release process_**
 - Creates new commands for **_trinity_** - a Slack bot to support release process
 - Goes to Singapore to get knowledge transfers from previous release manager
 
@@ -22,7 +23,9 @@ _Automation_
 - Works closely with development teams to improve the apps quality
 - Reports defects, follow up, and verifies the fixes
 
-_Business domain:_ E-commerce
+_Business domain_
+
+- E-commerce
 
 _Tech Stacks_
 

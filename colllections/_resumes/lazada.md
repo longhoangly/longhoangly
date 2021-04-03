@@ -1,5 +1,6 @@
 ---
 type: experience
+index: 4
 title: Senior Associate Automation QA
 company: Lazada Group
 timeline: May 2021 - Present
@@ -11,7 +12,7 @@ We used mostly all Alibaba stacks to develop test framework and write test scrip
 
 _Manual Test_
 
-- Works as a test PIC for Redmart replatform project
+- **Works as a test PIC for Redmart replatform project**
 - Works with developers and PD team to clarify requirement
 - Develops test plan, test cases based on clarified requirement
 - Executes API tests, also Web UI tests
@@ -22,7 +23,9 @@ _Automation Test_
 - Writes automation test scripts using Java, JavaScript
 - Executes automation tests, check reports and follow up if any bug
 
-_Business domain:_ E-commerce
+_Business domain_
+
+- E-commerce
 
 _Tech Stacks_
 
