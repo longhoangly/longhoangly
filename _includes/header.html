@@ -10,15 +10,27 @@
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <!-- Navbar items -->
         <ul class="navbar-nav mr-auto">
+
             {% for item in site.data.navigation %}
-            {% if item.name != "Authors" %}
             <li {% if page.url==item.link %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
                 <a class="nav-link" href="{{ item.link }}">
                     {{ item.name }}
                 </a>
             </li>
-            {% endif %}
             {% endfor %}
+
+            <li {% if page.url contains "random.html" %} class="nav-item dropdown active" {% else %}
+                class="nav-item dropdown" {% endif %}>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Apps</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="https://ankiflash.com/" target="_blank">AnkiFlash</a>
+                    <a class="dropdown-item" href="https://ankiweb.net/shared/info/1129289384" target="_blank">AnkiFlash
+                        Importer</a>
+                    <a class="dropdown-item" href="/random.html">Random Generators</a>
+                </div>
+            </li>
+
         </ul>
 
         <button id="download" class="btn btn-outline-dark mr-2" type="button">Download</button>

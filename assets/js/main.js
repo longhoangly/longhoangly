@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
     $("#download").on("click", function () {
-        window.open('https://github.com/longhoangly/longhoangly.github.io', '_blank')
+        window.open("https://github.com/longhoangly/longhoangly.github.io", "_blank")
     })
 
     $("#nightMode").on("click", function () {

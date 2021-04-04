@@ -12,7 +12,7 @@ title: Home | Long Ly
 Hello! I’m Long Ly, a QA engineer who is living and working in Ho Chi Minh city.
 To me, contribution is the most importance of life when I live, and work in a community,
 I always want to work and contribute my best to the world's growth of software industry.
-Given that my contribution is small, but together we can make it. Keep it up and do right things.  
+Although my contribution is small, but together we can make it bigger. Keep it up and do right things.  
 <br>
 
 ##### Latest Work

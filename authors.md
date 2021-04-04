@@ -2,7 +2,7 @@
 title: Authors | Long Ly
 ---
 
-# All authors for this blog!
+##### All authors on this blog!
 
 <ul>
     {% for author in site.authors %}

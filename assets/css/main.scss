@@ -4,7 +4,7 @@
 @import "../../_sass/bootstrap/bootstrap";
 
 body {
-  font-family: "Mali", monospace !important;
+  font-family: "Raleway", sans-serif !important;
   visibility: hidden;
 }
 
@@ -21,12 +21,8 @@ nav {
 
 a,
 a:hover {
-  color: inherit;
-}
-
-a {
   font-weight: bold;
-  font-style: italic;
+  color: inherit;
 }
 
 hr {

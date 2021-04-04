@@ -2,13 +2,10 @@
   link: /
 
 - name: Résumé
-  link: /résumé.html
+  link: /resume.html
 
 - name: Blog
   link: /blog.html
 
 - name: Thanks
   link: /thanks.html
-
-- name: Authors
-  link: /authors.html
