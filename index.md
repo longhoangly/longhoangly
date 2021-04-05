@@ -29,7 +29,7 @@ Although my contribution is small, but together we can make it bigger. Keep it u
 
   - If you want to join with me in this project, please feel free to drop me a message via links in <a href="#footer">_the footer below_</a>. Together, I believe we can go far.
 
-    ![AnkiFlash!](/assets/images/ankiflash_1.png "AnkiFlash Website"){:width="90%"}
+    ![AnkiFlash!]({{ site.url }}/assets/images/ankiflash_1.png "AnkiFlash Website"){:width="90%"}
 
 <br>
 - Jekyll Profile / Blog Template
@@ -38,7 +38,7 @@ Although my contribution is small, but together we can make it bigger. Keep it u
 
   - Tech Stasks / Tools: Jekyll, Bootstrap, JQuery, Github Pages, Github Actions
 
-  - Github repo: <a href="https://github.com/longhoangly/longhoangly.github.io" target="_blank">_longhoangly.github.io_</a>
+  - Github repo: <a href="https://github.com/longhoangly/longhoangly" target="_blank">_longhoangly.github.io/longhoangly_</a>
 
 <br>
 - Học Nữa Học Mãi Channel
@@ -51,7 +51,7 @@ Although my contribution is small, but together we can make it bigger. Keep it u
 
   - Channel: <a href="https://www.youtube.com/channel/UCeHm_2bEbq4EmZ9aaAgn7_w" target="_blank">_Học Nữa Học Mãi_</a>
 
-    ![Học Nữa Học Mãi!](/assets/images/hnhm_1.png "Học Nữa Học Mãi Channel"){:width="90%"}
+    ![Học Nữa Học Mãi!]({{ site.url }}/assets/images/hnhm_1.png "Học Nữa Học Mãi Channel"){:width="90%"}
 
 <br>
 - What's next?

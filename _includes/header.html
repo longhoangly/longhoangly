@@ -13,7 +13,7 @@
 
             {% for item in site.data.navigation %}
             <li {% if page.url==item.link %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                <a class="nav-link" href="{{ item.link }}">
+                <a class="nav-link" href="{{ site.url }}{{ item.link }}">
                     {{ item.name }}
                 </a>
             </li>
@@ -27,7 +27,7 @@
                     <a class="dropdown-item" href="https://ankiflash.com/" target="_blank">AnkiFlash</a>
                     <a class="dropdown-item" href="https://ankiweb.net/shared/info/1129289384" target="_blank">AnkiFlash
                         Importer</a>
-                    <a class="dropdown-item" href="/random-number-generator.html">Random Number Generator</a>
+                    <a class="dropdown-item" href="{{ site.url }}/random-number-generator.html">Random Number Generator</a>
                 </div>
             </li>
 
