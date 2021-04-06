@@ -11,7 +11,6 @@ $(document).ready(function () {
         let isNight = (!$("nav").hasClass("bg-dark")).toString()
 
         localStorage.setItem("isNight", isNight)
-        console.log("set isNight from localStorage", isNight)
 
         setNavBarNightMode(isNight)
         setBodyNightMode(isNight)
@@ -20,7 +19,6 @@ $(document).ready(function () {
 
     // Set night mode for website based on local storage memory
     let isNight = localStorage.getItem("isNight") || false.toString()
-    console.log("get isNight from localStorage", isNight)
 
     setNavBarNightMode(isNight)
     setBodyNightMode(isNight)

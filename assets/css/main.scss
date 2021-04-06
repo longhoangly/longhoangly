@@ -35,19 +35,21 @@ hr {
   border-color: grey;
   border-style: groove;
   border-radius: 10px;
-  margin-top: 50px;
   min-width: 160px;
+  width: 100%;
   padding: 15px;
 }
 
 .input-box {
   width: 100px;
-  margin: 0 10px;
+  margin: 5px 10px;
   padding: 0 10px;
+  background-color: #f8f9fa;
 }
 
 #result {
   text-align: top;
   width: 100%;
-  min-height: 100px;
+  min-height: 350px;
+  background-color: #f8f9fa;
 }
