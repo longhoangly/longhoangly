@@ -32,20 +32,22 @@ hr {
 }
 
 .tool-wrapper {
-  border-style: groove;
   border-color: grey;
+  border-style: groove;
   border-radius: 10px;
-  padding: 15px;
   margin-top: 50px;
   min-width: 160px;
+  padding: 15px;
 }
 
 .input-box {
-  max-width: 80px;
+  width: 100px;
   margin: 0 10px;
+  padding: 0 10px;
 }
 
-#result{
-  min-width: 100%;
+#result {
+  text-align: top;
+  width: 100%;
   min-height: 100px;
 }

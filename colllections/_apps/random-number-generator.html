@@ -1,0 +1,56 @@
+---
+title: Random Generators | Long Ly
+js: random-number-generator
+---
+
+
+<div class="container tool-wrapper">
+
+    <h3>Generate Random Number</h3>
+    <div class="row no-gutters align-items-center my-4">
+
+        <div>Generate</div>
+        <input type="text" class="input-box" id="num" name="num" placeholder="10">
+
+        <div>random number(s) from</div>
+        <input type="text" class="input-box" id="from" name="from" placeholder="1">
+
+        <div>to</div>
+        <input type="text" class="input-box" id="to" name="to" placeholder="100">
+
+        <div>in the box below</div>
+
+    </div>
+
+    <div class="row no-gutters align-items-center mb-4">
+        Separate by
+        <div class="form-check mx-3">
+            <input class="form-check-input" type="radio" name="line" id="line" value="line" checked>
+            <label class="form-check-label" for="line">
+                New line
+            </label>
+        </div>
+        <div class="form-check mr-3">
+            <input class="form-check-input" type="radio" name="comma" id="comma" value="comma">
+            <label class="form-check-label" for="comma">
+                Comma
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="space" id="space" value="space">
+            <label class="form-check-label" for="space">
+                A space
+            </label>
+        </div>
+    </div>
+
+    <button id="generate" type="button" class="btn btn-outline-dark mb-4">Generate</button>
+    <div class="row no-gutters align-items-center">
+
+        <label class="form-label" for="result">Generated random numbers</label>
+        <input type="text" id="result" name="result">
+
+    </div>
+
+</div>
+<br>

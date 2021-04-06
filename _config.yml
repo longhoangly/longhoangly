@@ -10,6 +10,9 @@ collections:
     output: true
   resumes:
     output: true
+  apps:
+      output: true
+      permalink: /:name
 
 defaults:
   - scope:
