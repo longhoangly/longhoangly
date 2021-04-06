@@ -3,54 +3,66 @@ title: Random Generators | Long Ly
 js: random-number-generator
 ---
 
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="tool-wrapper">
 
-<div class="container tool-wrapper">
+        <h3>Generate Random Number</h3>
+        <div class="row no-gutters align-items-center my-2">
 
-    <h3>Generate Random Number</h3>
-    <div class="row no-gutters align-items-center my-4">
+            <div>Generate</div>
+            <input type="number" min=0 oninput="validity.valid||(value='');" class="input-box" id="num" name="num"
+                value="10">
 
-        <div>Generate</div>
-        <input type="text" class="input-box" id="num" name="num" placeholder="10">
+            <div>random number(s) from</div>
+            <input type="number" class="input-box" id="from" name="from" value="1">
 
-        <div>random number(s) from</div>
-        <input type="text" class="input-box" id="from" name="from" placeholder="1">
+            <div>to</div>
+            <input type="number" class="input-box" id="to" name="to" value="100">
 
-        <div>to</div>
-        <input type="text" class="input-box" id="to" name="to" placeholder="100">
+            <div>in the box below</div>
 
-        <div>in the box below</div>
+        </div>
+
+        <div class="row no-gutters align-items-center mb-3">
+            <span class="mr-3">Separate by?</span>
+
+            <div class="form-check mr-3">
+                <input class="form-check-input" type="radio" name="separator" id="line" value="+++" checked>
+                <label class="form-check-label" for="line">
+                    New line
+                </label>
+            </div>
+
+            <div class="form-check mr-3">
+                <input class="form-check-input" type="radio" name="separator" id="comma" value=",">
+                <label class="form-check-label" for="comma">
+                    Comma
+                </label>
+            </div>
+
+            <div class="form-check mr-3">
+                <input class="form-check-input" type="radio" name="separator" id="space" value=" ">
+                <label class="form-check-label" for="space">
+                    A space
+                </label>
+            </div>
+            ||
+            <span class="mx-3">Unique number?</span>
+            <div class="input-group-text">
+                <input type="checkbox" id="unique" data-toggle="tooltip"
+                    title="check if you want to generate unique numbers.">
+            </div>
+
+        </div>
+
+        <button id="generate" type="button" class="btn btn-outline-dark">Generate</button>
+        <div id="error" class="alert alert-danger mt-2" role="alert" style="display: none"></div>
+
+        <div class="row no-gutters align-items-center mt-3">
+            <label class="form-label" for="result">Generated random numbers</label>
+            <textarea type="text" id="result" name="result"></textarea>
+        </div>
 
     </div>
-
-    <div class="row no-gutters align-items-center mb-4">
-        Separate by
-        <div class="form-check mx-3">
-            <input class="form-check-input" type="radio" name="line" id="line" value="line" checked>
-            <label class="form-check-label" for="line">
-                New line
-            </label>
-        </div>
-        <div class="form-check mr-3">
-            <input class="form-check-input" type="radio" name="comma" id="comma" value="comma">
-            <label class="form-check-label" for="comma">
-                Comma
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="space" id="space" value="space">
-            <label class="form-check-label" for="space">
-                A space
-            </label>
-        </div>
-    </div>
-
-    <button id="generate" type="button" class="btn btn-outline-dark mb-4">Generate</button>
-    <div class="row no-gutters align-items-center">
-
-        <label class="form-label" for="result">Generated random numbers</label>
-        <input type="text" id="result" name="result">
-
-    </div>
-
 </div>
 <br>
