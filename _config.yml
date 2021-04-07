@@ -11,8 +11,8 @@ collections:
   resumes:
     output: true
   apps:
-      output: true
-      permalink: /:name
+    output: true
+    permalink: /:name
 
 defaults:
   - scope:

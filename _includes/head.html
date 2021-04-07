@@ -44,7 +44,7 @@
     {% feed_meta %}
     {% seo %}
 
-
+    {% if jekyll.environment == "production" %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9N4MPMD8W"></script>
     <script>
@@ -54,4 +54,5 @@
 
         gtag('config', 'G-X9N4MPMD8W');
     </script>
+    {% endif %}
 </head>
