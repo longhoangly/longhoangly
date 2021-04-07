@@ -29,7 +29,9 @@ Although my contribution is small, but together we can make it bigger. Keep it u
 
   - If you want to join with me in this project, please feel free to drop me a message via links in <a href="#footer">_the footer below_</a>. Together, I believe we can go far.
 
-    ![AnkiFlash!]({{ site.url }}/assets/images/ankiflash_1.png "AnkiFlash Website"){:width="90%"}
+  <div class="video-container">
+      <iframe class="responsive-iframe" src="https://ankiflash.com" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 
 <br>
 - Jekyll Profile / Blog Template
@@ -51,7 +53,9 @@ Although my contribution is small, but together we can make it bigger. Keep it u
 
   - Channel: <a href="https://www.youtube.com/channel/UCeHm_2bEbq4EmZ9aaAgn7_w" target="_blank">_Học Nữa Học Mãi_</a>
 
-    ![Học Nữa Học Mãi!]({{ site.url }}/assets/images/hnhm_1.png "Học Nữa Học Mãi Channel"){:width="90%"}
+  <div class="video-container">
+      <iframe class="responsive-iframe" src="https://www.youtube.com/embed/fGeBk1vEdLY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 
 <br>
 - What's next?

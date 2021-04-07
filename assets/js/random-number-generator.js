@@ -36,24 +36,29 @@ function generateRandomNumbers(qty, from, to, separator, isUnique) {
         $("#error").attr("style", "display: block")
         return
 
-    } else if (isUnique && to - from + 1 < qty) {
+    } else if (isUnique && to - from -99 < qty) {
 
-        $("#error").text("Unique flag checked! The range should be bigger than quantity of random numbers!")
+        $("#error").text("Unique flag checked! The range should be big enough (100 units) to compare with quantity of random number!")
         $("#error").attr("style", "display: block")
         return
     }
 
-    var inputs = Array(to - from + 1).fill().map((_, i) => i + from)
+    var count = 0
     var results = []
+    do {
 
-    for (i = 0; i < qty; i++) {
-        const index = Math.floor(Math.random() * inputs.length)
+        var randNum = Math.floor(Math.random() * (to - from)) + from
+        if (!isUnique) {
 
-        results.push(inputs[index])
-        if (isUnique) {
-            inputs.splice(index, 1)
+            results.push(randNum)
+            count++
+        } else if (isUnique && !results.includes(randNum)) {
+
+            results.push(randNum)
+            count++
         }
-    }
+
+    } while (count < qty)
 
     $("#result").val(separator == "+++" ? results.join("\n") : results.join(separator))
 }
