@@ -10,8 +10,8 @@
         rel="stylesheet">
     <link href="{{ site.url }}/assets/css/main.css" rel="stylesheet" />
 
-      <!-- Custom CSS for specific page -->
-      {% if page.css %}
+    <!-- Custom CSS for specific page -->
+    {% if page.css %}
     {% for stylesheet in page.css %}
     <link rel="stylesheet" href="{{ site.url }}/assets/css/{{ stylesheet }}.css" type="text/css">
     {% endfor %}
