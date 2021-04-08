@@ -3,21 +3,38 @@ title: Random Number Generator | Long Ly
 js: random-number-generator
 ---
 
-<div class="h-100 d-flex align-items-center justify-content-center">
+<br>
+{% capture intro %}
+### Generate Random Number
+
+- This tool creates random numbers within a range
+- maximum quantity of number: 5000
+
+- minimum value of the range: 0
+- maximum value of the range: 1000000000000000000000
+{% endcapture %}
+
+<div class="tool-wrapper">
+    {{ intro | markdownify }}
+</div>
+
+<div class="h-50 d-flex align-items-center justify-content-center">
     <div class="tool-wrapper">
 
         <h3>Generate Random Number</h3>
         <div class="row no-gutters align-items-center my-2">
 
             <div>Generate</div>
-            <input type="number" min=0 oninput="validity.valid||(value='');" class="input-box" id="num" name="num"
-                value="10">
+            <input type="number" min="1" max="5000" class="input-box" id="num" name="num" value="1"
+                oninput="validity.valid||(value='5000');">
 
             <div>random number(s) from</div>
-            <input type="number" class="input-box" id="from" name="from" value="10">
+            <input type="number" min="0" max="1000000000000000000000" class="input-box" id="from" name="from" value="1"
+                oninput="validity.valid||(value='0');">
 
             <div>to</div>
-            <input type="number" class="input-box" id="to" name="to" value="120">
+            <input type="number" min="0" max="1000000000000000000000" class="input-box" id="to" name="to" value="150"
+                oninput="validity.valid||(value='150');">
 
             <div>in the box below</div>
 

@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     $("#generate").on("click", function () {
 
-        var qty = $("#num").val()
+        var qty = $("#num").val() || 0
         var from = parseInt($("#from").val())
         var to = parseInt($("#to").val())
 
@@ -30,37 +30,42 @@ function setButtonNightMode(isNight) {
 
 function generateRandomNumbers(qty, from, to, separator, isUnique) {
 
-    if (from > to) {
+    if (qty == 0 || !from && from != 0 || !to && to != 0) {
 
-        $("#error").text("Please check your input! 'max' value should be bigger than 'min' value!")
+        $("#error").text("Please check your inputs! All fields are required!")
         $("#error").attr("style", "display: block")
         return
 
-    } else if (isUnique && to - from -99 < qty) {
+    } else if (from > to) {
+
+        $("#error").text("Please check your inputs! 'max' value should be bigger than 'min' value!")
+        $("#error").attr("style", "display: block")
+        return
+
+    } else if (isUnique && to - from - 99 < qty) {
 
         $("#error").text("Unique flag checked! The range should be big enough (100 units) to compare with quantity of random number!")
         $("#error").attr("style", "display: block")
         return
     }
 
-    var count = 0
-    var results = []
+    var numbers = []
     do {
 
-        var randNum = Math.floor(Math.random() * (to - from)) + from
+        var randNum = Math.floor(Math.random() * (to - from + 1)) + from
         if (!isUnique) {
 
-            results.push(randNum)
-            count++
-        } else if (isUnique && !results.includes(randNum)) {
+            numbers.push(randNum)
+            qty--
+        } else if (isUnique && !numbers.includes(randNum)) {
 
-            results.push(randNum)
-            count++
+            numbers.push(randNum)
+            qty--
         }
 
-    } while (count < qty)
+    } while (qty > 0)
 
-    $("#result").val(separator == "+++" ? results.join("\n") : results.join(separator))
+    $("#result").val(separator == "+++" ? numbers.join("\n") : numbers.join(separator))
 }
 
 function cleanUpOldResult() {

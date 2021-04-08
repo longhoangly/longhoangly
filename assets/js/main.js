@@ -8,8 +8,7 @@ $(document).ready(function () {
     $("#nightMode").on("click", function () {
         // Everytime users click on night mode button, it means they want to change mode
         // Then reversed current night mode value is user's expectation!
-        let isNight = (!$("nav").hasClass("bg-dark")).toString()
-
+        let isNight = !$("nav").hasClass("bg-dark")
         localStorage.setItem("isNight", isNight)
 
         setNavBarNightMode(isNight)
@@ -18,7 +17,7 @@ $(document).ready(function () {
     })
 
     // Set night mode for website based on local storage memory
-    let isNight = localStorage.getItem("isNight") || false.toString()
+    let isNight = localStorage.getItem("isNight") == "true" || false
 
     setNavBarNightMode(isNight)
     setBodyNightMode(isNight)
@@ -52,32 +51,32 @@ $(window).on("load", function () {
 
 function setNavBarNightMode(isNight) {
 
-    $("nav").toggleClass("bg-dark navbar-dark", isNight == "true")
-    $("nav>div>button").toggleClass("btn-outline-light", isNight == "true")
+    $("nav").toggleClass("bg-dark navbar-dark", isNight)
+    $("nav>div>button").toggleClass("btn-outline-light", isNight)
 
-    $("nav").toggleClass("bg-light navbar-light", isNight == "false")
-    $("nav>div>button").toggleClass("btn-outline-dark", isNight == "false")
+    $("nav").toggleClass("bg-light navbar-light", !isNight)
+    $("nav>div>button").toggleClass("btn-outline-dark", !isNight)
 
-    $("#nightMode>i").toggleClass("fa-moon", isNight == "false")
-    $("#nightMode>i").toggleClass("fa-sun", isNight == "true")
+    $("#nightMode>i").toggleClass("fa-moon", !isNight)
+    $("#nightMode>i").toggleClass("fa-sun", isNight)
 
-    var theme = isNight == "true" ? "light" : "dark"
+    var theme = isNight ? "light" : "dark"
     $("#nightMode").attr("title", `Switch to the ${theme} theme`)
 }
 
 function setBodyNightMode(isNight) {
 
-    $("body").toggleClass("bg-dark text-light", isNight == "true")
-    $("body").toggleClass("bg-light text-dark", isNight == "false")
+    $("body").toggleClass("bg-dark text-light", isNight)
+    $("body").toggleClass("bg-light text-dark", !isNight)
 }
 
 function setFooterNightMode(isNight) {
 
-    $("footer").toggleClass("bg-dark text-light", isNight == "true")
-    $("footer section>a").toggleClass("text-light", isNight == "true")
+    $("footer").toggleClass("bg-dark text-light", isNight)
+    $("footer section>a").toggleClass("text-light", isNight)
 
-    $("footer").toggleClass("bg-light text-dark", isNight == "false")
-    $("footer section>a").toggleClass("text-dark", isNight == "false")
+    $("footer").toggleClass("bg-light text-dark", !isNight)
+    $("footer section>a").toggleClass("text-dark", !isNight)
 
     $("footer section>a").attr("data-mdb-ripple-color", isNight ? "light" : "dark")
 }
