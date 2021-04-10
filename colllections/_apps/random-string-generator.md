@@ -7,9 +7,9 @@ js: random-string-generator
 ### Generate Random String
 - This tool creates random strings from a list of given characters (letters and digits)
 - Unique option to generate only unique strings
-- Maximum quantity of strings: 5000
+- Maximum quantity of strings: 300
 - Minimum length of each string: 1
-- Maximum length of each string: 100000000000000
+- Maximum length of each string: 1000
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">
@@ -22,16 +22,16 @@ js: random-string-generator
     <div class="row no-gutters align-items-center my-3">
 
         <div>Generate</div>
-        <input type="number" min="1" max="5000" class="input-box" id="num" name="num" value="5"
-            oninput="validity.valid||(value='5000');">
+        <input type="number" min="1" max="300" class="input-box" id="num" name="num" value="5"
+            oninput="validity.valid||(value='300');">
 
         <div>random string(s) from</div>
-        <input type="text" maxlength="100000000000000" class="input-box" id="characters" name="characters"
+        <input type="text" maxlength="1000" class="input-box" id="characters" name="characters"
             value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ">
 
         <div>with length</div>
-        <input type="number" min="1" max="100000000000000" class="input-box" id="length" name="length" value="50"
-            oninput="validity.valid||(value='100000000000000');">
+        <input type="number" min="1" max="1000" class="input-box" id="length" name="length" value="50"
+            oninput="validity.valid||(value='1000');">
 
         <div>in the box below</div>
 
@@ -72,11 +72,12 @@ js: random-string-generator
     </div>
 
     <button id="generate" type="button" class="btn btn-outline-dark">Generate</button>
-    <div id="error" class="alert alert-danger mt-2" role="alert" style="display: none"></div>
+    <button id="copy" type="button" class="btn btn-outline-dark">Copy</button>
+    <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
 
     <div class="no-gutters mt-3">
         <label class="form-label" for="result">Generated random strings</label>
         <textarea type="text" id="result" name="result"></textarea>
     </div>
-
+    
 </div>

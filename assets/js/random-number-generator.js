@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
     $("#nightMode").on("click", function () {
-        let isNight = localStorage.getItem("isNight") || false.toString()
+        let isNight = localStorage.getItem("isNight") == "true"
         setButtonNightMode(isNight)
     })
 
-    let isNight = localStorage.getItem("isNight") || false.toString()
+    let isNight = localStorage.getItem("isNight") == "true"
     setButtonNightMode(isNight)
 
     $("#generate").on("click", function () {
@@ -17,35 +17,39 @@ $(document).ready(function () {
         var separator = $("input[name='separator']:checked").val()
         var isUnique = $("#unique").is(":checked")
 
-        cleanUpOldResult()
+        cleanUpPreviousResult()
         generateRandomNumbers(qty, from, to, separator, isUnique)
     })
+
+    $("#copy").on("click", function () {
+
+        if ($("#result").val().length == 0) {
+
+            displayAlertMessage("Nothing in text result!", false)
+
+        } else {
+
+            copyTextToClipboard("#result")
+            displayAlertMessage("Text result copied into the clipboard!", true)
+        }
+    })
 })
-
-function setButtonNightMode(isNight) {
-
-    $("button").toggleClass("btn-outline-light", isNight == "true")
-    $("button").toggleClass("btn-outline-dark", isNight == "false")
-}
 
 function generateRandomNumbers(qty, from, to, separator, isUnique) {
 
     if (qty == 0 || !from && from != 0 || !to && to != 0) {
 
-        $("#error").text("Please check your inputs! All fields are required!")
-        $("#error").attr("style", "display: block")
+        displayAlertMessage("Please check your inputs! All fields are required!", false)
         return
 
     } else if (from > to) {
 
-        $("#error").text("Please check your inputs! 'max' value should be bigger than 'min' value!")
-        $("#error").attr("style", "display: block")
+        displayAlertMessage("Please check your inputs! 'max' value should be bigger than 'min' value!", false)
         return
 
     } else if (isUnique && to - from - 99 < qty) {
 
-        $("#error").text("Unique flag checked! The range should be big enough (100 units) to compare with quantity of random number!")
-        $("#error").attr("style", "display: block")
+        displayAlertMessage("Unique flag checked! The range should be big enough (100 units) to compare with quantity of random number!", false)
         return
     }
 
@@ -66,9 +70,4 @@ function generateRandomNumbers(qty, from, to, separator, isUnique) {
     } while (qty > 0)
 
     $("#result").val(separator == "+++" ? numbers.join("\n") : numbers.join(separator))
-}
-
-function cleanUpOldResult() {
-    $("#result").val("")
-    $("#error").attr("style", "display: none")
 }

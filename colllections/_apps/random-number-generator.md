@@ -9,7 +9,7 @@ js: random-number-generator
 - Unique option to generate only unique numbers
 - Maximum quantity of number: 5000
 - Minimum value of the range: 0
-- Maximum value of the range: 1000000000000000000
+- Maximum value of the range: 100000000000000000
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">
@@ -26,12 +26,12 @@ js: random-number-generator
             oninput="validity.valid||(value='5000');">
 
         <div>random number(s) from</div>
-        <input type="number" min="0" max="1000000000000000000" class="input-box" id="from" name="from" value="1"
+        <input type="number" min="0" max="100000000000000000" class="input-box" id="from" name="from" value="0"
             oninput="validity.valid||(value='0');">
 
         <div>to</div>
-        <input type="number" min="0" max="1000000000000000000" class="input-box" id="to" name="to" value="150"
-            oninput="validity.valid||(value='1000000000000000000');">
+        <input type="number" min="0" max="100000000000000000" class="input-box" id="to" name="to" value="150"
+            oninput="validity.valid||(value='100000000000000000');">
 
         <div>in the box below</div>
 
@@ -72,7 +72,8 @@ js: random-number-generator
     </div>
 
     <button id="generate" type="button" class="btn btn-outline-dark">Generate</button>
-    <div id="error" class="alert alert-danger mt-2" role="alert" style="display: none"></div>
+    <button id="copy" type="button" class="btn btn-outline-dark">Copy</button>
+    <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
 
     <div class="no-gutters mt-3">
         <label class="form-label" for="result">Generated random numbers</label>

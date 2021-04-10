@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
     $("#nightMode").on("click", function () {
-        let isNight = localStorage.getItem("isNight") || false.toString()
+        let isNight = localStorage.getItem("isNight") == "true"
         setButtonNightMode(isNight)
     })
 
-    let isNight = localStorage.getItem("isNight") || false.toString()
+    let isNight = localStorage.getItem("isNight") == "true"
     setButtonNightMode(isNight)
 
     $("#generate").on("click", function () {
@@ -17,25 +17,30 @@ $(document).ready(function () {
         var separator = $("input[name='separator']:checked").val()
         var isUnique = $("#unique").is(":checked")
 
-        cleanUpOldResult()
+        cleanUpPreviousResult()
         generateRandomStrings(qty, characters, length, separator, isUnique)
     })
+
+    $("#copy").on("click", function () {
+
+        if ($("#result").val().length == 0) {
+
+            displayAlertMessage("Nothing in text result!", false)
+
+        } else {
+
+            copyTextToClipboard("#result")
+            displayAlertMessage("Text result copied into the clipboard!", true)
+        }
+    })
 })
-
-function setButtonNightMode(isNight) {
-
-    $("button").toggleClass("btn-outline-light", isNight == "true")
-    $("button").toggleClass("btn-outline-dark", isNight == "false")
-}
 
 function generateRandomStrings(qty, characters, length, separator, isUnique) {
 
     if (!qty || qty == 0 || !characters && characters.length == 0 || !length || length == 0) {
 
-        $("#error").text("Please check your inputs! All fields are required!")
-        $("#error").attr("style", "display: block")
+        displayAlertMessage("Please check your inputs! All fields are required!", false)
         return
-
     }
 
     var strings = []
@@ -59,9 +64,4 @@ function generateRandomStrings(qty, characters, length, separator, isUnique) {
     } while (qty > 0)
 
     $("#result").val(separator == "+++" ? strings.join("\n") : strings.join(separator))
-}
-
-function cleanUpOldResult() {
-    $("#result").val("")
-    $("#error").attr("style", "display: none")
 }

@@ -80,3 +80,37 @@ function setFooterNightMode(isNight) {
 
     $("footer section>a").attr("data-mdb-ripple-color", isNight ? "light" : "dark")
 }
+
+function setButtonNightMode(isNight) {
+
+    $("button").toggleClass("btn-outline-light", isNight)
+    $("button").toggleClass("btn-outline-dark", !isNight)
+}
+
+function copyTextToClipboard(selector) {
+
+    var $temp = $("<textarea>")
+    var brRegex = /<br\s*[\/]?>/gi
+
+    $("body").append($temp)
+    $temp.val($(selector).val().replace(brRegex, "\r\n")).select()
+
+    document.execCommand("copy")
+    $temp.remove()
+}
+
+function cleanUpPreviousResult() {
+    $("#result").val("")
+    $("#alert").attr("style", "display: none")
+}
+
+function displayAlertMessage(message, isSuccess) {
+
+    var clazz = isSuccess ? "alert-success" : "alert-danger"
+    var obsoleteClazz = isSuccess ? "alert-danger" : "alert-success"
+
+    $("#alert").text(message)
+    $("#alert").addClass(clazz)
+    $("#alert").removeClass(obsoleteClazz)
+    $("#alert").attr("style", "display: block")
+}
