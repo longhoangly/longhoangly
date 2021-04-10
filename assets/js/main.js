@@ -28,22 +28,24 @@ $(document).ready(function () {
     // Change navigation menu icon
     $("#changeToggle").on("click", function () {
 
-        var isCollapsed = $("#navbarSupportedContent").hasClass("show")
-        $("#changeToggle>i").toggleClass("fa-times", !isCollapsed)
-        $("#changeToggle>i").toggleClass("fa-bars", isCollapsed)
+        let isCollapsed = $("#navbarSupportedContent").hasClass("show")
+
+        $changeToggleIcons = $("#changeToggle>i")
+        $changeToggleIcons.toggleClass("fa-times", !isCollapsed)
+        $changeToggleIcons.toggleClass("fa-bars", isCollapsed)
     })
 })
 
 $(window).on("load", function () {
 
     // Set sticky responsive footer
-    var footerHeight = $("footer").outerHeight()
+    let footerHeight = $("footer").outerHeight()
     console.log("footer height", footerHeight)
 
-    var headerHeight = $("nav").outerHeight()
+    let headerHeight = $("nav").outerHeight()
     console.log("header height", headerHeight)
 
-    var minHeight = `calc(100vh - ${footerHeight + headerHeight}px)`
+    let minHeight = `calc(100vh - ${footerHeight + headerHeight}px)`
     console.log("main min height", minHeight)
 
     $("#main").attr("style", `min-height: ${minHeight};`)
@@ -51,46 +53,56 @@ $(window).on("load", function () {
 
 function setNavBarNightMode(isNight) {
 
-    $("nav").toggleClass("bg-dark navbar-dark", isNight)
-    $("nav>div>button").toggleClass("btn-outline-light", isNight)
+    let $nav = $("nav")
+    let $navBtns = $("nav>div>button")
+    let $nightModeBtn = $("#nightMode")
+    let $nightModeIcons = $("#nightMode>i")
 
-    $("nav").toggleClass("bg-light navbar-light", !isNight)
-    $("nav>div>button").toggleClass("btn-outline-dark", !isNight)
+    $nav.toggleClass("bg-dark navbar-dark", isNight)
+    $navBtns.toggleClass("btn-outline-light", isNight)
 
-    $("#nightMode>i").toggleClass("fa-moon", !isNight)
-    $("#nightMode>i").toggleClass("fa-sun", isNight)
+    $nav.toggleClass("bg-light navbar-light", !isNight)
+    $navBtns.toggleClass("btn-outline-dark", !isNight)
 
-    var theme = isNight ? "light" : "dark"
-    $("#nightMode").attr("title", `Switch to the ${theme} theme`)
+    $nightModeIcons.toggleClass("fa-moon", !isNight)
+    $nightModeIcons.toggleClass("fa-sun", isNight)
+
+    let theme = isNight ? "light" : "dark"
+    $nightModeBtn.attr("title", `Switch to the ${theme} theme`)
 }
 
 function setBodyNightMode(isNight) {
 
-    $("body").toggleClass("bg-dark text-light", isNight)
-    $("body").toggleClass("bg-light text-dark", !isNight)
+    let $body = $("body")
+    $body.toggleClass("bg-dark text-light", isNight)
+    $body.toggleClass("bg-light text-dark", !isNight)
 }
 
 function setFooterNightMode(isNight) {
 
-    $("footer").toggleClass("bg-dark text-light", isNight)
-    $("footer section>a").toggleClass("text-light", isNight)
+    let $footer = $("footer")
+    $footerLinks = $("footer section>a")
 
-    $("footer").toggleClass("bg-light text-dark", !isNight)
-    $("footer section>a").toggleClass("text-dark", !isNight)
+    $footer.toggleClass("bg-dark text-light", isNight)
+    $footerLinks.toggleClass("text-light", isNight)
 
-    $("footer section>a").attr("data-mdb-ripple-color", isNight ? "light" : "dark")
+    $footer.toggleClass("bg-light text-dark", !isNight)
+    $footerLinks.toggleClass("text-dark", !isNight)
+
+    $footerLinks.attr("data-mdb-ripple-color", isNight ? "light" : "dark")
 }
 
 function setButtonNightMode(isNight) {
 
-    $("button").toggleClass("btn-outline-light", isNight)
-    $("button").toggleClass("btn-outline-dark", !isNight)
+    let $button = $("button")
+    $button.toggleClass("btn-outline-light", isNight)
+    $button.toggleClass("btn-outline-dark", !isNight)
 }
 
 function copyTextToClipboard(selector) {
 
-    var $temp = $("<textarea>")
-    var brRegex = /<br\s*[\/]?>/gi
+    let $temp = $("<textarea>")
+    let brRegex = /<br\s*[\/]?>/gi
 
     $("body").append($temp)
     $temp.val($(selector).val().replace(brRegex, "\r\n")).select()
@@ -100,17 +112,37 @@ function copyTextToClipboard(selector) {
 }
 
 function cleanUpPreviousResult() {
+
     $("#result").val("")
     $("#alert").attr("style", "display: none")
 }
 
 function displayAlertMessage(message, isSuccess) {
 
-    var clazz = isSuccess ? "alert-success" : "alert-danger"
-    var obsoleteClazz = isSuccess ? "alert-danger" : "alert-success"
+    let clazz = isSuccess ? "alert-success" : "alert-danger"
+    let removedClazz = isSuccess ? "alert-danger" : "alert-success"
 
-    $("#alert").text(message)
-    $("#alert").addClass(clazz)
-    $("#alert").removeClass(obsoleteClazz)
-    $("#alert").attr("style", "display: block")
+    $alert = $("#alert")
+    $alert.text(message)
+    $alert.addClass(clazz)
+    $alert.removeClass(removedClazz)
+    $alert.attr("style", "display: block")
+}
+
+function calculateCounters(selector) {
+
+    let resultTxt = $(selector).val()
+    let characterCount = resultTxt.split("").filter(x => x.replaceAll(/\s*/g, '') && Boolean).length
+    let lineCount = resultTxt.split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean).length
+
+    let wordCount = 0
+    resultTxt.split("\n").forEach(element => {
+        wordCount += element.split(" ").filter(Boolean).length
+    });
+
+    console.log("characterCount", characterCount)
+    console.log("wordCount", wordCount)
+    console.log("lineCount", lineCount)
+
+    $("#counter").text(`Character count: ${characterCount} | Word count: ${wordCount} | Line count: ${lineCount}`)
 }

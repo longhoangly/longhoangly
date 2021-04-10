@@ -10,12 +10,12 @@ $(document).ready(function () {
 
     $("#generate").on("click", function () {
 
-        var qty = $("#num").val() || 0
-        var from = parseInt($("#from").val())
-        var to = parseInt($("#to").val())
+        let qty = $("#num").val() || 0
+        let from = parseInt($("#from").val())
+        let to = parseInt($("#to").val())
 
-        var separator = $("input[name='separator']:checked").val()
-        var isUnique = $("#unique").is(":checked")
+        let separator = $("input[name='separator']:checked").val()
+        let isUnique = $("#unique").is(":checked")
 
         cleanUpPreviousResult()
         generateRandomNumbers(qty, from, to, separator, isUnique)
@@ -32,6 +32,11 @@ $(document).ready(function () {
             copyTextToClipboard("#result")
             displayAlertMessage("Text result copied into the clipboard!", true)
         }
+    })
+
+    $("#result").on("change  paste input", function () {
+
+        calculateCounters("#result")
     })
 })
 
@@ -53,10 +58,10 @@ function generateRandomNumbers(qty, from, to, separator, isUnique) {
         return
     }
 
-    var numbers = []
+    let numbers = []
     do {
 
-        var randNum = Math.floor(Math.random() * (to - from + 1)) + from
+        let randNum = Math.floor(Math.random() * (to - from + 1)) + from
         if (!isUnique) {
 
             numbers.push(randNum)
@@ -69,5 +74,5 @@ function generateRandomNumbers(qty, from, to, separator, isUnique) {
 
     } while (qty > 0)
 
-    $("#result").val(separator == "+++" ? numbers.join("\n") : numbers.join(separator))
+    $("#result").val(separator == "+++" ? numbers.join("\n") : numbers.join(separator)).trigger("change")
 }

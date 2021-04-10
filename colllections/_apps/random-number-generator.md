@@ -76,8 +76,9 @@ js: random-number-generator
     <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
 
     <div class="no-gutters mt-3">
-        <label class="form-label" for="result">Generated random numbers</label>
+        <label class="form-label" for="result"><strong>Generated</strong> random numbers</label>
         <textarea type="text" id="result" name="result"></textarea>
+        <label id="counter" class="form-label" for="result">Character count: 0 | Word count: 0 | Line count: 0</label>
     </div>
 
 </div>

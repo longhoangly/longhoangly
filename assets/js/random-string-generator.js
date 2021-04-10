@@ -10,12 +10,12 @@ $(document).ready(function () {
 
     $("#generate").on("click", function () {
 
-        var qty = $("#num").val() || 0
-        var characters = $("#characters").val()
-        var length = $("#length").val() || 1
+        let qty = $("#num").val() || 0
+        let characters = $("#characters").val()
+        let length = $("#length").val() || 1
 
-        var separator = $("input[name='separator']:checked").val()
-        var isUnique = $("#unique").is(":checked")
+        let separator = $("input[name='separator']:checked").val()
+        let isUnique = $("#unique").is(":checked")
 
         cleanUpPreviousResult()
         generateRandomStrings(qty, characters, length, separator, isUnique)
@@ -33,6 +33,12 @@ $(document).ready(function () {
             displayAlertMessage("Text result copied into the clipboard!", true)
         }
     })
+
+
+    $("#result").on("change  paste input", function () {
+
+        calculateCounters("#result")
+    })
 })
 
 function generateRandomStrings(qty, characters, length, separator, isUnique) {
@@ -43,11 +49,11 @@ function generateRandomStrings(qty, characters, length, separator, isUnique) {
         return
     }
 
-    var strings = []
+    let strings = []
     do {
 
-        var randString = ''
-        for (var i = 0; i < length; i++) {
+        let randString = ''
+        for (let i = 0; i < length; i++) {
             randString += characters.charAt(Math.floor(Math.random() * characters.length))
         }
 
@@ -63,5 +69,5 @@ function generateRandomStrings(qty, characters, length, separator, isUnique) {
 
     } while (qty > 0)
 
-    $("#result").val(separator == "+++" ? strings.join("\n") : strings.join(separator))
+    $("#result").val(separator == "+++" ? strings.join("\n") : strings.join(separator)).trigger("change")
 }
