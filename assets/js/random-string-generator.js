@@ -17,7 +17,8 @@ $(document).ready(function () {
         let separator = $("input[name='separator']:checked").val()
         let isUnique = $("#unique").is(":checked")
 
-        cleanUpPreviousResult()
+        hideElement("#alert")
+        clearElementText("#result")
         generateRandomStrings(qty, characters, length, separator, isUnique)
     })
 
@@ -34,8 +35,14 @@ $(document).ready(function () {
         }
     })
 
+    $("#clear").on("click", function () {
 
-    $("#result").on("change  paste input", function () {
+        hideElement("#alert")
+        clearElementText("#result")
+        calculateCounters("#result")
+    })
+
+    $("#result").on("change paste input", function () {
 
         calculateCounters("#result")
     })

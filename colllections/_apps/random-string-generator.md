@@ -22,15 +22,15 @@ js: random-string-generator
     <div class="row no-gutters align-items-center my-3">
 
         <div>Generate</div>
-        <input type="number" min="1" max="300" class="input-box" id="num" name="num" value="5"
+        <input type="number" min="1" max="300" class="form-control input-box" id="num" name="num" value="5"
             oninput="validity.valid||(value='300');">
 
         <div>random string(s) from</div>
-        <input type="text" maxlength="1000" class="input-box" id="characters" name="characters"
+        <input type="text" maxlength="1000" class="form-control input-box" id="characters" name="characters"
             value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ">
 
         <div>with length</div>
-        <input type="number" min="1" max="1000" class="input-box" id="length" name="length" value="50"
+        <input type="number" min="1" max="1000" class="form-control input-box" id="length" name="length" value="50"
             oninput="validity.valid||(value='1000');">
 
         <div>in the box below</div>
@@ -73,6 +73,7 @@ js: random-string-generator
 
     <button id="generate" type="button" class="btn btn-outline-dark">Generate</button>
     <button id="copy" type="button" class="btn btn-outline-dark">Copy</button>
+    <button id="clear" type="button" class="btn btn-outline-dark">Clear</button>
     <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
 
     <div class="no-gutters mt-3">

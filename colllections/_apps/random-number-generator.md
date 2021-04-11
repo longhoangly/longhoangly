@@ -22,15 +22,15 @@ js: random-number-generator
     <div class="row no-gutters align-items-center my-3">
 
         <div>Generate</div>
-        <input type="number" min="1" max="5000" class="input-box" id="num" name="num" value="5"
+        <input type="number" min="1" max="5000" class="form-control input-box" id="num" name="num" value="5"
             oninput="validity.valid||(value='5000');">
 
         <div>random number(s) from</div>
-        <input type="number" min="0" max="100000000000000000" class="input-box" id="from" name="from" value="0"
+        <input type="number" min="0" max="100000000000000000" class="form-control input-box" id="from" name="from" value="0"
             oninput="validity.valid||(value='0');">
 
         <div>to</div>
-        <input type="number" min="0" max="100000000000000000" class="input-box" id="to" name="to" value="150"
+        <input type="number" min="0" max="100000000000000000" class="form-control input-box" id="to" name="to" value="150"
             oninput="validity.valid||(value='100000000000000000');">
 
         <div>in the box below</div>
@@ -73,6 +73,7 @@ js: random-number-generator
 
     <button id="generate" type="button" class="btn btn-outline-dark">Generate</button>
     <button id="copy" type="button" class="btn btn-outline-dark">Copy</button>
+    <button id="clear" type="button" class="btn btn-outline-dark">Clear</button>
     <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
 
     <div class="no-gutters mt-3">

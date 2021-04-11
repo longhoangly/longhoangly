@@ -22,7 +22,7 @@ $(document).ready(function () {
     setNavBarNightMode(isNight)
     setBodyNightMode(isNight)
     setFooterNightMode(isNight)
-    $("body").attr("style", "visibility: visible !important")
+    $("body").attr("style", "visibility: visible")
 
 
     // Change navigation menu icon
@@ -111,10 +111,35 @@ function copyTextToClipboard(selector) {
     $temp.remove()
 }
 
-function cleanUpPreviousResult() {
+function displayElement(selector) {
 
-    $("#result").val("")
-    $("#alert").attr("style", "display: none")
+    $element = $(selector)
+    if ($element.attr("style").includes("display")) {
+
+        $element.attr("style", "display: block")
+    } else {
+
+        $element.attr("style", "visibility: visible")
+    }
+
+}
+
+function hideElement(selector) {
+
+    $element = $(selector)
+    if ($element.attr("style").includes("display")) {
+
+        $element.attr("style", "display: none")
+    } else {
+
+        $element.attr("style", "visibility: hidden")
+    }
+}
+
+function clearElementText(selector) {
+
+    $(selector).val("")
+    $(selector).text("")
 }
 
 function displayAlertMessage(message, isSuccess) {
@@ -126,7 +151,7 @@ function displayAlertMessage(message, isSuccess) {
     $alert.text(message)
     $alert.addClass(clazz)
     $alert.removeClass(removedClazz)
-    $alert.attr("style", "display: block")
+    $alert.attr("style", "visibility: visible")
 }
 
 function calculateCounters(selector) {
@@ -139,10 +164,6 @@ function calculateCounters(selector) {
     resultTxt.split("\n").forEach(element => {
         wordCount += element.split(" ").filter(Boolean).length
     });
-
-    console.log("characterCount", characterCount)
-    console.log("wordCount", wordCount)
-    console.log("lineCount", lineCount)
 
     $("#counter").text(`Character count: ${characterCount} | Word count: ${wordCount} | Line count: ${lineCount}`)
 }
