@@ -26,8 +26,8 @@ js: case-converter
 
         <form class="form-inline w-100">
 
-            <label class="form-check-label mr-2" for="desiredCase">Desired Case</label>
-            <select id="desiredCase" class="custom-select mr-3">
+            <label class="form-check-label m-2" for="desiredCase">Desired Case</label>
+            <select id="desiredCase" class="custom-select m-2">
                 <option selected>lower case</option>
                 <option>UPPER CASE</option>
                 <option>Sentense case</option>
@@ -36,7 +36,7 @@ js: case-converter
                 <option>iNVERSE CASE</option>
             </select>
 
-            <div id="exceptions-wrapper" class="form-check col-sm-8" style="visibility: hidden">
+            <div id="exceptions-wrapper" class="form-check col-sm-8" style="display: none">
                 <label class="form-check-label mr-2" for="exceptions">Exceptions</label>
                 <input type="text" class="form-control w-100" id="exceptions" value="along, the, and, nor, or, yet, so, a, amid, an, apud, as, at, atop, but, by, down, for, from, in, into, like, mid, near, next, of, off, on, onto, out, over, pace, past, per, plus, pro, qua, sans, save, than, till, to, unto, up, upon, via, vice, vs., with">
             </div>

@@ -114,12 +114,12 @@ function copyTextToClipboard(selector) {
 function displayElement(selector) {
 
     $element = $(selector)
-    if ($element.attr("style").includes("display")) {
-
-        $element.attr("style", "display: block")
-    } else {
+    if ($element.attr("style").includes("visibility")) {
 
         $element.attr("style", "visibility: visible")
+    } else {
+
+        $element.attr("style", "display: inline-flex")
     }
 
 }
@@ -127,12 +127,12 @@ function displayElement(selector) {
 function hideElement(selector) {
 
     $element = $(selector)
-    if ($element.attr("style").includes("display")) {
-
-        $element.attr("style", "display: none")
-    } else {
+    if ($element.attr("style").includes("visibility")) {
 
         $element.attr("style", "visibility: hidden")
+    } else {
+
+        $element.attr("style", "display: none")
     }
 }
 
@@ -151,7 +151,7 @@ function displayAlertMessage(message, isSuccess) {
     $alert.text(message)
     $alert.addClass(clazz)
     $alert.removeClass(removedClazz)
-    $alert.attr("style", "visibility: visible")
+    $alert.attr("style", "display: inline-flex")
 }
 
 function calculateCounters(selector) {

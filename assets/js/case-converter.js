@@ -37,7 +37,7 @@ $(document).ready(function () {
             return
         }
 
-        let orignalTxt = localStorage.getItem("orignalTxt")
+        let orignalTxt = localStorage.getItem("orignalTxt") || ""
         if (orignalTxt.toLowerCase() != txtBox.toLowerCase()) {
 
             localStorage.setItem("orignalTxt", txtBox)
@@ -51,7 +51,7 @@ $(document).ready(function () {
 
     $("#original").on("click", function () {
 
-        let orignalTxt = localStorage.getItem("orignalTxt")
+        let orignalTxt = localStorage.getItem("orignalTxt") || ""
         $("#result").val(orignalTxt)
     })
 
