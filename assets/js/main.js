@@ -151,7 +151,7 @@ function displayAlertMessage(message, isSuccess) {
     $alert.text(message)
     $alert.addClass(clazz)
     $alert.removeClass(removedClazz)
-    $alert.attr("style", "display: inline-flex")
+    $alert.attr("style", "display: block")
 }
 
 function calculateCounters(selector) {
