@@ -1,0 +1,42 @@
+---
+---
+
+.tool-wrapper {
+    border-color: grey;
+    border-style: groove;
+    border-radius: 10px;
+    min-width: 160px;
+    width: 100%;
+    padding: 15px;
+}
+
+.input-box {
+    width: 150px;
+    margin: 5px 10px;
+    padding: 0 10px;
+    background-color: #f8f9fa;
+}
+
+#result {
+    text-align: top;
+    width: 100%;
+    min-height: 250px;
+    background-color: #f8f9fa;
+}
+
+#desiredCase {
+    max-width: 180px;
+}
+
+.count-box {
+    min-width: 130px;
+    margin: 2px;
+}
+
+.card-header {
+    border-width: 3px;
+}
+
+.table {
+    color: inherit;
+}

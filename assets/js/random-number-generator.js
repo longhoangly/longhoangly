@@ -1,13 +1,5 @@
 $(document).ready(function () {
 
-    $("#nightMode").on("click", function () {
-        let isNight = localStorage.getItem("isNight") == "true"
-        setButtonNightMode(isNight)
-    })
-
-    let isNight = localStorage.getItem("isNight") == "true"
-    setButtonNightMode(isNight)
-
     $("#generate").on("click", function () {
 
         let qty = $("#num").val() || 0

@@ -11,7 +11,8 @@
         <!-- Navbar items -->
         <ul class="navbar-nav mr-auto">
 
-            {% for item in site.data.navigation %}
+            {% assign firstItems = site.data.navigation | where: "section", "First" | sort: "index" %}
+            {% for item in firstItems %}
             <li {% if page.url==item.link %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
                 <a class="nav-link" href="{{ site.url }}{{ item.link }}">
                     {{ item.name }}
@@ -19,22 +20,39 @@
             </li>
             {% endfor %}
 
-            <li {% if page.url contains "random-number-generator" %} class="nav-item dropdown active" {% else %}
-                class="nav-item dropdown" {% endif %}>
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Apps</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="https://ankiflash.com/" target="_blank">AnkiFlash</a>
-                    <a class="dropdown-item" href="https://ankiweb.net/shared/info/1129289384" target="_blank">AnkiFlash
-                        Importer</a>
+
+                    {% assign secondItems = site.data.navigation | where: "section", "Second" | sort: "index" %}
+                    {% for item in secondItems %}
+
+                    {% if item.link contains "http" %}
+                    {% assign hrefLink = item.link %}
+                    {% else %}
+                    {% assign hrefLink = site.url | append: item.link %}
+                    {% endif %}
+
+                    <a class="dropdown-item" href="{{ hrefLink }}" {% if item.link contains "http" %} target="_blank" {%
+                        endif %}>{{ item.name }}</a>
+
+                    {% if item.break %}
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ site.url }}/random-number-generator.html">Random Number
-                        Generator</a>
-                    <a class="dropdown-item" href="{{ site.url }}/random-string-generator.html">Random String
-                        Generator</a>
-                    <a class="dropdown-item" href="{{ site.url }}/case-converter.html">Case Converter</a>
+                    {% endif %}
+
+                    {% endfor %}
                 </div>
             </li>
+
+            {% assign thirdItems = site.data.navigation | where: "section", "Third" | sort: "index" %}
+            {% for item in thirdItems %}
+            <li {% if page.url==item.link %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+                <a class="nav-link" href="{{ site.url }}{{ item.link }}">
+                    {{ item.name }}
+                </a>
+            </li>
+            {% endfor %}
 
         </ul>
 

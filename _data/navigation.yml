@@ -1,11 +1,50 @@
 - name: Home
   link: /
+  index: 1
+  section: First
 
-- name: Résumé
-  link: /resume.html
+- name: AnkiFlash
+  link: https://ankiflash.com/
+  index: 1
+  section: Second
+
+- name: AnkiFlash Importer
+  link: https://ankiweb.net/shared/info/1129289384
+  index: 2
+  section: Second
+  break: true
+
+- name: Random Number Generator
+  link: /random-number-generator.html
+  index: 3
+  section: Second
+
+- name: Random String Generator
+  link: /random-string-generator.html
+  index: 4
+  section: Second
+
+- name: Case Converter
+  link: /case-converter.html
+  index: 5
+  section: Second
+
+- name: Word Count
+  link: /word-count.html
+  index: 6
+  section: Second
 
 - name: Blog
   link: /blog.html
+  index: 1
+  section: Third
+
+- name: Résumé
+  link: /resume.html
+  index: 2
+  section: Third
 
 - name: Thanks
   link: /thanks.html
+  index: 3
+  section: Third

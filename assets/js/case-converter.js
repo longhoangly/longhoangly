@@ -7,22 +7,16 @@ var textCases = {
     inverseCase: "iNVERSE CASE"
 }
 
-var originExceptions = "along, the, and, nor, or, yet, so, a, amid, an, apud, as, at, atop, but, by, down, for, from, in, into, like, mid, near, next, of, off, on, onto, out, over, pace, past, per, plus, pro, qua, sans, save, than, till, to, unto, up, upon, via, vice, vs., with"
+var originExceptions = "along, the, and, nor, or, yet, so, a, amid, an, apud, as, at, atop, but, by, down, \
+    for, from, in, into, like, mid, near, next, of, off, on, onto, out, over, pace, past, per, plus, pro, qua, \
+    sans, save, than, till, to, unto, up, upon, via, vice, vs., with"
 
 $(document).ready(function () {
-
-    let isNight = localStorage.getItem("isNight") == "true"
-    setButtonNightMode(isNight)
 
     let excepStorage = localStorage.getItem("exceptions") || ""
     if (excepStorage.length > 0) {
         $("#exceptions").val(excepStorage)
     }
-
-    $("#nightMode").on("click", function () {
-        let isNight = localStorage.getItem("isNight") == "true"
-        setButtonNightMode(isNight)
-    })
 
     $("#exceptionReset").on("click", function () {
         $("#exceptions").val(originExceptions)
@@ -128,29 +122,31 @@ function convertStringCase(desiredCase) {
     $("#result").val(txtBox).trigger("change")
 }
 
-function firstLetterUpper(theString) {
-    return theString.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, function (c) { return c.toUpperCase() });
+function firstLetterUpper(string) {
+    return string.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g,
+        function (c) { return c.toUpperCase() });
 }
 
-function capitalizedCase(str) {
-    return str.toLowerCase().split(" ").map(function (word) {
-        return (word.charAt(0).toUpperCase() + word.slice(1));
+function capitalizedCase(string) {
+    return string.toLowerCase().split(" ").map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
     }).join(" ");
 }
 
-function titleCase(str) {
+function titleCase(string) {
 
     let exceptions = $("#exceptions").val().toLowerCase().split(",").map(item => item.trim())
-    return str.toLowerCase().split(" ").map(function (word) {
+    return string.toLowerCase().split(" ").map(function (word) {
 
         if (exceptions.includes(word.trim().toLowerCase())) {
-            return (word.charAt(0).toLowerCase() + word.slice(1));
+            return word.charAt(0).toLowerCase() + word.slice(1);
         } else {
-            return (word.charAt(0).toUpperCase() + word.slice(1));
+            return word.charAt(0).toUpperCase() + word.slice(1);
         }
     }).join(" ");
 }
 
-function inverseString(str) {
-    return [...str].map(char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()).join('');
+function inverseString(string) {
+    return [...string].map(char => char === char.toUpperCase() ?
+        char.toLowerCase() : char.toUpperCase()).join('');
 }

@@ -54,7 +54,7 @@ $(window).on("load", function () {
 function setNavBarNightMode(isNight) {
 
     let $nav = $("nav")
-    let $navBtns = $("nav>div>button")
+    let $navBtns = $("button")
     let $nightModeBtn = $("#nightMode")
     let $nightModeIcons = $("#nightMode>i")
 
@@ -76,6 +76,10 @@ function setBodyNightMode(isNight) {
     let $body = $("body")
     $body.toggleClass("bg-dark text-light", isNight)
     $body.toggleClass("bg-light text-dark", !isNight)
+
+    let $cards = $("[name='card']")
+    $cards.toggleClass("bg-dark border-light", isNight)
+    $cards.toggleClass("bg-light border-dark", !isNight)
 }
 
 function setFooterNightMode(isNight) {
