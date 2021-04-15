@@ -8,8 +8,8 @@ css: tool
 ### Word Count
 - This tool counts characters, words, and lines for a string
 - Characters counted with and without spaces
-- It also provided a list of word of word density
-- This will help you to have a better sense when writing SEO articles
+- It also provided a list of word density (12 most appeared words)
+    - This will help you to have a better sense when writing SEO articles
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">
