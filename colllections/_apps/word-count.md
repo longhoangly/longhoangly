@@ -26,31 +26,31 @@ css: tool
 
             <form class="form-inline w-100">
 
-                <div name="card" class="card border-dark text-center count-box mr-3">
+                <div name="card" class="card border-dark text-center count-box mr-2">
                     <div class="card-header">Characters</div>
                     <div class="card-body">
-                        <h5 class="card-title">0</h5>
+                        <h5 id="characters" class="card-title">0</h5>
                     </div>
                 </div>
 
-                <div name="card" class="card border-dark text-center count-box mr-3">
+                <div name="card" class="card border-dark text-center count-box mr-2">
                     <div class="card-header">Characters w/o Spaces</div>
                     <div class="card-body">
-                        <h5 class="card-title">0</h5>
+                        <h5 id="charactersWoSpace" class="card-title">0</h5>
                     </div>
                 </div>
 
-                <div name="card" class="card border-dark text-center count-box mr-3">
+                <div name="card" class="card border-dark text-center count-box mr-2">
                     <div class="card-header">Words</div>
                     <div class="card-body">
-                        <h5 class="card-title">0</h5>
+                        <h5 id="words" class="card-title">0</h5>
                     </div>
                 </div>
 
-                <div name="card" class="card border-dark text-center count-box mr-3">
+                <div name="card" class="card border-dark text-center count-box mr-2">
                     <div class="card-header">Lines</div>
                     <div class="card-body">
-                        <h5 class="card-title">0</h5>
+                        <h5 id="lines" class="card-title">0</h5>
                     </div>
                 </div>
 
@@ -72,58 +72,7 @@ css: tool
                         <th scope="col">Count</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>200</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Bird</td>
-                        <td>300</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Bird</td>
-                        <td>300</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Bird</td>
-                        <td>300</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td>Bird</td>
-                        <td>300</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">7</th>
-                        <td>Bird</td>
-                        <td>300</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">8</th>
-                        <td>Bird</td>
-                        <td>300</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">9</th>
-                        <td>Bird</td>
-                        <td>300</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">10</th>
-                        <td>Bird</td>
-                        <td>300</td>
-                    </tr>
-                </tbody>
+                <tbody id="densityTable"></tbody>
             </table>
         </div>
 
