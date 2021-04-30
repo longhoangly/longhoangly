@@ -1,7 +1,6 @@
 ---
 title: Random Number Generator | Long Ly
 js: random-number-generator
-css: tool
 ---
 
 {% capture intro %}

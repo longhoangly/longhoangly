@@ -1,7 +1,6 @@
 ---
 title: Word Count | Long Ly
 js: word-count
-css: tool
 ---
 
 {% capture intro %}
@@ -55,6 +54,8 @@ css: tool
                 </div>
 
             </form>
+
+            <button id="clearCounters" type="button" class="btn btn-outline-dark my-2">Clear</button>
 
             <div class="no-gutters mt-3">
                 <label class="form-label" for="result">Input your text here!</label>

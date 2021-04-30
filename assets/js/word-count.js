@@ -1,8 +1,16 @@
-$(document).ready(function () {
+$(document).ready(() => {
 
-    $("#result").on("change paste input", function () {
+    $("#result").on("change input", () => {
+
         calculateCounters("#result")
         calculateKeywordDensity("#result")
+    })
+
+    $("#clearCounters").on("click", () => {
+
+        $("#densityTable").html("")
+        clearElementText("#result")
+        calculateCounters("#result")
     })
 })
 
@@ -32,7 +40,8 @@ function calculateKeywordDensity(selector) {
 
     let words = []
     resultTxt.split("\n").forEach(line => {
-        words = words.concat(line.split(" ").filter(Boolean))
+        line = line.replaceAll(/[.,;!?:\[\]\{\}\|\\@#$%^&*\(\)-+='/<>]/g, " ")
+        words = words.concat(line.split(" ").filter(word => word.trim() && Boolean))
     })
 
     if (words.length == 0) {

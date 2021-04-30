@@ -1,7 +1,6 @@
 ---
 title: Random String Generator | Long Ly
 js: random-string-generator
-css: tool
 ---
 
 {% capture intro %}

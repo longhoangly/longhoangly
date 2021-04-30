@@ -1,6 +1,6 @@
-$(document).ready(function () {
+$(document).ready(() => {
 
-    $("#generate").on("click", function () {
+    $("#generate").on("click", () => {
 
         let qty = $("#num").val() || 0
         let from = parseInt($("#from").val())
@@ -14,30 +14,6 @@ $(document).ready(function () {
         generateRandomNumbers(qty, from, to, separator, isUnique)
     })
 
-    $("#copy").on("click", function () {
-
-        if ($("#result").val().length == 0) {
-
-            displayAlertMessage("Nothing in text result!", false)
-
-        } else {
-
-            copyTextToClipboard("#result")
-            displayAlertMessage("Text result copied into the clipboard!", true)
-        }
-    })
-
-    $("#clear").on("click", function () {
-
-        hideElement("#alert")
-        clearElementText("#result")
-        calculateCounters("#result")
-    })
-
-    $("#result").on("change paste input", function () {
-
-        calculateCounters("#result")
-    })
 })
 
 function generateRandomNumbers(qty, from, to, separator, isUnique) {

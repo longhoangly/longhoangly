@@ -11,19 +11,19 @@ var originExceptions = "along, the, and, nor, or, yet, so, a, amid, an, apud, as
     for, from, in, into, like, mid, near, next, of, off, on, onto, out, over, pace, past, per, plus, pro, qua, \
     sans, save, than, till, to, unto, up, upon, via, vice, vs., with"
 
-$(document).ready(function () {
+$(document).ready(() => {
 
     let excepStorage = localStorage.getItem("exceptions") || ""
     if (excepStorage.length > 0) {
         $("#exceptions").val(excepStorage)
     }
 
-    $("#exceptionReset").on("click", function () {
+    $("#exceptionReset").on("click", () => {
         $("#exceptions").val(originExceptions)
         localStorage.setItem("exceptions", originExceptions)
     })
 
-    $("input[name='desiredCase']").on("change", function () {
+    $("input[name='desiredCase']").on("change", () => {
 
         let desiredCase = $("input[name='desiredCase']:checked").val()
         if (desiredCase == textCases.titleCase) {
@@ -36,7 +36,7 @@ $(document).ready(function () {
         }
     })
 
-    $("#convert").on("click", function () {
+    $("#convert").on("click", () => {
 
         let resultBox = $("#result").val()
         if (resultBox.length == 0) {
@@ -67,30 +67,11 @@ $(document).ready(function () {
         convertStringCase(desiredCase)
     })
 
-    $("#original").on("click", function () {
+    $("#original").on("click", () => {
         let orignalTxt = localStorage.getItem("orignalTxt") || ""
         $("#result").val(orignalTxt)
     })
 
-    $("#copy").on("click", function () {
-
-        if ($("#result").val().length == 0) {
-            displayAlertMessage("Nothing in text result!", false)
-        } else {
-            copyTextToClipboard("#result")
-            displayAlertMessage("Text result copied into the clipboard!", true)
-        }
-    })
-
-    $("#clear").on("click", function () {
-        hideElement("#alert")
-        clearElementText("#result")
-        calculateCounters("#result")
-    })
-
-    $("#result").on("change paste input", function () {
-        calculateCounters("#result")
-    })
 })
 
 function convertStringCase(desiredCase) {

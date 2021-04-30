@@ -1,11 +1,11 @@
 
-$(document).ready(function () {
+$(document).ready(() => {
 
-    $("#download").on("click", function () {
+    $("#download").on("click", () => {
         window.open("https://github.com/longhoangly/longhoangly.github.io", "_blank")
     })
 
-    $("#nightMode").on("click", function () {
+    $("#nightMode").on("click", () => {
         // Everytime users click on night mode button, it means they want to change mode
         // Then reversed current night mode value is user's expectation!
         let isNight = !$("nav").hasClass("bg-dark")
@@ -26,7 +26,7 @@ $(document).ready(function () {
 
 
     // Change navigation menu icon
-    $("#changeToggle").on("click", function () {
+    $("#changeToggle").on("click", () => {
 
         let isCollapsed = $("#navbarSupportedContent").hasClass("show")
 
@@ -36,7 +36,7 @@ $(document).ready(function () {
     })
 })
 
-$(window).on("load", function () {
+$(window).on("load", () => {
 
     // Set sticky responsive footer
     let footerHeight = $("footer").outerHeight()
@@ -94,80 +94,4 @@ function setFooterNightMode(isNight) {
     $footerLinks.toggleClass("text-dark", !isNight)
 
     $footerLinks.attr("data-mdb-ripple-color", isNight ? "light" : "dark")
-}
-
-function setButtonNightMode(isNight) {
-
-    let $button = $("button")
-    $button.toggleClass("btn-outline-light", isNight)
-    $button.toggleClass("btn-outline-dark", !isNight)
-}
-
-function copyTextToClipboard(selector) {
-
-    let $temp = $("<textarea>")
-    let brRegex = /<br\s*[\/]?>/gi
-
-    $("body").append($temp)
-    $temp.val($(selector).val().replace(brRegex, "\r\n")).select()
-
-    document.execCommand("copy")
-    $temp.remove()
-}
-
-function displayElement(selector) {
-
-    $element = $(selector)
-    if ($element.attr("style").includes("visibility")) {
-
-        $element.attr("style", "visibility: visible")
-    } else {
-
-        $element.attr("style", "display: inline-flex")
-    }
-
-}
-
-function hideElement(selector) {
-
-    $element = $(selector)
-    if ($element.attr("style").includes("visibility")) {
-
-        $element.attr("style", "visibility: hidden")
-    } else {
-
-        $element.attr("style", "display: none")
-    }
-}
-
-function clearElementText(selector) {
-
-    $(selector).val("")
-    $(selector).text("")
-}
-
-function displayAlertMessage(message, isSuccess) {
-
-    let clazz = isSuccess ? "alert-success" : "alert-danger"
-    let removedClazz = isSuccess ? "alert-danger" : "alert-success"
-
-    $alert = $("#alert")
-    $alert.text(message)
-    $alert.addClass(clazz)
-    $alert.removeClass(removedClazz)
-    $alert.attr("style", "display: block")
-}
-
-function calculateCounters(selector) {
-
-    let resultTxt = $(selector).val()
-    let characterCount = resultTxt.split("").filter(x => x.replaceAll(/\s*/g, '') && Boolean).length
-    let lineCount = resultTxt.split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean).length
-
-    let wordCount = 0
-    resultTxt.split("\n").forEach(element => {
-        wordCount += element.split(" ").filter(Boolean).length
-    });
-
-    $("#counter").text(`Character count: ${characterCount} | Word count: ${wordCount} | Line count: ${lineCount}`)
 }

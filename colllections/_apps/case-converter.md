@@ -1,7 +1,6 @@
 ---
 title: Case Converter | Long Ly
 js: case-converter
-css: tool
 ---
 
 {% capture intro %}
