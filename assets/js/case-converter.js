@@ -81,19 +81,19 @@ function convertStringCase(desiredCase) {
     switch (desiredCase) {
         case textCases.upperCase:
             txtBox = txtBox.toLocaleUpperCase()
-            break;
+            break
         case textCases.sentenseCase:
             txtBox = firstLetterUpper(txtBox)
-            break;
+            break
         case textCases.capitalizedCase:
             txtBox = capitalizedCase(txtBox)
-            break;
+            break
         case textCases.titleCase:
             txtBox = titleCase(txtBox)
-            break;
+            break
         case textCases.inverseCase:
             txtBox = inverseString(txtBox)
-            break;
+            break
         default:
             // default is lower case
             txtBox = txtBox.toLocaleLowerCase()

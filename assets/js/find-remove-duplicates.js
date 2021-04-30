@@ -11,7 +11,7 @@ $(document).ready(() => {
         clearElementText("#result")
         clearElementText("#duplicates")
 
-        let strArray = $input.val().split("\n").filter(x => x.replaceAll(/\s*/g, '') && x.replaceAll(/\n/g, '') && Boolean)
+        let strArray = $input.val().split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean)
         console.log("strArray", strArray)
 
         if (strArray.length === 0) {
@@ -62,10 +62,11 @@ $(document).ready(() => {
 
         if (strArray.length === 0) {
             displayAlertMessage("Please enter text in input texbox!", false)
+            return
         }
 
         let uniques = getUniques(strArray)
-        sortingHandler(uniques)
+        uniqueSortingHandler(uniques)
     })
 })
 
@@ -99,7 +100,7 @@ function getUniques(strArray) {
     return uniques
 }
 
-function sortingHandler(resultArray) {
+function uniqueSortingHandler(resultArray) {
 
     let isNumbers = resultArray.every((x) => {
         // "is Not a Number" => return true if the string is not a number!
@@ -111,6 +112,7 @@ function sortingHandler(resultArray) {
     let sorting = $("input[name='sorting']:checked").val()
 
     switch (sorting) {
+
         case "ascending":
 
             if (isNumbers) {
@@ -119,7 +121,7 @@ function sortingHandler(resultArray) {
                 resultArray.sort()
             }
 
-            console.log("sort", resultArray)
+            console.log("sort ascending", resultArray)
             $result.val(resultArray.join("\n")).trigger("change")
             break
 
@@ -128,10 +130,11 @@ function sortingHandler(resultArray) {
             if (isNumbers) {
                 resultArray.sort((a, b) => { return b - a })
             } else {
+                resultArray.sort()
                 resultArray.reverse()
             }
 
-            console.log("reverse", resultArray)
+            console.log("sort descending", resultArray)
             $result.val(resultArray.join("\n")).trigger("change")
             break
 
