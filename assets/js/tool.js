@@ -14,9 +14,9 @@ $(document).ready(() => {
 
     $("#clear").on("click", () => {
 
-        hideElement("#alert")
         clearElementText("#result")
         calculateCounters("#result")
+        hideElement("#alert")
     })
 
     $("#result").on("change input", () => {
@@ -29,8 +29,11 @@ $(document).ready(() => {
 function setButtonNightMode(isNight) {
 
     let $button = $("button")
-    $button.toggleClass("btn-outline-light", isNight)
-    $button.toggleClass("btn-outline-dark", !isNight)
+    if ($button.length) {
+
+        $button.toggleClass("btn-outline-light", isNight)
+        $button.toggleClass("btn-outline-dark", !isNight)
+    }
 }
 
 function copyTextToClipboard(selector) {
@@ -47,20 +50,22 @@ function copyTextToClipboard(selector) {
 
 function displayElement(selector) {
 
-    $element = $(selector)
-    if ($element.attr("style").includes("visibility")) {
+    let $element = $(selector)
+    if ($element.length) {
 
-        $element.attr("style", "visibility: visible")
-    } else {
+        if ($element.attr("style").includes("visibility")) {
 
-        $element.attr("style", "display: inline-flex")
+            $element.attr("style", "visibility: visible")
+        } else {
+
+            $element.attr("style", "display: inline-flex")
+        }
     }
-
 }
 
 function hideElement(selector) {
 
-    $element = $(selector)
+    let $element = $(selector)
     if ($element.length) {
 
         if ($element.attr("style").includes("visibility")) {
@@ -75,10 +80,11 @@ function hideElement(selector) {
 
 function clearElementText(selector) {
 
-    if ($(selector).length) {
+    let $element = $(selector)
+    if ($element.length) {
 
-        $(selector).val("")
-        $(selector).text("")
+        $element.val("").trigger("change")
+        $element.text("").trigger("change")
     }
 }
 

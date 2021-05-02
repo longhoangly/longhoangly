@@ -6,32 +6,31 @@ $(document).ready(() => {
         hideElement("#alert")
         clearElementText("#result")
 
-        sortingHandler()
+        sortingHandler(true)
     })
 
     $("#clearSort").on("click", () => {
 
-        hideElement("#alert")
-
         clearElementText("#input")
         clearElementText("#result")
-
-        calculateCounters("#result")
+        hideElement("#alert")
     })
 
     $("input[name='sorting']").on("change", () => {
 
-        sortingHandler()
+        sortingHandler(true)
     })
 })
 
-function sortingHandler() {
+function sortingHandler(hasAlert = false) {
 
     let strArray = $("#input").val().split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean)
     console.log("strArray", strArray)
 
     if (strArray.length === 0) {
-        displayAlertMessage("Please enter text in input texbox!", false)
+        if (hasAlert) {
+            displayAlertMessage("Please enter text in input texbox!", false)
+        }
         return
     }
 
@@ -46,7 +45,6 @@ function sortLines(strArray) {
         // "is Not a Number" => return true if the string is not a number!
         return !isNaN(x)
     })
-    console.log("isNumbers", isNumbers)
 
     let sorting = $("input[name='sorting']:checked").val()
 

@@ -29,9 +29,7 @@ Although my contribution is small, but together we can make it bigger. Keep it u
 
   - If you want to join with me in this project, please feel free to drop me a message via links in <a href="#footer">_the footer below_</a>. Together, I believe we can go far.
 
-  <div class="video-container">
-      <iframe class="responsive-iframe" src="https://ankiflash.com" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
+  ![AnkiFlash!]({{ site.url }}/assets/images/ankiflash_1.png "AnkiFlash Website"){:width="100%"}
 
 <br>
 - Jekyll Profile / Blog Template

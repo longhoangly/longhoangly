@@ -1,4 +1,3 @@
-
 $(document).ready(() => {
 
     $("#download").on("click", () => {
@@ -23,7 +22,6 @@ $(document).ready(() => {
     setBodyNightMode(isNight)
     setFooterNightMode(isNight)
     $("body").attr("style", "visibility: visible")
-
 
     // Change navigation menu icon
     $("#changeToggle").on("click", () => {

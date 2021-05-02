@@ -10,6 +10,7 @@ js: find-remove-duplicates
     - No Sorting
     - Ascending
     - Descending
+- Based on input text, the tool will sort text as strings or numbers
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">

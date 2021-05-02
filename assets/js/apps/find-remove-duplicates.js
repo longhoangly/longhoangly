@@ -7,34 +7,16 @@ $(document).ready(() => {
 
     $input.on("change input", () => {
 
-        hideElement("#alert")
         clearElementText("#result")
         clearElementText("#duplicates")
+        hideElement("#alert")
 
-        let strArray = $input.val().split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean)
-        console.log("strArray", strArray)
-
-        if (strArray.length === 0) {
-            displayAlertMessage("Please enter text in input texbox!", false)
-            return
-        }
-
-        let duplicateStrs = getDuplicates(strArray)
-        if (duplicateStrs.length > 0) {
-
-            $duplicates.val(duplicateStrs.join("\n"))
-
-            let uniques = getUniques(strArray)
-            $result.val(uniques.join("\n")).trigger("change")
-
-        } else {
-            displayAlertMessage("No duplicates found! All lines are unique.", true)
-        }
+        findDuplicateHandler($input, $duplicates, $result)
     })
 
     $("#cpDuplicates").on("click", () => {
 
-        if ($("#result").val().length == 0) {
+        if ($result.val().length == 0) {
 
             displayAlertMessage("Nothing in duplicate box!", false)
         } else {
@@ -47,26 +29,17 @@ $(document).ready(() => {
 
     $("#clearDuplicates").on("click", () => {
 
-        hideElement("#alert")
-
         clearElementText("#input")
         clearElementText("#duplicates")
         clearElementText("#result")
 
         calculateCounters("#result")
+        hideElement("#alert")
     })
 
     $("input[name='sorting']").on("change", () => {
 
-        let strArray = $input.val().split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean)
-
-        if (strArray.length === 0) {
-            displayAlertMessage("Please enter text in input texbox!", false)
-            return
-        }
-
-        let uniques = getUniques(strArray)
-        uniqueSortingHandler(uniques)
+        sortingResultHandler($input, $result)
     })
 })
 
@@ -89,7 +62,6 @@ function getDuplicates(strArray) {
         }
     })
 
-    console.log("duplicateStrs", duplicateStrs)
     return duplicateStrs
 }
 
@@ -100,15 +72,45 @@ function getUniques(strArray) {
     return uniques
 }
 
-function uniqueSortingHandler(resultArray) {
+function findDuplicateHandler($input, $duplicates, $result) {
+
+    let strArray = $input.val().split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean)
+    console.log("strArray", strArray)
+
+    if (strArray.length === 0) {
+        displayAlertMessage("Please enter text in input texbox!", false)
+        return
+    }
+
+    let duplicateStrs = getDuplicates(strArray)
+    if (duplicateStrs.length > 0) {
+
+        $duplicates.val(duplicateStrs.join("\n"))
+
+        let uniques = getUniques(strArray)
+        $result.val(uniques.join("\n")).trigger("change")
+
+    } else {
+        displayAlertMessage("No duplicates found! All lines are unique.", true)
+    }
+}
+
+function sortingResultHandler($input, $result) {
+
+    let strArray = $input.val().split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean)
+
+    if (strArray.length === 0) {
+        displayAlertMessage("Please enter text in input texbox!", false)
+        return
+    }
+
+    let resultArray = getUniques(strArray)
 
     let isNumbers = resultArray.every((x) => {
         // "is Not a Number" => return true if the string is not a number!
         return !isNaN(x)
     })
-    console.log("isNumbers", isNumbers)
 
-    let $result = $("#result")
     let sorting = $("input[name='sorting']:checked").val()
 
     switch (sorting) {
