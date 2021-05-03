@@ -25,7 +25,7 @@ _Automation Test_
 
 _Business domain_
 
-- E-commerce
+- E-commerce, Logistics
 
 _Tech Stacks_
 

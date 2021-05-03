@@ -7,7 +7,6 @@ title: Thanks | Long Ly
 Thanks for your attention and visit my site.  
 Please feel free to drop me a message via links in <a href="#footer">_the footer below_</a>  
 
-<br>
 Again, if you found my content is valuable for your study, or your work.  
 Feel free to support me by buying me a coffee. Thanks a lot..
 

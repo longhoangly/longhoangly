@@ -1,16 +1,23 @@
 ---
+name: Find / Remove Duplicates
+link: /find-remove-duplicates.html
+
 title: Find / Remove Duplicates | Long Ly
 js: find-remove-duplicates
 ---
 
 {% capture intro %}
+
 ### Find / Remove Duplicates
+<!--separator-->
 - This tool finds and removes duplicated lines from an input text
 - Additional provided some sorting options:
     - No Sorting
     - Ascending
     - Descending
 - Based on input text, the tool will sort text as strings or numbers
+<!--separator-->
+
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">

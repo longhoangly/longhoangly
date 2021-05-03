@@ -1,7 +1,12 @@
-{% capture description %}
+---
+author: Long
+excerpt_separator: <!--more-->
+layout: code_vertical
+---
 
-There are multiple ways to check if a variable is a number in JavaScript and some common ways are:
+There are multiple ways to check if a variable is a number in JavaScript and some common ways are...
 
+<!--more-->
 - **isNaN( variable )** : This function name stands for "is Not a Number". If the variable is a number, it will return FALSE! Otherwise, it would be TRUE.
 
 - **typeof( operand )** : The typeof operator returns a string indicating the type of the unevaluated operand
@@ -11,7 +16,8 @@ There are multiple ways to check if a variable is a number in JavaScript and som
 The function **isNaN()** is a better way, be used in most cases.  
 But **typeof()** and **match()** are also nice to try.
 
-Becareful when using **typeof()** because it will return "string" if the number is declared as a string! _e.g. let number = "numberA"_
+Becareful when using **typeof()** because it will return "string" if the number is declared as a string! 
+_e.g. let number = "numberA"_
 
 While **match()** is only available for variables which declared in string type.
 
@@ -44,17 +50,3 @@ While **match()** is only available for variables which declared in string type.
     // expected: true
 
 ```
-
-{% endcapture %}
-
-<div class="row">
-
-    <div class="col pr-1">
-        {{ description | markdownify }}
-    </div>
-
-    <div class="col pr-1">
-        {% include js-executer.html %}
-    </div>
-
-</div>

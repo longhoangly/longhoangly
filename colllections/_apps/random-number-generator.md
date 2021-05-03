@@ -1,15 +1,22 @@
 ---
+name: Random Number Generator
+link: /random-number-generator.html
+
 title: Random Number Generator | Long Ly
 js: random-number-generator
 ---
 
 {% capture intro %}
+
 ### Generate Random Number
+<!--separator-->
 - This tool creates random numbers within a range
+    - Maximum quantity of number: 5000
+    - Minimum value of the range: 0
+    - Maximum value of the range: 100000000000000000
 - Unique option to generate only unique numbers
-- Maximum quantity of number: 5000
-- Minimum value of the range: 0
-- Maximum value of the range: 100000000000000000
+<!--separator-->
+
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">

@@ -1,10 +1,15 @@
 ---
+name: Case Converter
+link: /case-converter.html
+
 title: Case Converter | Long Ly
 js: case-converter
 ---
 
 {% capture intro %}
+
 ### Case Converter
+<!--separator-->
 - This tool converts the input text into a desired case
 - There are some cases supported:
     - lower case
@@ -13,6 +18,8 @@ js: case-converter
     - Capitalized Case
     - Title Case (supported custom exceptions, input into textbox)
     - iNVERSE CASE
+<!--separator-->
+
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">

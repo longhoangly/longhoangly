@@ -1,15 +1,22 @@
 ---
+name: Sort Lines
+link: /sort-lines.html
+
 title: Sort Lines | Long Ly
 js: sort-lines
 ---
 
 {% capture intro %}
+
 ### Sort Lines
+<!--separator-->
 - This tool sorts all lines from an input text
 - There are two options for sorting:
     - Ascending
     - Descending
 - These sorting options can work with text or numbers
+<!--separator-->
+
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">

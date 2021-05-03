@@ -1,15 +1,22 @@
 ---
+name: Random String Generator
+link: /random-string-generator.html
+
 title: Random String Generator | Long Ly
 js: random-string-generator
 ---
 
 {% capture intro %}
+
 ### Generate Random String
+<!--separator-->
 - This tool creates random strings from a list of given characters (letters and digits)
+    - Maximum quantity of strings: 300
+    - Minimum length of each string: 1
+    - Maximum length of each string: 1000
 - Unique option to generate only unique strings
-- Maximum quantity of strings: 300
-- Minimum length of each string: 1
-- Maximum length of each string: 1000
+<!--separator-->
+
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">
