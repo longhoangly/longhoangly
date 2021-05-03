@@ -16,3 +16,4 @@ end
 gem "jekyll", "~> 3.9"
 gem "webrick", "~> 1.7"
 gem "pathutil", "~> 0.16.2"
+gem "rouge", "~> 3.26.0"

@@ -1,0 +1,99 @@
+<div id="jsExecuter">
+    <div class="tool-wrapper">
+
+        <h3>JavaScript Executer</h3>
+        <div class="col p-0">
+            <label class="form-label" for="input"><strong>Input your JavaScript code here</strong></label>
+            <textarea type="text" id="input" name="input"></textarea>
+        </div>
+
+        <button id="execute" type="button" class="btn btn-outline-dark my-2">Execute</button>
+        <button id="clearJs" type="button" class="btn btn-outline-dark my-2">Clear</button>
+
+        <div class="col p-0 mt-3">
+            <label class="form-label" for="consoleOutput"><strong>JavaScript console output</strong></label>
+            <textarea class="textarea-sm" type="text" id="consoleOutput" name="consoleOutput" disabled></textarea>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(window).on("load", () => {
+
+        let $consoleOutput = $("#consoleOutput")
+        if ($consoleOutput.length !== 0) {
+
+            // Start Console Hooks
+            console.defaultLog = console.log.bind(console)
+            console.logs = []
+            console.log = function () {
+                // default & console.log()
+                console.defaultLog.apply(console, arguments)
+                // new & array data
+                console.logs.push(Array.from(arguments))
+                //Textarea logs 
+                let currentLogs = $consoleOutput.val().trim()
+                currentLogs = currentLogs.length > 0 ? currentLogs + "\n" : currentLogs
+                $consoleOutput.val(currentLogs + Array.from(arguments).join(" "))
+            }
+
+            console.defaultError = console.error.bind(console)
+            console.errors = []
+            console.error = function () {
+                // default & console.error()
+                console.defaultError.apply(console, arguments)
+                // new & array data
+                console.errors.push(Array.from(arguments))
+                //Textarea logs 
+                let currentLogs = $consoleOutput.val().trim()
+                currentLogs = currentLogs.length > 0 ? currentLogs + "\n" : currentLogs
+                $consoleOutput.val(currentLogs + Array.from(arguments).join(" "))
+            }
+
+            console.defaultDebug = console.debug.bind(console)
+            console.debugs = []
+            console.debug = function () {
+                // default & console.debug()
+                console.defaultDebug.apply(console, arguments)
+                // new & array data
+                console.debugs.push(Array.from(arguments))
+                //Textarea logs 
+                let currentLogs = $consoleOutput.val().trim()
+                currentLogs = currentLogs.length > 0 ? currentLogs + "\n" : currentLogs
+                $consoleOutput.val(currentLogs + "\n" + Array.from(arguments).join(" "))
+            }
+            // End Console Hooks
+        }
+
+        $("#execute").on("click", () => {
+
+            let jsScript = $("#input").val()
+            if (jsScript.length === 0) {
+
+                $("#consoleOutput").val("Could you please check your input? No JS code found!")
+                return
+            }
+
+            eval(jsScript)
+
+        })
+
+        $("#clearJs").on("click", () => {
+            console.logs.length = 0
+            console.errors.length = 0
+            console.debugs.length = 0
+
+            $("#input").val("")
+            $("#consoleOutput").val("")
+        })
+
+        $("#input").on("change input", () => {
+
+            clearElementText("#consoleOutput")
+        })
+
+    })
+
+</script>

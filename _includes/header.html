@@ -11,7 +11,7 @@
         <!-- Navbar items -->
         <ul class="navbar-nav mr-auto">
 
-            {% assign firstItems = site.data.navigation | where: "section", "First" | sort: "index" %}
+            {% assign firstItems = site.data.navigation | where: "section", "First" %}
             {% for item in firstItems %}
             <li {% if page.url==item.link %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
                 <a class="nav-link" href="{{ site.url }}{{ item.link }}">
@@ -25,7 +25,7 @@
                     aria-haspopup="true" aria-expanded="false">Apps</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                    {% assign secondItems = site.data.navigation | where: "section", "Second" | sort: "index" %}
+                    {% assign secondItems = site.data.navigation | where: "section", "Second" %}
                     {% for item in secondItems %}
 
                     {% if item.link contains "http" %}
@@ -45,7 +45,7 @@
                 </div>
             </li>
 
-            {% assign thirdItems = site.data.navigation | where: "section", "Third" | sort: "index" %}
+            {% assign thirdItems = site.data.navigation | where: "section", "Third" %}
             {% for item in thirdItems %}
             <li {% if page.url==item.link %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
                 <a class="nav-link" href="{{ site.url }}{{ item.link }}">
