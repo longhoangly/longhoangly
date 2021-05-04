@@ -1,8 +1,5 @@
 ---
 name: Word Count
-link: /1.word-count.html
-
-title: Word Count | Long Ly
 js: word-count
 ---
 

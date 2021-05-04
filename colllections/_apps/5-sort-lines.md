@@ -1,8 +1,5 @@
 ---
 name: Sort Lines
-link: /sort-lines.html
-
-title: Sort Lines | Long Ly
 js: sort-lines
 ---
 

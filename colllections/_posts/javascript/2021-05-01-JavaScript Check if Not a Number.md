@@ -1,7 +1,7 @@
 ---
 author: Long
-excerpt_separator: <!--more-->
 layout: code_vertical
+excerpt_separator: <!--more-->
 ---
 
 There are multiple ways to check if a variable is a number in JavaScript and some common ways are...

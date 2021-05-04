@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home | Long Ly
+title: About | Long Ly App
 ---
 
 <div class="row justify-content-center">

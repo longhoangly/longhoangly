@@ -1,7 +1,13 @@
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="{{ '/favicon.ico' | prepend: site.baseurl | prepend: site.url }}" />
-    <title>{{ page.title }}</title>
+
+    {% if page.collection == "apps" %}
+    {% assign title = page.name | append: " | Long Ly App" %}
+    {% else %}
+    {% assign title = page.title %}
+    {% endif %}
+    <title>{{ title }}</title>
 
     <!-- Loading CSS -->
     <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"

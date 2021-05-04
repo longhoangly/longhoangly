@@ -1,8 +1,5 @@
 ---
 name: Random Number Generator
-link: /random-number-generator.html
-
-title: Random Number Generator | Long Ly
 js: random-number-generator
 ---
 

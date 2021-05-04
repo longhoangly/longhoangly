@@ -1,5 +1,5 @@
 ---
-title: Blog | Long Ly
+title: Blog | Long Ly App
 ---
 
 ##### Latest Posts

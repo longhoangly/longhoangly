@@ -1,5 +1,5 @@
 ---
-title: Thanks | Long Ly
+title: Thanks | Long Ly App
 ---
 
 ##### Thanks

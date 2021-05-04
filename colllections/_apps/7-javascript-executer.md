@@ -1,8 +1,5 @@
 ---
 name: JavaScript Executer
-link: /javascript-executer.html
-
-title: JavaScript Executer | Long Ly
 ---
 
 {% capture intro %}

@@ -1,5 +1,5 @@
 ---
-title: Authors | Long Ly
+title: Authors | Long Ly App
 ---
 
 ##### All authors on this blog!

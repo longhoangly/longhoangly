@@ -1,8 +1,5 @@
 ---
 name: Find / Remove Duplicates
-link: /find-remove-duplicates.html
-
-title: Find / Remove Duplicates | Long Ly
 js: find-remove-duplicates
 ---
 

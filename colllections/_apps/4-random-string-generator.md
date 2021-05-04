@@ -1,10 +1,7 @@
 ---
 name: Random String Generator
-link: /random-string-generator.html
-break: true
-
-title: Random String Generator | Long Ly
 js: random-string-generator
+break: true
 ---
 
 {% capture intro %}

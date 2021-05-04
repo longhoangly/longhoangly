@@ -6,7 +6,7 @@ title: Home | Long Ly App
 <br>
 Hi! Welcome to the LongLy.App
 
-This site has some useful tool for processing text, strings and numbers.
+This site has some useful tools for processing text, strings and numbers.
 
 Feel free to give it a try and send me messages if any suggestion. Thanks!
 <br>

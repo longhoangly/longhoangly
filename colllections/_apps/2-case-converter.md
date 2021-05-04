@@ -1,8 +1,5 @@
 ---
 name: Case Converter
-link: /case-converter.html
-
-title: Case Converter | Long Ly
 js: case-converter
 ---
 
