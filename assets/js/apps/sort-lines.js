@@ -3,9 +3,8 @@ $(document).ready(() => {
 
     $("#input").on("change input", () => {
 
-        hideElement("#alert")
         clearElementText("#result")
-
+        hideElement("#alert")
         sortingHandler(true)
     })
 
@@ -24,7 +23,7 @@ $(document).ready(() => {
 
 function sortingHandler(hasAlert = false) {
 
-    let strArray = $("#input").val().split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean)
+    let strArray = $("#input").val().split("\n").filter(x => x.trim() && Boolean)
     console.log("strArray", strArray)
 
     if (strArray.length === 0) {

@@ -14,20 +14,18 @@ $(document).ready(() => {
         findDuplicateHandler($input, $duplicates, $result)
     })
 
-    $("#cpDuplicates").on("click", () => {
+    $("#copyDup").on("click", () => {
 
         if ($result.val().length == 0) {
-
             displayAlertMessage("Nothing in duplicate box!", false)
         } else {
-
             copyTextToClipboard("#duplicates")
             displayAlertMessage("Duplicated text copied into the clipboard!", true)
         }
     })
 
 
-    $("#clearDuplicates").on("click", () => {
+    $("#clearDup").on("click", () => {
 
         clearElementText("#input")
         clearElementText("#duplicates")
@@ -68,13 +66,12 @@ function getDuplicates(strArray) {
 function getUniques(strArray) {
 
     let uniques = strArray.filter((v, i, a) => a.indexOf(v) === i)
-
     return uniques
 }
 
 function findDuplicateHandler($input, $duplicates, $result) {
 
-    let strArray = $input.val().split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean)
+    let strArray = $input.val().split("\n").filter(x => x.trim() && Boolean)
     console.log("strArray", strArray)
 
     if (strArray.length === 0) {
@@ -97,7 +94,7 @@ function findDuplicateHandler($input, $duplicates, $result) {
 
 function sortingResultHandler($input, $result) {
 
-    let strArray = $input.val().split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean)
+    let strArray = $input.val().split("\n").filter(x => x.trim() && Boolean)
 
     if (strArray.length === 0) {
         displayAlertMessage("Please enter text in input texbox!", false)
@@ -140,8 +137,9 @@ function sortingResultHandler($input, $result) {
             $result.val(resultArray.join("\n")).trigger("change")
             break
 
-        case "noSorting":
+        default:
             console.log("no-sorting", resultArray)
             $result.val(resultArray.join("\n")).trigger("change")
+            break
     }
 }

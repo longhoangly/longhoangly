@@ -1,73 +1,60 @@
 
 $(document).ready(() => {
 
-    $("#input").on("change input", () => {
+    $("#find").on("click", () => {
 
+        clearElementText("#result_1")
+        clearElementText("#result_2")
         hideElement("#alert")
-        clearElementText("#result")
-
-        sortingHandler(true)
+        findDifferences()
     })
 
-    $("#clearSort").on("click", () => {
+    $("#clearDiff").on("click", () => {
 
-        clearElementText("#input")
-        clearElementText("#result")
+        clearElementText("#input_1")
+        clearElementText("#input_2")
+        clearElementText("#result_1")
+        clearElementText("#result_2")
         hideElement("#alert")
-    })
-
-    $("input[name='sorting']").on("change", () => {
-
-        sortingHandler(true)
     })
 })
 
-function sortingHandler(hasAlert = false) {
 
-    let strArray = $("#input").val().split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean)
-    console.log("strArray", strArray)
+function findDifferences() {
 
-    if (strArray.length === 0) {
-        if (hasAlert) {
-            displayAlertMessage("Please enter text in input texbox!", false)
+    let inputLines_1 = $("#input_1").val().split("\n").filter(x => x.trim() && Boolean)
+    let inputLines_2 = $("#input_2").val().split("\n").filter(x => x.trim() && Boolean)
+
+    let outputLines_1 = []
+    let outputLines_3 = []
+    inputLines_1.forEach(element => {
+        if (!inputLines_2.includes(element)) {
+            outputLines_1.push(`<div><mark>${element}</mark></div>`)
+        } else {
+            outputLines_3.push(element)
         }
-        return
-    }
-
-    let sortedLines = sortLines(strArray)
-    $("#result").val(sortedLines.join("\n")).trigger("change")
-}
-
-
-function sortLines(strArray) {
-
-    let isNumbers = strArray.every((x) => {
-        // "is Not a Number" => return true if the string is not a number!
-        return !isNaN(x)
     })
 
-    let sorting = $("input[name='sorting']:checked").val()
+    let outputLines_2 = []
+    inputLines_2.forEach(element => {
+        if (!inputLines_1.includes(element)) {
+            outputLines_2.push(`<div><mark>${element}</mark></div>`)
+        }
+    })
 
-    switch (sorting) {
+    if (inputLines_1.length !== inputLines_2.length) {
 
-        case "descending":
-            if (isNumbers) {
-                strArray.sort((a, b) => { return b - a })
-            } else {
-                strArray.sort()
-                strArray.reverse()
-            }
-            console.log("sort descending", strArray)
-            break
+        displayAlertMessage("Not mached!! Two lists have different length!!", false)
 
-        default:
-            if (isNumbers) {
-                strArray.sort((a, b) => { return a - b })
-            } else {
-                strArray.sort()
-            }
-            console.log("sort ascending", strArray)
+    } else if (!outputLines_1.join(" ").includes("mark") && !outputLines_2.join(" ").includes("mark")) {
+
+        displayAlertMessage("All matched!!!", true)
+    } else {
+
+        displayAlertMessage("Not matched!! Two list have the same length, but there are differences!!", false)
     }
 
-    return strArray
+    $("#result_1").html(outputLines_1.join("\n"))
+    $("#result_2").html(outputLines_2.join("\n"))
+    $("#result_3").html(outputLines_3.join("\n"))
 }

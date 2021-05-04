@@ -85,6 +85,7 @@ function clearElementText(selector) {
 
         $element.val("").trigger("change")
         $element.text("").trigger("change")
+        $element.html("").trigger("change")
     }
 }
 

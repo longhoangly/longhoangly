@@ -24,9 +24,9 @@ js: find-remove-duplicates
     <h3>Find / Remove Duplicates</h3>
     <br>
 
-    <button id="cpDuplicates" type="button" class="btn btn-outline-dark mb-2">Copy Duplicates</button>
+    <button id="copyDup" type="button" class="btn btn-outline-dark mb-2">Copy Duplicates</button>
     <button id="copy" type="button" class="btn btn-outline-dark mb-2">Copy Result</button>
-    <button id="clearDuplicates" type="button" class="btn btn-outline-dark mb-2">Clear</button>
+    <button id="clearDup" type="button" class="btn btn-outline-dark mb-2">Clear</button>
     <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
 
     <div class="no-gutters mt-3">
