@@ -1,57 +1,19 @@
 - name: Home
   link: /
-  section: First
-
-- name: AnkiFlash
-  link: https://ankiflash.com/
-  section: Second
-
-- name: AnkiFlash Importer
-  link: https://ankiweb.net/shared/info/1129289384
-  section: Second
-  break: true
-
-- name: Word Count
-  link: /word-count.html
-  section: Second
-
-- name: Case Converter
-  link: /case-converter.html
-  section: Second
-
-- name: Random String Generator
-  link: /random-string-generator.html
-  section: Second
-
-- name: Random Number Generator
-  link: /random-number-generator.html
-  section: Second
-  break: true
-
-- name: JavaScript Executer
-  link: /javascript-executer.html
-  section: Second
-
-- name: Sort Lines
-  link: /sort-lines.html
-  section: Second
-
-- name: Find / Remove Duplicates
-  link: /find-remove-duplicates.html
-  section: Second
+  section: Home
 
 - name: Blog
   link: /blog.html
-  section: Third
+  section: Others
 
 - name: About
   link: /about.html
-  section: Third
+  section: Others
 
 - name: Thanks
   link: /thanks.html
-  section: Third
+  section: Others
 
 - name: Résumé
   link: /resume.html
-  section: Third
+  section: Others

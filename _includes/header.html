@@ -11,7 +11,7 @@
         <!-- Navbar items -->
         <ul class="navbar-nav mr-auto">
 
-            {% assign firstItems = site.data.navigation | where: "section", "First" %}
+            {% assign firstItems = site.data.navigation | where: "section", "Home" %}
             {% for item in firstItems %}
             <li {% if page.url==item.link %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
                 <a class="nav-link" href="{{ site.url }}{{ item.link }}">
@@ -25,19 +25,15 @@
                     aria-haspopup="true" aria-expanded="false">Apps</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                    {% assign secondItems = site.data.navigation | where: "section", "Second" %}
-                    {% for item in secondItems %}
+                    <a class="dropdown-item" href="https://ankiflash.com/" target="_blank">AnkiFlash</a>
+                    <a class="dropdown-item" href="https://ankiweb.net/shared/info/1129289384" target="_blank">AnkiFlash
+                        Importer</a>
+                    <div class="dropdown-divider"></div>
 
-                    {% if item.link contains "http" %}
-                    {% assign hrefLink = item.link %}
-                    {% else %}
-                    {% assign hrefLink = site.url | append: item.link %}
-                    {% endif %}
+                    {% for app in site.apps %}
+                    <a class="dropdown-item" href="{{ app.url }}">{{ app.name }}</a>
 
-                    <a class="dropdown-item" href="{{ hrefLink }}" {% if item.link contains "http" %} target="_blank" {%
-                        endif %}>{{ item.name }}</a>
-
-                    {% if item.break %}
+                    {% if app.break %}
                     <div class="dropdown-divider"></div>
                     {% endif %}
 
@@ -45,7 +41,7 @@
                 </div>
             </li>
 
-            {% assign thirdItems = site.data.navigation | where: "section", "Third" %}
+            {% assign thirdItems = site.data.navigation | where: "section", "Others" %}
             {% for item in thirdItems %}
             <li {% if page.url==item.link %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
                 <a class="nav-link" href="{{ site.url }}{{ item.link }}">

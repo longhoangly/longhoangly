@@ -7,7 +7,6 @@ js: random-number-generator
 ---
 
 {% capture intro %}
-
 ### Generate Random Number
 <!--separator-->
 - This tool creates random numbers within a range
@@ -16,7 +15,6 @@ js: random-number-generator
     - Maximum value of the range: 100000000000000000
 - Unique option to generate only unique numbers
 <!--separator-->
-
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">

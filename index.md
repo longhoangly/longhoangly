@@ -19,7 +19,6 @@ Feel free to give it a try and send me messages if any suggestion. Thanks!
     <tbody>
 
       <tr>
-
         <td>
           <a href="https://ankiflash.com/" target="_blank">
             <h4>1. AnkiFlash</h4>
@@ -37,19 +36,15 @@ Feel free to give it a try and send me messages if any suggestion. Thanks!
           the <a href="https://ankiflash.com/" target="_blank">https://ankiflash.com</a> website.' %}
           <p>{{ desc | markdownify }}</p>
         </td>
-
       </tr>
 
       {% for app in site.apps %}
 
       {% assign indexModulo = forloop.index0 | modulo: 2 %}
       {% if indexModulo == 0 %}
-
-      {% assign appLink = site.url | append: app.link %}
       <tr>
-
         <td>
-          <a href="{{ appLink }}">
+          <a href="{{ app.url }}">
             <h4>{{forloop.index0 | plus: 3}}. {{ app.name }}</h4>
           </a>
 
@@ -62,9 +57,7 @@ Feel free to give it a try and send me messages if any suggestion. Thanks!
           {% if site.apps.size > nextIndex %}
 
           {% assign nextApp = site.apps[nextIndex] %}
-          {% assign nextAppLink = site.url | append: nextApp.link %}
-
-          <a href="{{ nextAppLink }}">
+          <a href="{{ nextApp.url }}">
             <h4>{{nextIndex | plus: 3}}. {{ nextApp.name }}</h4>
           </a>
 
@@ -73,7 +66,6 @@ Feel free to give it a try and send me messages if any suggestion. Thanks!
 
           {% endif %}
         </td>
-
       </tr>
 
       {% endif %}

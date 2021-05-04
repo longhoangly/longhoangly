@@ -1,13 +1,13 @@
 ---
 name: Random String Generator
 link: /random-string-generator.html
+break: true
 
 title: Random String Generator | Long Ly
 js: random-string-generator
 ---
 
 {% capture intro %}
-
 ### Generate Random String
 <!--separator-->
 - This tool creates random strings from a list of given characters (letters and digits)
@@ -16,7 +16,6 @@ js: random-string-generator
     - Maximum length of each string: 1000
 - Unique option to generate only unique strings
 <!--separator-->
-
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">

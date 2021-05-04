@@ -1,13 +1,12 @@
 ---
 name: Word Count
-link: /word-count.html
+link: /1.word-count.html
 
 title: Word Count | Long Ly
 js: word-count
 ---
 
 {% capture intro %}
-
 ### Word Count
 <!--separator-->
 - This tool counts characters, words, and lines for a string
@@ -15,7 +14,6 @@ js: word-count
 - It also provided a list of word density (12 most appeared words)
     - This will help you to have a better sense when writing SEO articles
 <!--separator-->
-
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">

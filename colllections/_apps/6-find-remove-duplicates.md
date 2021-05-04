@@ -7,7 +7,6 @@ js: find-remove-duplicates
 ---
 
 {% capture intro %}
-
 ### Find / Remove Duplicates
 <!--separator-->
 - This tool finds and removes duplicated lines from an input text
@@ -17,7 +16,6 @@ js: find-remove-duplicates
     - Descending
 - Based on input text, the tool will sort text as strings or numbers
 <!--separator-->
-
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">

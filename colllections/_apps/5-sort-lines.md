@@ -7,7 +7,6 @@ js: sort-lines
 ---
 
 {% capture intro %}
-
 ### Sort Lines
 <!--separator-->
 - This tool sorts all lines from an input text
@@ -16,7 +15,6 @@ js: sort-lines
     - Descending
 - These sorting options can work with text or numbers
 <!--separator-->
-
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">

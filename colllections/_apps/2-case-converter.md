@@ -7,7 +7,6 @@ js: case-converter
 ---
 
 {% capture intro %}
-
 ### Case Converter
 <!--separator-->
 - This tool converts the input text into a desired case
@@ -19,7 +18,6 @@ js: case-converter
     - Title Case (supported custom exceptions, input into textbox)
     - iNVERSE CASE
 <!--separator-->
-
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">
