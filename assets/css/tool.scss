@@ -21,14 +21,20 @@ textarea {
   text-align: top;
   width: 100%;
   min-height: 250px;
-  background-color: #f8f9fa;
+  border-width: 2px;
+  border-radius: 3px;
+  color: inherit;
+  background-color: inherit;
 }
 
 .textarea-sm {
   text-align: top;
   width: 100%;
   min-height: 150px;
-  background-color: #f8f9fa;
+  border-width: 2px;
+  border-radius: 3px;
+  color: inherit;
+  background-color: inherit;
 }
 
 #desiredCase {
