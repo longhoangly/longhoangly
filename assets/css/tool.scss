@@ -24,7 +24,7 @@ textarea {
   border-width: 2px;
   border-radius: 3px;
   color: inherit;
-  background-color: inherit;
+  background-color: darken(inherit, 10%) ;;
 }
 
 .textarea-sm {
