@@ -10,6 +10,7 @@ $(document).ready(() => {
         let isNight = !$("nav").hasClass("bg-dark")
         localStorage.setItem("isNight", isNight)
 
+        setTextareaBgColor(isNight)
         setNavBarNightMode(isNight)
         setBodyNightMode(isNight)
         setFooterNightMode(isNight)
@@ -18,6 +19,7 @@ $(document).ready(() => {
     // Set night mode for website based on local storage memory
     let isNight = localStorage.getItem("isNight") == "true" || false
 
+    setTextareaBgColor(isNight)
     setNavBarNightMode(isNight)
     setBodyNightMode(isNight)
     setFooterNightMode(isNight)
@@ -32,6 +34,7 @@ $(document).ready(() => {
         $changeToggleIcons.toggleClass("fa-times", !isCollapsed)
         $changeToggleIcons.toggleClass("fa-bars", isCollapsed)
     })
+
 })
 
 $(window).on("load", () => {
@@ -92,4 +95,10 @@ function setFooterNightMode(isNight) {
     $footerLinks.toggleClass("text-dark", !isNight)
 
     $footerLinks.attr("data-mdb-ripple-color", isNight ? "light" : "dark")
+}
+
+function setTextareaBgColor(isNight) {
+
+    let bgColor = isNight ? "#2e3338" : "#f0f2f4"
+    $("textarea").css("background-color", bgColor)
 }

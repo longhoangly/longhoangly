@@ -1,12 +1,15 @@
 ---
 name: Base64 Encode Decode
+js: base64-encode-decode
 ---
 
 {% capture intro %}
 ### Base64 Encode Decode
 <!--separator-->
-- A simple JavaScript online executer
-- Console output (logs, errors, debugs) will be printted in console output box
+- This tool provides encode and decode Base64 strings
+- It supports two main charsets (UTF-8, UTF-16) and also has options
+    - Encode / decode each line separately
+    - Split encoded string into 76 character wide chunks
 <!--separator-->
 {% endcapture %}
 
@@ -17,6 +20,38 @@ name: Base64 Encode Decode
 <div class="tool-wrapper">
 
     <h3>Base64 Encode Decode</h3>
+
+    <div class="form-check form-check-inline mt-3">
+        <input class="form-check-input" type="checkbox" id="parallel" data-toggle="tooltip"
+            title="check if you want to encode / decode multiple lines.">
+        <label class="form-check-label" for="parallel">Encode / decode each line separately (parallel proceed multiple
+            lines)</label>
+    </div>
+    <br>
+
+    <div class="form-check form-check-inline mb-3">
+        <input class="form-check-input" type="checkbox" id="split76" data-toggle="tooltip"
+            title="check if you want to encode / decode multiple lines.">
+        <label class="form-check-label" for="split76">Split encoded string into 76 character wide chunks
+            (MIME).</label>
+    </div>
+
+    <form class="form-inline w-100 mb-2">
+        <label class="form-check-label mr-3" for="charset">Charset</label>
+        <div class="form-check form-check-inline mr-3">
+            <input class="form-check-input" type="radio" name="charset" id="utf8" value="utf8" checked>
+            <label class="form-check-label" for="utf8">
+                UTF-8
+            </label>
+        </div>
+
+        <div class="form-check form-check-inline mr-3">
+            <input class="form-check-input" type="radio" name="charset" id="utf16" value="utf16">
+            <label class="form-check-label" for="utf16">
+                UTF-16
+            </label>
+        </div>
+    </form>
 
     <div class="row">
         <div class="col pr-1">
@@ -53,4 +88,7 @@ name: Base64 Encode Decode
 
         </div>
     </div>
+
+    <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
+
 </div>
