@@ -40,7 +40,7 @@ $(document).ready(() => {
 
         let resultBox = $("#result").val()
         if (resultBox.length == 0) {
-            displayAlertMessage("Please check your input! Nothing to convert!", false)
+            alertWebMsg("Please check your input! No text input!", false)
             return
         }
 
@@ -63,7 +63,6 @@ $(document).ready(() => {
             $("#exceptions").val(excepStorage)
         }
 
-        hideElement("#alert")
         convertStringCase(desiredCase)
     })
 

@@ -5,7 +5,6 @@ $(document).ready(() => {
 
         clearElementText("#result_1")
         clearElementText("#result_2")
-        hideElement("#alert")
         findDifferences()
     })
 
@@ -15,7 +14,6 @@ $(document).ready(() => {
         clearElementText("#input_2")
         clearElementText("#result_1")
         clearElementText("#result_2")
-        hideElement("#alert")
     })
 })
 
@@ -44,14 +42,14 @@ function findDifferences() {
 
     if (inputLines_1.length !== inputLines_2.length) {
 
-        displayAlertMessage("Not mached!! Two lists have different length!!", false)
+        alertWebMsg("Not mached!! Two lists have different lengths!!", false)
 
     } else if (!outputLines_1.join(" ").includes("mark") && !outputLines_2.join(" ").includes("mark")) {
 
-        displayAlertMessage("All matched!!!", true)
+        alertWebMsg("Yay, all matched.", true)
     } else {
 
-        displayAlertMessage("Not matched!! Two list have the same length, but there are differences!!", false)
+        alertWebMsg("Not matched!! Two lists have the same length, but there are differences!!", false)
     }
 
     $("#result_1").html(outputLines_1.join("\n"))

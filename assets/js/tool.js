@@ -4,11 +4,11 @@ $(document).ready(() => {
 
         if ($("#result").val().length == 0) {
 
-            displayAlertMessage("Nothing in text result box!", false)
+            alertWebMsg("No text result!", false)
         } else {
 
             copyTextToClipboard("#result")
-            displayAlertMessage("Text result copied into the clipboard!", true)
+            alertWebMsg("Text result copied into the clipboard.", true)
         }
     })
 
@@ -16,7 +16,6 @@ $(document).ready(() => {
 
         clearElementText("#result")
         calculateCounters("#result")
-        hideElement("#alert")
     })
 
     $("#result").on("change input", () => {
@@ -89,7 +88,7 @@ function clearElementText(selector) {
     }
 }
 
-function displayAlertMessage(message, isSuccess) {
+async function alertWebMsg(message, isSuccess, timeout = 3) {
 
     let clazz = isSuccess ? "alert-success" : "alert-danger"
     let removedClazz = isSuccess ? "alert-danger" : "alert-success"
@@ -98,7 +97,10 @@ function displayAlertMessage(message, isSuccess) {
     $alert.text(message)
     $alert.addClass(clazz)
     $alert.removeClass(removedClazz)
-    $alert.attr("style", "display: block")
+    $alert.attr("style", "display: block;")
+
+    await delayTime(timeout * 1000)
+    $alert.attr("style", "display: none;")
 }
 
 function calculateCounters(selector) {

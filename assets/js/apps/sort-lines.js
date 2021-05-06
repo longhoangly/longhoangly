@@ -4,7 +4,6 @@ $(document).ready(() => {
     $("#input").on("change input", () => {
 
         clearElementText("#result")
-        hideElement("#alert")
         sortingHandler(true)
     })
 
@@ -12,7 +11,6 @@ $(document).ready(() => {
 
         clearElementText("#input")
         clearElementText("#result")
-        hideElement("#alert")
     })
 
     $("input[name='sorting']").on("change", () => {
@@ -28,7 +26,7 @@ function sortingHandler(hasAlert = false) {
 
     if (strArray.length === 0) {
         if (hasAlert) {
-            displayAlertMessage("Please enter text in input texbox!", false)
+            alertWebMsg("Please check your input! No text input!", false)
         }
         return
     }

@@ -9,7 +9,6 @@ $(document).ready(() => {
 
         clearElementText("#result")
         clearElementText("#duplicates")
-        hideElement("#alert")
 
         findDuplicateHandler($input, $duplicates, $result)
     })
@@ -17,10 +16,10 @@ $(document).ready(() => {
     $("#copyDup").on("click", () => {
 
         if ($result.val().length == 0) {
-            displayAlertMessage("Nothing in duplicate box!", false)
+            alertWebMsg("No duplicate!", false)
         } else {
             copyTextToClipboard("#duplicates")
-            displayAlertMessage("Duplicated text copied into the clipboard!", true)
+            alertWebMsg("Duplicated lines copied into the clipboard.", true)
         }
     })
 
@@ -32,7 +31,6 @@ $(document).ready(() => {
         clearElementText("#result")
 
         calculateCounters("#result")
-        hideElement("#alert")
     })
 
     $("input[name='sorting']").on("change", () => {
@@ -75,7 +73,7 @@ function findDuplicateHandler($input, $duplicates, $result) {
     console.log("strArray", strArray)
 
     if (strArray.length === 0) {
-        displayAlertMessage("Please enter text in input texbox!", false)
+        alertWebMsg("Please check your input! No text input!", false)
         return
     }
 
@@ -88,7 +86,7 @@ function findDuplicateHandler($input, $duplicates, $result) {
         $result.val(uniques.join("\n")).trigger("change")
 
     } else {
-        displayAlertMessage("No duplicates found! All lines are unique.", true)
+        alertWebMsg("Yay, No duplicates found, all lines are unique.", true)
     }
 }
 
@@ -97,7 +95,7 @@ function sortingResultHandler($input, $result) {
     let strArray = $input.val().split("\n").filter(x => x.trim() && Boolean)
 
     if (strArray.length === 0) {
-        displayAlertMessage("Please enter text in input texbox!", false)
+        alertWebMsg("Please check your input! No text input!", false)
         return
     }
 

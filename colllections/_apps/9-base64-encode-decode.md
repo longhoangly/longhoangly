@@ -63,6 +63,7 @@ js: base64-encode-decode
 
             <button id="encode" type="button" class="btn btn-outline-dark my-2">Encode</button>
             <button id="clearEncode" type="button" class="btn btn-outline-dark my-2">Clear</button>
+            <button id="copyEncode" type="button" class="btn btn-outline-dark my-2">Copy Encoded String</button>
 
             <div class="col p-0 mt-3">
                 <label class="form-label" for="encodeOutput"><strong>Encoded base64 string</strong></label>
@@ -80,6 +81,7 @@ js: base64-encode-decode
 
             <button id="decode" type="button" class="btn btn-outline-dark my-2">Decode</button>
             <button id="clearDecode" type="button" class="btn btn-outline-dark my-2">Clear</button>
+            <button id="copyDecode" type="button" class="btn btn-outline-dark my-2">Copy Decoded String</button>
 
             <div class="col p-0 mt-3">
                 <label class="form-label" for="decodeOutput"><strong>Decoded base64 string</strong></label>

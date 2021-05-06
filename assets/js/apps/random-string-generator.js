@@ -9,7 +9,6 @@ $(document).ready(() => {
         let separator = $("input[name='separator']:checked").val()
         let isUnique = $("#unique").is(":checked")
 
-        hideElement("#alert")
         clearElementText("#result")
         generateRandomStrings(qty, characters, length, separator, isUnique)
     })
@@ -20,7 +19,7 @@ function generateRandomStrings(qty, characters, length, separator, isUnique) {
 
     if (!qty || qty == 0 || !characters && characters.length == 0 || !length || length == 0) {
 
-        displayAlertMessage("Please check your inputs! All fields are required!", false)
+        alertWebMsg("Please check your inputs, all fields are required!", false)
         return
     }
 
