@@ -46,7 +46,7 @@
     <!-- Custom JS for specific page -->
     {% if page.js %}
     {% for js_file in page.js %}
-    <script src="{{ site.url }}/assets/js/apps/{{ js_file }}.js" type="text/javascript"></script>
+    <script src="{{ site.url }}/assets/js/{{ js_file }}.js" type="text/javascript"></script>
     {% endfor %}
     {% endif %}
 
