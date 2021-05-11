@@ -25,7 +25,7 @@
     <!-- Custom CSS for specific page -->
     {% if page.css %}
     {% for stylesheet in page.css %}
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/apps/{{ stylesheet }}.css" type="text/css">
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/{{ stylesheet }}.css" type="text/css">
     {% endfor %}
     {% endif %}
 

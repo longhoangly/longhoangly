@@ -1,0 +1,47 @@
+#jsoneditor1,
+#jsoneditor2 {
+    width: 100%;
+    height: 700px;
+    border-width: 2px;
+    border-radius: 3px;
+}
+
+.jsoneditor,
+.jsoneditor-menu {
+    border-color: #f4a259;
+}
+
+.jsoneditor-menu,
+.pico-modal-header {
+    background-color: #f4a259 !important;
+}
+
+.jsoneditor-contextmenu > .jsoneditor-menu {
+    background-color: #f0f5f5 !important;
+}
+
+.ace_content,
+.jsoneditor-tree {
+    background: #f0f5f5;
+}
+
+.jsoneditor-jmespath-label {
+    color: #f4a259 !important;
+}
+
+.change-mode {
+    background-image: none !important;
+    cursor: pointer;
+}
+
+.change-mode.selected {
+    box-shadow: inset 1px 1px 2px #75521d;
+    background: rgba(255, 255, 255, 0.3);
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.tool-wrapper {
+    min-width: 350px !important;
+    width: 100%;
+}
