@@ -5,7 +5,7 @@ title: About | Long Ly App
 
 <div class="row justify-content-center">
     <picture class="m-4" style="max-width:25%">
-        <img src="{{site.url}}/assets/images/avatar_3.jpg" class="rounded-circle img-thumbnail shadow" alt="Long Ly">
+        <img src="{{site.url}}/assets/image/avatar_3.jpg" class="rounded-circle img-thumbnail shadow" alt="Long Ly">
     </picture>
 </div>
 
@@ -29,7 +29,7 @@ Although my contribution is small, but together we can make it bigger. Keep it u
 
   - If you want to join with me in this project, please feel free to drop me a message via links in <a href="#footer">_the footer below_</a>. Together, I believe we can go far.
 
-  ![AnkiFlash!]({{ site.url }}/assets/images/ankiflash_1.png "AnkiFlash Website"){:width="100%"}
+  ![AnkiFlash!]({{ site.url }}/assets/image/ankiflash_1.png "AnkiFlash Website"){:width="100%"}
 
 <br>
 - Jekyll Profile / Blog Template
@@ -58,9 +58,11 @@ Although my contribution is small, but together we can make it bigger. Keep it u
 <br>
 - What's next?
 
-  - An AnkiFlash desktop version, install as an add-on of Anki?
+  - An AnkiFlash desktop version (Python), install as an add-on of Anki?
 
   - More videos on Youtube channel to share more with you all!
+
+  - Small / useful tools for processing text, strings and numbers. (longly.app)
 
   - *To be continue...*
 

@@ -1,13 +1,14 @@
 ---
 name: JSON Viewer / Editor
-js: ["apps/json-viewer", "external/jsoneditor.min"]
-css: ["external/jsoneditor.min", "external/jsoneditor.custom"]
+js: ["external/jsoneditor.min", "apps/json-viewer"]
+css: ["external/jsoneditor.min", "apps/jsoneditor.custom"]
+module: ["jsoneditor"]
 ---
 
 {% capture intro %}
 ### JSON Viewer / Editor
 <!--separator-->
-- A simple viewer / editer to make your JSON more beautiful
+- A simple viewer / editor to make your JSON more beautiful
 - It has a toggle button to switch between two main modes
     - Code view
     - Tree view

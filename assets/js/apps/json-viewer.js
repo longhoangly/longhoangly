@@ -2,7 +2,7 @@ $(document).ready(() => {
 
     $(".col-lg-8").addClass("col-lg").removeClass("col-lg-8")
 
-    const initialJson = {
+    const templateJson = {
         "Array": [1, 2, 3],
         "Boolean": true,
         "Null": null,
@@ -17,12 +17,6 @@ $(document).ready(() => {
     let container1 = document.getElementById(jsoneditorId1)
     let options1 = {
         mode: "code",
-        onChangeText: (jsonString) => {
-            jsonEditor2.updateText(jsonString)
-        },
-        onChangeJSON: (jsonString) => {
-            jsonEditor2.update(jsonString)
-        },
         onModeChange: (newMode, oldMode) => {
 
             console.log('Mode switched from', oldMode, 'to', newMode)
@@ -44,7 +38,7 @@ $(document).ready(() => {
         }
     }
 
-    let jsonEditor1 = new JSONEditor(container1, options1, initialJson)
+    let jsonEditor1 = new JSONEditor(container1, options1, templateJson)
     addToggleButton(jsoneditorId1, jsonEditor1.getMode())
 
     $(changeModeSelector1).on("click", () => {
@@ -66,13 +60,7 @@ $(document).ready(() => {
 
     let container2 = document.getElementById(jsoneditorId2)
     let options2 = {
-        mode: "tree",
-        onChangeText: (jsonString) => {
-            jsonEditor1.updateText(jsonString)
-        },
-        onChangeJSON: (jsonString) => {
-            jsonEditor1.update(jsonString)
-        },
+        mode: "code",
         onModeChange: (newMode, oldMode) => {
 
             console.log('Mode switched from', oldMode, 'to', newMode)
@@ -94,7 +82,7 @@ $(document).ready(() => {
         }
     }
 
-    let jsonEditor2 = new JSONEditor(container2, options2, initialJson)
+    let jsonEditor2 = new JSONEditor(container2, options2, templateJson)
     addToggleButton(jsoneditorId2, jsonEditor2.getMode())
 
     $(changeModeSelector2).on("click", () => {
