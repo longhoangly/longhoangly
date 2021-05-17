@@ -1,12 +1,5 @@
 'use strict';
 
-/* Tag: Removed by LongLy
- * Object.defineProperty(exports, '__esModule', {
- *   value: true
- * });
- * exports.default = void 0;
- */
-
 /**
  * Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
  *
@@ -801,9 +794,4 @@ var _default = (aLength, bLength, isCommon, foundSubsequence) => {
   }
 };
 
-/* Tag: Removed by LongLy
- * exports.default = _default;
- */
-
-/* Tag: Added by LongLy */
 export default _default

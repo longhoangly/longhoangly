@@ -107,3 +107,45 @@ let delayTime = ms => new Promise((res) => {
     setTimeout(res, ms)
     console.log(`Waiting for ${ms} ms`)
 })
+
+
+function getJsonNodePaths(root) {
+
+    let paths = [];
+    let outNodes = [];
+
+    let nodes = [{
+        obj: root,
+        path: []
+    }];
+
+    while (nodes.length > 0) {
+        let n = nodes.pop();
+        outNodes.push(n)
+
+        if (n.obj) {
+            Object.keys(n.obj).forEach(k => {
+                if (typeof n.obj[k] === 'object') {
+                    let path = n.path.concat(k);
+
+                    paths.push(path);
+                    nodes.unshift({
+                        obj: n.obj[k],
+                        path: path
+                    });
+                }
+            });
+        }
+    }
+    return { paths, outNodes };
+}
+
+function isValidJson(jsonStr) {
+
+    try {
+        return JSON.parse(jsonStr)
+    }
+    catch (err) {
+        return undefined
+    }
+}

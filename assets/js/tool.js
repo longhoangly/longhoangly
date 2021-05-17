@@ -47,7 +47,7 @@ function copyTextToClipboard(selector) {
     $temp.remove()
 }
 
-function displayElement(selector) {
+function displayElement(selector, displayClass = "inline-flex") {
 
     let $element = $(selector)
     if ($element.length) {
@@ -57,7 +57,7 @@ function displayElement(selector) {
             $element.attr("style", "visibility: visible")
         } else {
 
-            $element.attr("style", "display: inline-flex")
+            $element.attr("style", `display: ${displayClass};`)
         }
     }
 }
@@ -88,7 +88,7 @@ function clearElementText(selector) {
     }
 }
 
-async function alertWebMsg(message, isSuccess, timeout = 3) {
+async function alertWebMsg(message, isSuccess, timeout = 5) {
 
     let clazz = isSuccess ? "alert-success" : "alert-danger"
     let removedClazz = isSuccess ? "alert-danger" : "alert-success"
@@ -112,7 +112,7 @@ function calculateCounters(selector) {
     let wordCount = 0
     resultTxt.split("\n").forEach(element => {
         wordCount += element.split(" ").filter(Boolean).length
-    });
+    })
 
     $("#counter").text(`Character count: ${characterCount} | Word count: ${wordCount} | Line count: ${lineCount}`)
 }

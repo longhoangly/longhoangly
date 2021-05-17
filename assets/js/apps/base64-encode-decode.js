@@ -52,9 +52,9 @@ $(document).ready(() => {
 
         if ($("#parallel").is(":checked")) {
 
-            $("#split76").prop("disabled", true);
+            $("#split76").prop("disabled", true)
         } else {
-            $("#split76").prop("disabled", false);
+            $("#split76").prop("disabled", false)
         }
     })
 
@@ -62,9 +62,9 @@ $(document).ready(() => {
 
         if ($("#split76").is(":checked")) {
 
-            $("#parallel").prop("disabled", true);
+            $("#parallel").prop("disabled", true)
         } else {
-            $("#parallel").prop("disabled", false);
+            $("#parallel").prop("disabled", false)
         }
     })
 })
@@ -172,17 +172,19 @@ function decodeBase64String(input) {
 }
 
 function toBinary(string) {
-    const codeUnits = new Uint16Array(string.length);
+
+    const codeUnits = new Uint16Array(string.length)
     for (let i = 0; i < codeUnits.length; i++) {
-        codeUnits[i] = string.charCodeAt(i);
+        codeUnits[i] = string.charCodeAt(i)
     }
-    return String.fromCharCode(...new Uint8Array(codeUnits.buffer));
+    return String.fromCharCode(...new Uint8Array(codeUnits.buffer))
 }
 
 function fromBinary(binary) {
-    const bytes = new Uint8Array(binary.length);
+
+    const bytes = new Uint8Array(binary.length)
     for (let i = 0; i < bytes.length; i++) {
-        bytes[i] = binary.charCodeAt(i);
+        bytes[i] = binary.charCodeAt(i)
     }
-    return String.fromCharCode(...new Uint16Array(bytes.buffer));
+    return String.fromCharCode(...new Uint16Array(bytes.buffer))
 }

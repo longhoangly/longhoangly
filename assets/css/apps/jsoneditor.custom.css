@@ -1,7 +1,7 @@
-#jsoneditor1,
-#jsoneditor2 {
+#jsoneditorLeft,
+#jsoneditorRight {
     width: 100%;
-    height: 700px;
+    min-height: 800px;
     border-width: 2px;
     border-radius: 3px;
 }
@@ -44,4 +44,19 @@
 .tool-wrapper {
     min-width: 350px !important;
     width: 100%;
+}
+
+/* Format different lines */
+.different_element {
+    background-color: lightskyblue;
+}
+
+.different_element .jsoneditor-tree:not(:first-child),
+.different_element .jsoneditor-separator {
+    background-color: lightskyblue;
+}
+
+.undefined .jsoneditor-tree:not(:first-child),
+.undefined .jsoneditor-separator {
+    background-color: lightcoral;
 }

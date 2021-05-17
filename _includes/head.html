@@ -29,7 +29,6 @@
     {% endfor %}
     {% endif %}
 
-
     <!-- Loading JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f"
@@ -52,8 +51,8 @@
 
     <!-- Custom module JS for specific page -->
     {% if page.module %}
-    {% for mod in page.module %}
-    <script type="module" src="{{ site.url }}/assets/js/module/{{ mod }}.js"></script>
+    {% for modul in page.module %}
+    <script type="module" src="{{ site.url }}/assets/js/module/{{ modul }}.js"></script>
     {% endfor %}
     {% endif %}
 

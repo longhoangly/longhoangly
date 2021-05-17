@@ -24,7 +24,7 @@ function calculateCounters(selector) {
     let wordCount = 0
     resultTxt.split("\n").forEach(line => {
         wordCount += line.split(" ").filter(Boolean).length
-    });
+    })
 
     let lineCount = resultTxt.split("\n").filter(x => x.replaceAll(/\s*/g, '') && Boolean).length
 
@@ -56,7 +56,7 @@ function calculateKeywordDensity(selector) {
     }
 
     let uniqueWords = [...uniqueMap.entries()].sort((a, b) => b[1] - a[1])
-    let loopSize = uniqueWords.length < 12 ? uniqueWords.length : 12;
+    let loopSize = uniqueWords.length < 12 ? uniqueWords.length : 12
 
     let tableBody
     for (i = 0; i < loopSize; i++) {

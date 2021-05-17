@@ -104,13 +104,13 @@ function convertStringCase(desiredCase) {
 
 function firstLetterUpper(string) {
     return string.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g,
-        function (c) { return c.toUpperCase() });
+        function (c) { return c.toUpperCase() })
 }
 
 function capitalizedCase(string) {
     return string.toLowerCase().split(" ").map(function (word) {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-    }).join(" ");
+        return word.charAt(0).toUpperCase() + word.slice(1)
+    }).join(" ")
 }
 
 function titleCase(string) {
@@ -119,14 +119,14 @@ function titleCase(string) {
     return string.toLowerCase().split(" ").map(function (word) {
 
         if (exceptions.includes(word.trim().toLowerCase())) {
-            return word.charAt(0).toLowerCase() + word.slice(1);
+            return word.charAt(0).toLowerCase() + word.slice(1)
         } else {
-            return word.charAt(0).toUpperCase() + word.slice(1);
+            return word.charAt(0).toUpperCase() + word.slice(1)
         }
-    }).join(" ");
+    }).join(" ")
 }
 
 function inverseString(string) {
     return [...string].map(char => char === char.toUpperCase() ?
-        char.toLowerCase() : char.toUpperCase()).join('');
+        char.toLowerCase() : char.toUpperCase()).join('')
 }
