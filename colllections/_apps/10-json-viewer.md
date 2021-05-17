@@ -9,9 +9,10 @@ css: ["external/jsoneditor.min", "apps/jsoneditor.custom"]
 ### JSON Viewer / Compare JSON
 <!--separator-->
 - A simple viewer / editor to make your JSON more beautiful
-- It has a toggle button to switch between two main modes
-- Code view
-- Tree view
+- Provide a toggle button to compare two JSON's
+- It also has a toggle button to switch between two main modes (on menu bar)
+    - Code view
+    - Tree view
 <!--separator-->
 {% endcapture %}
 
