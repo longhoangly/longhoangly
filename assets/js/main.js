@@ -109,19 +109,19 @@ let delayTime = ms => new Promise((res) => {
 })
 
 
-function getJsonNodePaths(root) {
+function getJsonNodePaths(rootObj) {
 
     let paths = [];
-    let outNodes = [];
+    let jsonNodes = [];
 
     let nodes = [{
-        obj: root,
+        obj: rootObj,
         path: []
     }];
 
     while (nodes.length > 0) {
         let n = nodes.pop();
-        outNodes.push(n)
+        jsonNodes.push(n)
 
         if (n.obj) {
             Object.keys(n.obj).forEach(k => {
@@ -137,10 +137,21 @@ function getJsonNodePaths(root) {
             });
         }
     }
-    return { paths, outNodes };
+    return { paths, jsonNodes };
 }
 
 function isValidJson(jsonStr) {
+
+    try {
+        JSON.parse(jsonStr)
+        return true
+    }
+    catch (err) {
+        return false
+    }
+}
+
+function JsonFromString(jsonStr) {
 
     try {
         return JSON.parse(jsonStr)
@@ -148,4 +159,35 @@ function isValidJson(jsonStr) {
     catch (err) {
         return undefined
     }
+}
+
+function JsonFromObjWithNewLines(obj) {
+
+    try {
+        return JSON.stringify(obj, null, 4)
+    }
+    catch (err) {
+        return undefined
+    }
+}
+
+function getDeepKeys(obj) {
+
+    var keys = [];
+    for (var key in obj) {
+        keys.push(key);
+
+        if (typeof obj[key] === "object") {
+            var subkeys = getDeepKeys(obj[key]);
+            keys = keys.concat(subkeys.map(function (subkey) {
+                return key + "." + subkey;
+            }));
+        }
+    }
+
+    return keys;
+}
+
+function objectDeepKeys(obj) {
+    return Object.keys(obj).filter(key => obj[key] instanceof Object).map(key => objectDeepKeys(obj[key]).map(k => `${key}.${k}`)).reduce((x, y) => x.concat(y), Object.keys(obj))
 }

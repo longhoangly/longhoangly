@@ -10,6 +10,8 @@ css: ["external/jsoneditor.min", "apps/jsoneditor.custom"]
 <!--separator-->
 - A simple viewer / editor to make your JSON more beautiful
 - Provide a toggle button to compare two JSON's
+    - Click Compare button to highlight all diffs in Code editor view
+    - Auto compare will run in Tree view
 - It also has a toggle button to switch between two main modes (on menu bar)
     - Code view
     - Tree view
@@ -31,18 +33,20 @@ css: ["external/jsoneditor.min", "apps/jsoneditor.custom"]
         <label class="form-check-label" for="compareJson">Compare JSON's?</label>
     </div>
 
+    <button id="compare" type="button" class="btn btn-outline-dark mb-2" style="display: none">Compare</button>
+    <button id="clearJson" type="button" class="btn btn-outline-dark mb-2" style="display: none">Clear</button>
     <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
 
-    <div class="row my-3">
+    <div class="row mb-4">
 
         <div class="col">
-            <label class="form-label" for="jsoneditor1"><strong>Input your JSON here</strong></label>
+            <label class="form-label" for="jsoneditorLeft"><strong>Input your JSON here</strong></label>
             <br>
             <div id="jsoneditorLeft"></div>
         </div>
 
         <div id="secondView" class="col pl-0" style="display: none;">
-            <label class="form-label" for="jsoneditor2"><strong>Second JSON to compare with</strong></label>
+            <label class="form-label" for="jsoneditorRight"><strong>Second JSON to compare with</strong></label>
             <br>
             <div id="jsoneditorRight"></div>
         </div>

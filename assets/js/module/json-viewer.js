@@ -4,9 +4,11 @@ import * as d from './diff-wrapper.js';
 
 $(document).ready(() => {
 
+    // modify class to make editors bigger
     $(".col-lg-8").addClass("col-lg").removeClass("col-lg-8")
 
-    let jsonLeft = ""
+    // Json editor on the left
+    let jsonLeft = {}
     let idLeft = "jsoneditorLeft"
     let changeModeSelectorLeft = `#${idLeft} .change-mode`
 
@@ -19,12 +21,15 @@ $(document).ready(() => {
             jsonLeft = newJson
             jsonEditorLeft.refresh()
             jsonEditorRight.refresh()
+            heightUpdateFunction(jsonEditorLeft, idLeft, jsonEditorRight, idRight)
         },
         onChangeText: (jsonString) => {
 
-            jsonLeft = isValidJson(jsonString)
-            heightUpdateFunction(jsonEditorLeft, idLeft);
-            highlightDiffsInCodeMode(jsonEditorLeft, idLeft, jsonEditorRight, idRight)
+            if (isValidJson(jsonString)) {
+                jsonLeft = JsonFromString(jsonString)
+                heightUpdateFunction(jsonEditorLeft, idLeft, jsonEditorRight, idRight)
+                clearHighlights()
+            }
         },
         onModeChange: (newMode, oldMode) => {
 
@@ -43,8 +48,8 @@ $(document).ready(() => {
         changeModeHandler(changeModeSelectorLeft, jsonEditorLeft, idLeft, jsonEditorRight, idRight)
     })
 
-
-    let jsonRight = ""
+    // Json editor on the right
+    let jsonRight = {}
     let optionsRight = {
 
         mode: "code",
@@ -54,12 +59,15 @@ $(document).ready(() => {
             jsonRight = newJson
             jsonEditorLeft.refresh()
             jsonEditorRight.refresh()
+            heightUpdateFunction(jsonEditorLeft, idLeft, jsonEditorRight, idRight)
         },
         onChangeText: (jsonString) => {
 
-            jsonRight = isValidJson(jsonString)
-            heightUpdateFunction(jsonEditorRight, idRight);
-            highlightDiffsInCodeMode(jsonEditorLeft, idLeft, jsonEditorRight, idRight)
+            if (isValidJson(jsonString)) {
+                jsonRight = JsonFromString(jsonString)
+                heightUpdateFunction(jsonEditorLeft, idLeft, jsonEditorRight, idRight)
+                clearHighlights()
+            }
         }
     }
 
@@ -67,54 +75,61 @@ $(document).ready(() => {
     let containerRight = document.getElementById(idRight)
     let jsonEditorRight = new JSONEditor(containerRight, optionsRight, jsonRight)
 
+    // fallback function to highlight diffs in tree mode
     function onClassName({ path, field, value }) {
 
         let nodeClass = "the_same_element"
-        let compareJson = $("#compareJson").is(":checked")
-        if (compareJson && validateInputJson(jsonEditorLeft) && validateInputJson(jsonEditorRight)) {
+        if (field !== undefined) {
+            let compareJson = $("#compareJson").is(":checked")
+            if (compareJson && isValidJson(jsonEditorLeft.getText()) && isValidJson(jsonEditorRight.getText())) {
 
-            let leftValue
-            if (jsonLeft) {
-                leftValue = _.get(jsonLeft, path)
-            }
+                let leftValue = _.get(jsonLeft, path)
+                let rightValue = _.get(jsonRight, path)
 
-            let rightValue
-            if (jsonRight) {
-                rightValue = _.get(jsonRight, path)
-            }
-
-            if (leftValue === undefined || rightValue === undefined) {
-                nodeClass = 'undefined'
-            } else {
-                nodeClass = _.isEqual(leftValue, rightValue) ? 'the_same_element' : 'different_element'
+                if (leftValue === undefined || rightValue === undefined) {
+                    nodeClass = "undefined"
+                } else {
+                    nodeClass = _.isEqual(leftValue, rightValue) ? "the_same_element" : "different_element"
+                }
             }
         }
 
         return nodeClass
     }
 
-    $("#compareJson").on("change", async () => {
+    // compareJson checkbox handler
+    $("#compareJson").on("change", () => {
 
         jsonEditorLeft.setMode("code")
         jsonEditorRight.setMode("code")
-        $(".ace_line_group").removeClass("different_element")
+        clearHighlights()
 
         let compareJson = $("#compareJson").is(":checked")
         if (compareJson) {
-
-            await displayElement("#secondView", "inline")
-
-            await delayTime(100)
-            highlightDiffsInCodeMode(jsonEditorLeft, idLeft, jsonEditorRight, idRight)
+            displayElement("#compare")
+            displayElement("#clearJson")
+            displayElement("#secondView", "inline")
         } else {
-
+            hideElement("#compare")
+            hideElement("#clearJson")
             hideElement("#secondView")
         }
+
+        formatHandler(jsonEditorRight)
     })
 
-    // Set initial size to match initial content
-    heightUpdateFunction(jsonEditorLeft, idLeft);
-    heightUpdateFunction(jsonEditorRight, idRight);
+    // compare jsons handler
+    $("#compare").on("click", () => {
+
+        formatHandler(jsonEditorLeft)
+        formatHandler(jsonEditorRight)
+        highlightDiffsInCodeMode(jsonEditorLeft, idLeft, jsonEditorRight, idRight)
+    })
+
+    // clear jsons in editors
+    $("#clearJson").on("click", () => {
+        clearHighlights()
+    })
 })
 
 function addToggleButton(containerId, mode) {
@@ -139,38 +154,31 @@ async function changeModeHandler(changeModeSelectorLeft, jsonEditorLeft, idLeft,
     let currentMode = jsonEditorLeft.getMode()
     if (currentMode === "code") {
 
-        if (jsonEditorLeft.getText().length > 0) {
-            jsonEditorLeft.setMode("tree")
-        } else {
-            alertWebMsg("Please check your inputs. Valid JSON's required.", false)
+        if (jsonEditorLeft.getText().length === 0) {
+            jsonEditorLeft.set({})
         }
 
-        if (jsonEditorRight.getText().length > 0) {
-            jsonEditorRight.setMode("tree")
-        } else {
-            alertWebMsg("Please check your inputs. Valid JSON's required.", false)
+        if (jsonEditorRight.getText().length === 0) {
+            jsonEditorLeft.set({})
         }
 
+        jsonEditorLeft.setMode("tree")
+        jsonEditorRight.setMode("tree")
         $(changeModeSelectorLeft).removeClass("selected")
+
     } else {
 
         jsonEditorLeft.setMode("code")
         jsonEditorRight.setMode("code")
         $(changeModeSelectorLeft).addClass("selected")
-
-        await delayTime(100)
-        highlightDiffsInCodeMode(jsonEditorLeft, idLeft, jsonEditorRight, idRight)
     }
 }
 
 async function highlightDiffsInCodeMode(jsonEditorLeft, idLeft, jsonEditorRight, idRight) {
 
-    $(".ace_line_group").removeClass("different_element")
-    if (validateInputJson(jsonEditorLeft) && validateInputJson(jsonEditorRight)) {
+    if (isValidJson(jsonEditorLeft.getText()) && isValidJson(jsonEditorRight.getText())) {
 
-        console.log("clearing highlights...")
         await delayTime(200)
-
         let compareJson = $("#compareJson").is(":checked")
         if (compareJson) {
 
@@ -178,44 +186,51 @@ async function highlightDiffsInCodeMode(jsonEditorLeft, idLeft, jsonEditorRight,
             let diffs = d.getDiffLines(jsonEditorLeft.get(), jsonEditorRight.get())
 
             let leftIndexes = diffs.aDiff.keys()
-            let index = leftIndexes.next();
+            let index = leftIndexes.next()
             while (!index.done) {
                 $(`#${idLeft} .ace_line_group`).eq(index.value).addClass("different_element")
-                index = leftIndexes.next();
+                index = leftIndexes.next()
             }
 
             let rightIndexes = diffs.bDiff.keys()
-            index = rightIndexes.next();
+            index = rightIndexes.next()
             while (!index.done) {
                 $(`#${idRight} .ace_line_group`).eq(index.value).addClass("different_element")
-                index = rightIndexes.next();
+                index = rightIndexes.next()
             }
         }
     }
 }
 
-function heightUpdateFunction(jsonEditor, editorId) {
+function clearHighlights() {
+    $(".ace_line_group").removeClass("different_element")
+}
 
-    if (validateInputJson(jsonEditor)) {
+async function heightUpdateFunction(jsonEditorLeft, idLeft, jsonEditorRight, idRight) {
 
-        let noLines = d.getNumLines(jsonEditor.get())
+    let noLinesLeft = d.getNumLines(jsonEditorLeft.get())
+    let noLinesRight = d.getNumLines(jsonEditorRight.get())
 
-        // 35 is menu height, 26 is status height
-        let newHeight = `${(noLines + 2) * 16 + 35 + 26}px`;
+    // 35 is menu height, 26 is status height
+    let newHeightLeft = `${(noLinesLeft + 2) * 16 + 35 + 26}px`
+    let newHeightRight = `${(noLinesRight + 2) * 16 + 35 + 26}px`
 
-        $(`#${editorId}`).height(newHeight);
+    let commonHeight = newHeightLeft >= newHeightRight ? newHeightLeft : newHeightRight
+    console.log("commonHeight", commonHeight)
+
+    $(`#${idLeft}`).height(commonHeight)
+    $(`#${idRight}`).height(commonHeight)
+    $(".ace_content").height(commonHeight)
+}
+
+function formatHandler(jsonEditor) {
+
+    let compareJson = $("#compareJson").is(":checked")
+    let mode = jsonEditor.getMode()
+
+    if (compareJson && mode === "code") {
+
+        console.log("Formating Json...")
+        jsonEditor.set(jsonEditor.get())
     }
-};
-
-function validateInputJson(jsonEditor) {
-
-    let isValid = false
-
-    if (isValidJson(jsonEditor.getText()) !== undefined) {
-        isValid = true
-    } else {
-        alertWebMsg("Please check your inputs. Valid JSON's required.", false)
-    }
-
-    return isValid
 }

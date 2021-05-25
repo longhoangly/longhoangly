@@ -11,9 +11,8 @@ export function getNumLines(jsonObject) {
 
 export function getDiffLines(a, b) {
 
-    // Indented to display changed and unchanged lines
-    const aLinesIn = format(a, { indent: 0 /*, other options*/ }).split('\n');
-    const bLinesIn = format(b, { indent: 0 /*, other options*/ }).split('\n');
+    const aLinesIn = JsonFromObjWithNewLines(a).split('\n');
+    const bLinesIn = JsonFromObjWithNewLines(b).split('\n');
 
     return compareTwoArray(aLinesIn, bLinesIn)
 };
