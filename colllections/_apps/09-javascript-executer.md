@@ -1,5 +1,6 @@
 ---
 name: JavaScript Executer
+js: ["external/ace/ace"]
 ---
 
 {% capture intro %}

@@ -3,8 +3,8 @@
 
         <h3>JavaScript Executer</h3>
         <div class="col p-0">
-            <label class="form-label" for="input"><strong>Input your JavaScript code here</strong></label>
-            <textarea type="text" id="input" name="input"></textarea>
+            <label class="form-label" for="editor"><strong>Input your JavaScript code here</strong></label>
+            <div class="textarea" id="editor" name="editor"></div>
         </div>
 
         <button id="execute" type="button" class="btn btn-outline-dark my-2">Execute</button>
@@ -12,7 +12,7 @@
 
         <div class="col p-0 mt-3">
             <label class="form-label" for="consoleOutput"><strong>JavaScript console output</strong></label>
-            <textarea class="textarea-sm" type="text" id="consoleOutput" name="consoleOutput" disabled></textarea>
+            <div class="textarea-sm" id="consoleOutput" name="consoleOutput"></div>
         </div>
 
     </div>
@@ -20,10 +20,18 @@
 
 <script type="text/javascript">
 
+    var consoleOutput = ace.edit("consoleOutput")
+    consoleOutput.setTheme("ace/theme/solarized_light")
+    consoleOutput.session.setMode("ace/mode/text")
+    consoleOutput.setHighlightActiveLine(false)
+    document.getElementById('consoleOutput').style.fontSize = "16px"
+    document.getElementById('consoleOutput').style.color = "#586E75"
+    consoleOutput.setReadOnly(true)
+
+
     $(window).on("load", () => {
 
-        let $consoleOutput = $("#consoleOutput")
-        if ($consoleOutput.length !== 0) {
+        if (consoleOutput) {
 
             // Start Console Hooks
             console.defaultLog = console.log.bind(console)
@@ -34,9 +42,9 @@
                 // new & array data
                 console.logs.push(Array.from(arguments))
                 //Textarea logs 
-                let currentLogs = $consoleOutput.val().trim()
+                let currentLogs = consoleOutput.getValue().trim()
                 currentLogs = currentLogs.length > 0 ? currentLogs + "\n" : currentLogs
-                $consoleOutput.val(currentLogs + Array.from(arguments).join(" "))
+                consoleOutput.setValue(currentLogs + Array.from(arguments).join(" "))
             }
 
             console.defaultError = console.error.bind(console)
@@ -47,9 +55,9 @@
                 // new & array data
                 console.errors.push(Array.from(arguments))
                 //Textarea logs 
-                let currentLogs = $consoleOutput.val().trim()
+                let currentLogs = consoleOutput.getValue().trim()
                 currentLogs = currentLogs.length > 0 ? currentLogs + "\n" : currentLogs
-                $consoleOutput.val(currentLogs + Array.from(arguments).join(" "))
+                consoleOutput.setValue(currentLogs + Array.from(arguments).join(" "))
             }
 
             console.defaultDebug = console.debug.bind(console)
@@ -60,40 +68,50 @@
                 // new & array data
                 console.debugs.push(Array.from(arguments))
                 //Textarea logs 
-                let currentLogs = $consoleOutput.val().trim()
+                let currentLogs = consoleOutput.getValue().trim()
                 currentLogs = currentLogs.length > 0 ? currentLogs + "\n" : currentLogs
-                $consoleOutput.val(currentLogs + "\n" + Array.from(arguments).join(" "))
+                consoleOutput.setValue(currentLogs + Array.from(arguments).join(" "))
             }
             // End Console Hooks
         }
+    })
+
+
+    var editor = ace.edit("editor")
+    editor.setTheme("ace/theme/solarized_light")
+    editor.session.setMode("ace/mode/javascript")
+    document.getElementById('editor').style.fontSize = "16px"
+    document.getElementById('editor').style.color = "#586E75"
+
+    $(document).ready(() => {
 
         $("#execute").on("click", () => {
 
-            let jsScript = $("#input").val()
+            let jsScript = editor.getValue()
             if (jsScript.length === 0) {
 
-                $("#consoleOutput").val("Could you please check your input? No JS code found!")
+                consoleOutput.setValue("Could you please check your input? No JS code found!")
                 return
             }
 
+            consoleOutput.setValue("")
             eval(jsScript)
-
         })
 
         $("#clearJs").on("click", () => {
+
             console.logs.length = 0
             console.errors.length = 0
             console.debugs.length = 0
 
-            $("#input").val("")
-            $("#consoleOutput").val("")
+            editor.setValue("")
+            consoleOutput.setValue("")
         })
 
-        $("#input").on("change input", () => {
+        editor.on("change", () => {
 
-            clearElementText("#consoleOutput")
+            consoleOutput.setValue("")
         })
-
     })
 
 </script>

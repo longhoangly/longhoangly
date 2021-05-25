@@ -2,11 +2,9 @@
 
 import diff from '../external/diff-sequences.js';
 
-import format from '../external/pretty-format.js';
-
 export function getNumLines(jsonObject) {
 
-    return format(jsonObject, { indent: 0 /*, other options*/ }).split('\n').length;
+    return JsonFromObjWithNewLines(jsonObject).split('\n').length;
 };
 
 export function getDiffLines(a, b) {
