@@ -18,13 +18,11 @@ export function getDiffLines(objA, objB) {
 
 export function compareTwoArray(aLinesIn, bLinesIn) {
 
-    const aLength = aLinesIn.length; // Validate: aLinesUn.length === aLength
-    const bLength = bLinesIn.length; // Validate: bLinesUn.length === bLength
+    const aLength = aLinesIn.length;
+    const bLength = bLinesIn.length;
 
     const isCommon = (aIndex, bIndex) => aLinesIn[aIndex] === bLinesIn[bIndex];
 
-    // Only because the GitHub Flavored Markdown doc collapses adjacent spaces,
-    // this example code and the following table represent spaces as middle dots.
     let aIndex = 0;
     let bIndex = 0;
 

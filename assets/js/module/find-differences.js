@@ -48,17 +48,25 @@ function findAndHighlightDifferences(editor1, editorId1, editor2, editorId2) {
     // find diffs
     let diffs = d.compareTwoArray(inputLines_1, inputLines_2)
 
+    console.log("aDiff", diffs.aDiff)
+    console.log("bDiff", diffs.bDiff)
+    console.log("common", diffs.common)
+
     let leftIndexes = diffs.aDiff.keys()
     let index = leftIndexes.next()
     while (!index.done) {
-        $(`#${editorId1} .ace_line`).eq(index.value).addClass("different_element")
+        // if (diffs.common.has(index)) {
+            $(`#${editorId1} .ace_line`).eq(index.value).addClass("different_element")
+        // }
         index = leftIndexes.next()
     }
 
     let rightIndexes = diffs.bDiff.keys()
     index = rightIndexes.next()
     while (!index.done) {
-        $(`#${editorId2} .ace_line`).eq(index.value).addClass("different_element")
+        // if (diffs.common.has(index)) {
+            $(`#${editorId2} .ace_line`).eq(index.value).addClass("different_element")
+        // }
         index = rightIndexes.next()
     }
 
@@ -66,7 +74,7 @@ function findAndHighlightDifferences(editor1, editorId1, editor2, editorId2) {
 
         alertWebMsg("Not mached!! Two lists have different lengths!!", false)
 
-    } else if (leftIndexes.length === 0 && leftIndexes.length === 0) {
+    } else if (diffs.aDiff.size === 0 && diffs.bDiff.size === 0) {
 
         alertWebMsg("Yay, all matched.", true)
     } else {

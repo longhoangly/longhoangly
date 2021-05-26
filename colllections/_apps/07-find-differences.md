@@ -2,7 +2,7 @@
 name: Find Differences
 js: ["external/ace/ace"]
 module: ["diff-wrapper", "find-differences"]
-css: ["apps/jsoneditor.custom"]
+css: ["apps/find-differences"]
 ---
 
 {% capture intro %}
