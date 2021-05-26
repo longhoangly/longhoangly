@@ -1,11 +1,16 @@
 ---
 name: Find Differences
-js: apps/find-differences
+js: ["external/ace/ace"]
+module: ["diff-wrapper", "find-differences"]
+css: ["apps/jsoneditor.custom"]
 ---
 
 {% capture intro %}
+
 ### Find Differences
+
 <!--separator-->
+
 - This tool find all differences between two list of text lines
 - The differences will be printted into output textbox
 <!--separator-->
@@ -27,7 +32,8 @@ js: apps/find-differences
                 <button id="clearDiff" type="button" class="btn btn-outline-dark my-2">Clear</button>
                 <br>
                 <label class="form-label" for="input_1"><strong>Input your first lines list</strong></label>
-                <textarea class="textarea-sm" type="text" id="input_1" name="input_1"></textarea>
+                <div class="textarea" id="input_1" name="input_1"></div>
+
             </div>
 
             <br>
@@ -36,34 +42,7 @@ js: apps/find-differences
                 <br>
                 <br>
                 <label class="form-label" for="input_2"><strong>Input your second lines list</strong></label>
-                <textarea class="textarea-sm" type="text" id="input_2" name="input_2"></textarea>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <label class="form-label" for="result_3"><strong>Lines in both lists</strong></label>
-                <textarea class="textarea-sm" type="text" id="result_3" name="result_3" disabled></textarea>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col pr-1">
-
-                <div id="parent_result_1" name="card" class="card border-dark">
-                    <div class="card-header"><strong>Lines in first list but not in the second</strong></div>
-                    <div id="result_1" class="card-body"></div>
-                </div>
-
-            </div>
-
-            <div class="col pl-1">
-
-                <div id="parent_result_2" name="card" class="card border-dark">
-                    <div class="card-header"><strong>Lines in second list but not in the first</strong></div>
-                    <div id="result_2" class="card-body"></div>
-                </div>
-
+                <div class="textarea" id="input_2" name="input_2"></div>
             </div>
         </div>
 

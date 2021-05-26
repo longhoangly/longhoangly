@@ -88,7 +88,7 @@ function clearElementText(selector) {
     }
 }
 
-async function alertWebMsg(message, isSuccess, timeout = 5) {
+async function alertWebMsg(message, isSuccess, timeout = 3) {
 
     let clazz = isSuccess ? "alert-success" : "alert-danger"
     let removedClazz = isSuccess ? "alert-danger" : "alert-success"

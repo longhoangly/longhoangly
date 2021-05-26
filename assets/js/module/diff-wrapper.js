@@ -7,10 +7,11 @@ export function getNumLines(jsonObject) {
     return JsonFromObjWithNewLines(jsonObject).split('\n').length;
 };
 
-export function getDiffLines(a, b) {
+// Diffs from objects
+export function getDiffLines(objA, objB) {
 
-    const aLinesIn = JsonFromObjWithNewLines(a).split('\n');
-    const bLinesIn = JsonFromObjWithNewLines(b).split('\n');
+    const aLinesIn = JsonFromObjWithNewLines(objA).split('\n');
+    const bLinesIn = JsonFromObjWithNewLines(objB).split('\n');
 
     return compareTwoArray(aLinesIn, bLinesIn)
 };

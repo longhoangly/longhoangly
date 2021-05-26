@@ -12,7 +12,7 @@
 
         <div class="col p-0 mt-3">
             <label class="form-label" for="consoleOutput"><strong>JavaScript console output</strong></label>
-            <div class="textarea-sm" id="consoleOutput" name="consoleOutput"></div>
+            <div class="textarea" id="consoleOutput" name="consoleOutput"></div>
         </div>
 
     </div>
@@ -23,11 +23,10 @@
     var consoleOutput = ace.edit("consoleOutput")
     consoleOutput.setTheme("ace/theme/solarized_light")
     consoleOutput.session.setMode("ace/mode/text")
-    consoleOutput.setHighlightActiveLine(false)
     document.getElementById('consoleOutput').style.fontSize = "16px"
     document.getElementById('consoleOutput').style.color = "#586E75"
     consoleOutput.setReadOnly(true)
-
+    consoleOutput.setHighlightActiveLine(false)
 
     $(window).on("load", () => {
 
