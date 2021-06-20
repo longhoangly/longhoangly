@@ -88,7 +88,7 @@ function clearElementText(selector) {
     }
 }
 
-async function alertWebMsg(message, isSuccess, timeout = 3) {
+async function alertWebMsg(message, isSuccess, autoHide = true, timeout = 3) {
 
     let clazz = isSuccess ? "alert-success" : "alert-danger"
     let removedClazz = isSuccess ? "alert-danger" : "alert-success"
@@ -99,8 +99,29 @@ async function alertWebMsg(message, isSuccess, timeout = 3) {
     $alert.removeClass(removedClazz)
     $alert.attr("style", "display: block;")
 
-    await delayTime(timeout * 1000)
-    $alert.attr("style", "display: none;")
+    if (autoHide) {
+        await delayTime(timeout * 1000)
+        $alert.attr("style", "display: none;")
+    }
+}
+
+async function alertIntroMsg(message, isSuccess, autoHide = true, timeout = 3) {
+
+    let clazz = isSuccess ? "alert-success" : "alert-danger"
+    let removedClazz = isSuccess ? "alert-danger" : "alert-success"
+
+    $alert = $("#alertIntro")
+    $alert.text(message)
+    $alert.addClass(clazz)
+    $alert.removeClass(removedClazz)
+    $alert.attr("style", "display: block;")
+
+    if (autoHide) {
+        await delayTime(timeout * 1000)
+        $alert.attr("style", "display: none;")
+    }
+
+    $("#intro").attr("style", "display: none;")
 }
 
 function calculateCounters(selector) {

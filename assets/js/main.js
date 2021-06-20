@@ -1,3 +1,11 @@
+let delayTime = ms => new Promise((res) => {
+    setTimeout(res, ms)
+    console.log(`Waiting for ${ms} ms`)
+})
+
+let introShowingTime = 5
+let introAlertMsg = `Introduction section will be hidden after ${introShowingTime} seconds... You can refresh to see it or read it on Home page!`
+
 $(document).ready(() => {
 
     $("#download").on("click", () => {
@@ -102,12 +110,6 @@ function setTextareaBgColor(isNight) {
     let bgColor = isNight ? "#2e3338" : "#f0f2f4"
     $("textarea").css("background-color", bgColor)
 }
-
-let delayTime = ms => new Promise((res) => {
-    setTimeout(res, ms)
-    console.log(`Waiting for ${ms} ms`)
-})
-
 
 function getJsonNodePaths(rootObj) {
 

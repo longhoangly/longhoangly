@@ -19,8 +19,9 @@ css: ["external/jsoneditor.min", "apps/jsoneditor.custom"]
 {% endcapture %}
 
 
-<div class="tool-wrapper mb-4">
+<div id="intro" class="tool-wrapper mb-4">
     {{ intro | markdownify }}
+    <div id="alertIntro" class="alert mt-2" role="alert" style="display: none"></div>
 </div>
 
 <div class="tool-wrapper">
