@@ -73,8 +73,8 @@ function setNavBarNightMode(isNight) {
     $nav.toggleClass("bg-light navbar-light", !isNight)
     $navBtns.toggleClass("btn-outline-dark", !isNight)
 
-    $nightModeIcons.toggleClass("fa-moon", !isNight)
-    $nightModeIcons.toggleClass("fa-sun", isNight)
+    $nightModeIcons.toggleClass("bi-moon-fill", !isNight)
+    $nightModeIcons.toggleClass("bi-sun", isNight)
 
     let theme = isNight ? "light" : "dark"
     $nightModeBtn.attr("title", `Switch to the ${theme} theme`)

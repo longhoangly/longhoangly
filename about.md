@@ -9,7 +9,7 @@ title: About | Long Ly App
     </picture>
 </div>
 
-Hello! Welcome to the <a href="{{site.url}}">_LongLy.App_</a> website. I’m Long Ly, a QA engineer who is living and working in Ho Chi Minh city.
+Hello! Welcome to the <a href="{{site.url}}">QaTips.Dev</a> website. I’m Long Ly, a QA engineer who is living and working in Ho Chi Minh city.
 To me, contribution is the most importance of life when I live, and work in a community,
 I always want to work and contribute my best to the world's growth of software industry.
 Although my contribution is small, but together we can make it bigger. Keep it up and do right things.  
@@ -34,7 +34,7 @@ Although my contribution is small, but together we can make it bigger. Keep it u
 <br>
 - Jekyll Profile / Blog Template
 
-  - A profile / blog template built with Jekyll, Boostrap frameworks, and JQuery library. This template supports night mode and has a tab for blogging in case you want to share your thoughts to the world. It is maintained under MIT License. Feel free to fork if you see it matched your needs. [Thanks]
+  - A profile / blog template built with Jekyll, Boostrap frameworks, and JQuery library. This template supports night mode and has a tab for blogging in case you want to share your thoughts to the world. It is maintained under Apache License 2.0. Feel free to fork if you see it matched your needs. [Thanks]
 
   - Tech Stasks / Tools: Jekyll, Bootstrap, JQuery, Github Pages, Github Actions
 

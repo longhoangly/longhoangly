@@ -45,22 +45,22 @@ js: apps/find-remove-duplicates
         <br>
         <form class="form-inline w-100 mb-2">
 
-            <label class="form-check-label mr-3" for="sorting">Sorting</label>
-            <div class="form-check form-check-inline mr-3">
+            <label class="form-check-label me-3" for="sorting">Sorting</label>
+            <div class="form-check form-check-inline me-3">
                 <input class="form-check-input" type="radio" name="sorting" id="noSorting" value="noSorting" checked>
                 <label class="form-check-label" for="noSorting">
                     No sorting
                 </label>
             </div>
 
-            <div class="form-check form-check-inline mr-3">
+            <div class="form-check form-check-inline me-3">
                 <input class="form-check-input" type="radio" name="sorting" id="ascending" value="ascending">
                 <label class="form-check-label" for="ascending">
                     Ascending
                 </label>
             </div>
 
-            <div class="form-check form-check-inline mr-3">
+            <div class="form-check form-check-inline me-3">
                 <input class="form-check-input" type="radio" name="sorting" id="descending" value="descending">
                 <label class="form-check-label" for="descending">
                     Descending

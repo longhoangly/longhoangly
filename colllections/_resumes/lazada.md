@@ -12,10 +12,10 @@ We used mostly all Alibaba stacks to develop test framework and write test scrip
 
 _Manual Test_
 
-- **Works as a test PIC for Redmart replatform project**
+- **Works as a test PIC for Logistics projects**
 - Works with developers and PD team to clarify requirement
 - Develops test plan, test cases based on clarified requirement
-- Executes API tests, also Web UI tests
+- Executes API, Web UI, and Mobile tests
 - Reported defects and verifies the fixes
 
 _Automation Test_

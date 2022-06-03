@@ -38,15 +38,15 @@ break: true
     </div>
 
     <form class="form-inline w-100 mb-2">
-        <label class="form-check-label mr-3" for="charset">Charset</label>
-        <div class="form-check form-check-inline mr-3">
+        <label class="form-check-label me-3" for="charset">Charset</label>
+        <div class="form-check form-check-inline me-3">
             <input class="form-check-input" type="radio" name="charset" id="utf8" value="utf8" checked>
             <label class="form-check-label" for="utf8">
                 UTF-8
             </label>
         </div>
 
-        <div class="form-check form-check-inline mr-3">
+        <div class="form-check form-check-inline me-3">
             <input class="form-check-input" type="radio" name="charset" id="utf16" value="utf16">
             <label class="form-check-label" for="utf16">
                 UTF-16

@@ -39,9 +39,9 @@ js: apps/sort-lines
             <div class="col pl-1">
                 <form class="form-inline w-100 mb-2">
 
-                    <label class="form-check-label mr-3" for="sorting">Sorting</label>
+                    <label class="form-check-label me-3" for="sorting">Sorting</label>
 
-                    <div class="form-check form-check-inline mr-3">
+                    <div class="form-check form-check-inline me-3">
                         <input class="form-check-input" type="radio" name="sorting" id="ascending" value="ascending"
                             checked>
                         <label class="form-check-label" for="ascending">
@@ -49,7 +49,7 @@ js: apps/sort-lines
                         </label>
                     </div>
 
-                    <div class="form-check form-check-inline mr-3">
+                    <div class="form-check form-check-inline me-3">
                         <input class="form-check-input" type="radio" name="sorting" id="descending" value="descending">
                         <label class="form-check-label" for="descending">
                             Descending

@@ -4,12 +4,13 @@ js: apps/word-count
 ---
 
 {% capture intro %}
+
 ### Word Count
 <!--separator-->
-- This tool counts characters, words, and lines for a string
+- This tool counts characters, words, and lines for input text
 - Characters counted with and without spaces
 - It also provided a list of word density (12 most appeared words)
-    - This will help you to have a better sense when writing SEO articles
+- This will help you to have a better sense when writing SEO articles
 <!--separator-->
 {% endcapture %}
 
@@ -25,37 +26,44 @@ js: apps/word-count
     <div class="row no-gutters mt-3">
         <div class="col-12 col-sm-6 col-md-8 pr-4">
 
-            <form class="form-inline w-100">
-
-                <div name="card" class="card border-dark text-center count-box mr-2">
-                    <div class="card-header">Characters</div>
-                    <div class="card-body">
-                        <h5 id="characters" class="card-title">0</h5>
+            <div class="row row-cols-auto">
+                <div class="col pe-0">
+                    <div name="card" class="card border-dark text-center count-box me-2">
+                        <div class="card-header">Characters</div>
+                        <div class="card-body">
+                            <h5 id="characters" class="card-title">0</h5>
+                        </div>
                     </div>
                 </div>
 
-                <div name="card" class="card border-dark text-center count-box mr-2">
-                    <div class="card-header">Characters w/o Spaces</div>
-                    <div class="card-body">
-                        <h5 id="charactersWoSpace" class="card-title">0</h5>
+                <div class="col p-0">
+                    <div name="card" class="card border-dark text-center count-box me-2">
+                        <div class="card-header">Characters w/o Spaces</div>
+                        <div class="card-body">
+                            <h5 id="charactersWoSpace" class="card-title">0</h5>
+                        </div>
                     </div>
                 </div>
 
-                <div name="card" class="card border-dark text-center count-box mr-2">
-                    <div class="card-header">Words</div>
-                    <div class="card-body">
-                        <h5 id="words" class="card-title">0</h5>
+                <div class="col p-0">
+                    <div name="card" class="card border-dark text-center count-box me-2">
+                        <div class="card-header">Words</div>
+                        <div class="card-body">
+                            <h5 id="words" class="card-title">0</h5>
+                        </div>
                     </div>
                 </div>
 
-                <div name="card" class="card border-dark text-center count-box mr-2">
-                    <div class="card-header">Lines</div>
-                    <div class="card-body">
-                        <h5 id="lines" class="card-title">0</h5>
+                <div class="col p-0">
+                    <div name="card" class="card border-dark text-center count-box me-2">
+                        <div class="card-header">Lines</div>
+                        <div class="card-body">
+                            <h5 id="lines" class="card-title">0</h5>
+                        </div>
                     </div>
                 </div>
 
-            </form>
+            </div>
 
             <button id="clearCounters" type="button" class="btn btn-outline-dark my-2">Clear</button>
 
@@ -65,8 +73,8 @@ js: apps/word-count
             </div>
 
         </div>
-
         <div class="col-6 col-md-4">
+
             <table class="table table-sm">
                 <thead>
                     <tr>
@@ -77,7 +85,7 @@ js: apps/word-count
                 </thead>
                 <tbody id="densityTable"></tbody>
             </table>
-        </div>
 
+        </div>
     </div>
 </div>

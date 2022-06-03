@@ -40,23 +40,23 @@ js: apps/random-number-generator
     </div>
 
     <div class="no-gutters mb-3">
-        <span class="mr-3">Separate by?</span>
+        <span class="me-3">Separate by?</span>
 
-        <div class="form-check form-check-inline mr-3">
+        <div class="form-check form-check-inline me-3">
             <input class="form-check-input" type="radio" name="separator" id="line" value="+++" checked>
             <label class="form-check-label" for="line">
                 New line
             </label>
         </div>
 
-        <div class="form-check form-check-inline mr-3">
+        <div class="form-check form-check-inline me-3">
             <input class="form-check-input" type="radio" name="separator" id="comma" value=",">
             <label class="form-check-label" for="comma">
                 Comma
             </label>
         </div>
 
-        <div class="form-check form-check-inline mr-3">
+        <div class="form-check form-check-inline me-3">
             <input class="form-check-input" type="radio" name="separator" id="space" value=" ">
             <label class="form-check-label" for="space">
                 A space
@@ -65,7 +65,7 @@ js: apps/random-number-generator
 
         <i class="fas fa-grip-lines-vertical"></i>
 
-        <div class="form-check form-check-inline ml-3">
+        <div class="form-check form-check-inline ms-3">
             <input class="form-check-input" type="checkbox" id="unique" data-toggle="tooltip"
                 title="check if you want to generate unique numbers.">
             <label class="form-check-label" for="unique">Unique numbers?</label>

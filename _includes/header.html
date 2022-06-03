@@ -9,7 +9,7 @@
     <!-- Navigation bar -->
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <!-- Navbar items -->
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav me-auto">
 
             {% assign firstItems = site.data.navigation | where: "section", "Home" %}
             {% for item in firstItems %}
@@ -21,13 +21,11 @@
             {% endfor %}
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Apps</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                    <a class="dropdown-item" href="https://ankiflash.com/" target="_blank">AnkiFlash</a>
-                    <a class="dropdown-item" href="https://ankiweb.net/shared/info/1129289384" target="_blank">AnkiFlash
-                        Importer</a>
+                    <a class="dropdown-item" href="https://ankiflash.com/" target="_blank">AnkiFlash Add-on</a>
                     <div class="dropdown-divider"></div>
 
                     {% for app in site.apps %}
@@ -52,9 +50,9 @@
 
         </ul>
 
-        <button id="download" class="btn btn-outline-dark mr-2" type="button">Download</button>
+        <button id="download" class="btn btn-outline-dark me-2" type="button">Download</button>
         <button id="nightMode" class="btn btn-outline-dark btn-sq-xs" type="button" data-placement="bottom">
-            <i class="fas fa-moon"></i>
+            <i class="bi bi-moon-fill"></i>
         </button>
     </div>
     <!-- Navigation bar -->

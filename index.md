@@ -4,7 +4,8 @@ title: Home | Long Ly App
 ---
 
 <br>
-Hi! Welcome to the LongLy.App
+Hi! Welcome to the
+<a href="{{site.url}}">QaTips.Dev</a>
 
 This site has some useful tools for processing text, strings and numbers.
 
@@ -15,64 +16,64 @@ Feel free to give it a try and send me messages if any suggestion. Thanks!
 ##### Tools
 
 <div class="table-responsive">
-  <table class="table table-bordered">
-    <tbody>
+    <table class="table table-bordered">
+        <tbody>
 
-      <tr>
-        <td>
-          <a href="https://ankiflash.com/" target="_blank">
-            <h4>1. AnkiFlash</h4>
-          </a>
-          {% assign desc = "- A tool to generate Anki cards to learn Vietnamese, English, Chinese, Japanese, French
-          vocabularies automatically." %}
-          <p>{{ desc | markdownify }}</p>
-        </td>
+                {% capture ankiFlash %}
+                {
+                      "name": "AnkiFlash",
+                      "url": "https://ankiflash.com/",
+                      "content": "- Generates Anki flashcards automatically for learning Vietnamese, English, Chinese, Japanese, French vocabularies."
+                }
+            {% endcapture %}
+            {% component type:"json", source_type: "string", source: "{{ankiFlash}}", collectionVariable: "myData" %}
 
-        <td>
-          <a href="https://ankiweb.net/shared/info/1129289384" target="_blank">
-            <h4>2. AnkiFlash Importer</h4>
-          </a>
-          {% assign desc = '- An add-on helps you to import automatically flashcards which are generated from
-          the <a href="https://ankiflash.com/" target="_blank">https://ankiflash.com</a> website.' %}
-          <p>{{ desc | markdownify }}</p>
-        </td>
-      </tr>
 
-      {% for app in site.apps %}
+            <h4>{{ ankiFlash.name }}</h4>
+            <h4>{{ ankiFlash.url }}</h4>
+            <h4>{{ ankiFlash.content }}</h4>
+            <!-- {% assign ankiFlash = myData | split:'' %} -->
 
-      {% assign indexModulo = forloop.index0 | modulo: 2 %}
-      {% if indexModulo == 0 %}
-      <tr>
-        <td>
-          <a href="{{ app.url }}">
-            <h4>{{forloop.index0 | plus: 3}}. {{ app.name }}</h4>
-          </a>
+            {% assign apps = site.apps %}
+            {% for app in apps %}
+                {% assign indexModulo = forloop.index0 | modulo: 2 %}
+                {% if indexModulo == 0 %}
 
-          {% assign contentSplitted = app.content | split: site.content_separator %}
-          <p>{{ contentSplitted[1] | markdownify }}</p>
-        </td>
+                    <tr>
+                        <td>
+                            <a href="{{ app.url }}">
+                                <h4>{{forloop.index0 | plus: 2}}.
+                                    {{ app.name }}</h4>
+                            </a>
 
-        <td>
-          {% assign nextIndex = forloop.index0 | plus: 1 %}
-          {% if site.apps.size > nextIndex %}
+                            {% assign contentSplitted = app.content | split: site.content_separator %}
+                            <p>{{ contentSplitted[1] | markdownify }}</p>
+                        </td>
 
-          {% assign nextApp = site.apps[nextIndex] %}
-          <a href="{{ nextApp.url }}">
-            <h4>{{nextIndex | plus: 3}}. {{ nextApp.name }}</h4>
-          </a>
+                        <td>
+                            {% assign nextIndex = forloop.index0 | plus: 1 %}
+                            {% if apps.size > nextIndex %}
 
-          {% assign contentSplitted = nextApp.content | split: site.content_separator %}
-          <p>{{ contentSplitted[1] | markdownify }}</p>
+                                {% assign nextApp = apps[nextIndex] %}
+                                <a href="{{ nextApp.url }}">
+                                    <h4>{{nextIndex | plus: 2}}.
+                                        {{ nextApp.name }}</h4>
+                                </a>
 
-          {% endif %}
-        </td>
-      </tr>
+                                {% assign contentSplitted = nextApp.content | split: site.content_separator %}
+                                <p>{{ contentSplitted[1] | markdownify }}</p>
 
-      {% endif %}
-      {% endfor %}
+                            {% endif %}
+                        </td>
+                    </tr>
 
-    </tbody>
-  </table>
+                {% endif %}
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
 </div>
 
 <br>

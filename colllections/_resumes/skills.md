@@ -3,18 +3,16 @@ type: skills
 index: 1
 ---
 
-_Language_: Java, Golang, C#, Python, Bash, Perl, VBScript
+_**Languages**_: Java, JavaScript, Python, Bash, Golang, C#, Perl, VBScript
 
-_Framework_: Serenity, Soap UI, Horus (my own framework in C#)
+_**Automation**_: Horus, Serenity, Selenium, Appium, SpecFlow, Cucumber, AWS Device Farm, BrowserStack
 
-_Automation_: Selenium, Appium, SpecFlow, Cucumber, AWS Device Farm, BrowserStack
+_**Cloud Services**_: AWS, GCP, Aone
 
-_Cloud Service_: AWS, GCP, Aone
+_**CI/CD**_: Github, Jenkins, SonarCloud, Aone
 
-_CI/CD_: Github, Jenkins, SonarCloud, Aone
+_**Storages**_: MS SQL, MySQL, Oracle, BigQuery, DynamoDB
 
-_Storage_: MS SQL, MySQL, Oracle, BigQuery, DynamoDB
+_**OS**_: MacOS, Linux (RedHat / Ubuntu), MS Windows
 
-_OS_: MacOS, Linux (RedHat / Ubuntu), MS Windows
-
-_Others_: Jira, Testrail, Qtest
+_**Others**_: Jira, Testrail, Qtest
