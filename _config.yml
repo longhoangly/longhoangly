@@ -1,45 +1,45 @@
 url: https://qatips.dev
 
-content_separator: "<!--separator-->"
+content_separator: "<!-- separator -->"
 
 sass:
-  sass_dir: assets/css
-  style: compressed
+    sass_dir: assets/css
+    style: compressed
 
 collections_dir: colllections
 collections:
-  authors:
-    output: true
-  resumes:
-    output: false
-  apps:
-    output: true
-    permalink: /:name
+    authors:
+        output: true
+    resumes:
+        output: false
+    apps:
+        output: true
+        permalink: /:name
 
 defaults:
-  - scope:
-      path: ""
-      type: "authors"
-    values:
-      layout: "author"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
+    - scope:
+          path: ""
+          type: "authors"
+      values:
+          layout: "author"
+    - scope:
+          path: ""
+          type: "posts"
+      values:
+          layout: "post"
+    - scope:
+          path: ""
+      values:
+          layout: "default"
 
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
+    - jekyll-feed
+    - jekyll-sitemap
+    - jekyll-seo-tag
 
 markdown: kramdown
-highlighter: rouge
+syntax_highlighter: rouge
 kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    default_lang: html
+    input: GFM
+    syntax_highlighter_opts:
+        default_lang: html

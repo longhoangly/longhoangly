@@ -1,59 +1,78 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <button
+    id="changeToggle"
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <i class="fa fa-bars"></i>
+  </button>
 
-    <button id="changeToggle" class="navbar-toggler" type="button" data-toggle="collapse"
-        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <i class="fa fa-bars"></i>
+  <div id="navbarSupportedContent" class="collapse navbar-collapse">
+    <ul class="navbar-nav me-auto">
+      {% assign firstItems = site.data.navigation | where: "section", "Home" %}
+      {% for item in firstItems %}
+        <li
+          {% if page.url==item.link %}
+            class="nav-item active"
+          {% else %}
+            class="nav-item"
+          {% endif %}
+        >
+          <a class="nav-link" href="{{ site.url }}{{ item.link }}">
+            {{ item.name }}
+          </a>
+        </li>
+      {% endfor %}
+
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Apps</a
+        >
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="https://ankiflash.com/" target="_blank">AnkiFlash Add-on</a>
+          <div class="dropdown-divider"></div>
+
+          {% for app in site.apps %}
+            <a class="dropdown-item" href="{{ app.url }}">{{ app.name }}</a>
+
+            {% if app.break %}
+              <div class="dropdown-divider"></div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </li>
+
+      {% assign thirdItems = site.data.navigation | where: "section", "Others" %}
+      {% for item in thirdItems %}
+        <li
+          {% if page.url==item.link %}
+            class="nav-item active"
+          {% else %}
+            class="nav-item"
+          {% endif %}
+        >
+          <a class="nav-link" href="{{ site.url }}{{ item.link }}">
+            {{ item.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <button id="download" class="btn btn-outline-dark me-2" type="button">Download</button>
+    <button id="nightMode" class="btn btn-outline-dark btn-sq-xs" type="button" data-placement="bottom">
+      <i class="bi bi-moon-fill"></i>
     </button>
-
-    <!-- Navigation bar -->
-    <div id="navbarSupportedContent" class="collapse navbar-collapse">
-        <!-- Navbar items -->
-        <ul class="navbar-nav me-auto">
-
-            {% assign firstItems = site.data.navigation | where: "section", "Home" %}
-            {% for item in firstItems %}
-            <li {% if page.url==item.link %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                <a class="nav-link" href="{{ site.url }}{{ item.link }}">
-                    {{ item.name }}
-                </a>
-            </li>
-            {% endfor %}
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Apps</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                    <a class="dropdown-item" href="https://ankiflash.com/" target="_blank">AnkiFlash Add-on</a>
-                    <div class="dropdown-divider"></div>
-
-                    {% for app in site.apps %}
-                    <a class="dropdown-item" href="{{ app.url }}">{{ app.name }}</a>
-
-                    {% if app.break %}
-                    <div class="dropdown-divider"></div>
-                    {% endif %}
-
-                    {% endfor %}
-                </div>
-            </li>
-
-            {% assign thirdItems = site.data.navigation | where: "section", "Others" %}
-            {% for item in thirdItems %}
-            <li {% if page.url==item.link %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                <a class="nav-link" href="{{ site.url }}{{ item.link }}">
-                    {{ item.name }}
-                </a>
-            </li>
-            {% endfor %}
-
-        </ul>
-
-        <button id="download" class="btn btn-outline-dark me-2" type="button">Download</button>
-        <button id="nightMode" class="btn btn-outline-dark btn-sq-xs" type="button" data-placement="bottom">
-            <i class="bi bi-moon-fill"></i>
-        </button>
-    </div>
-    <!-- Navigation bar -->
+  </div>
 </nav>

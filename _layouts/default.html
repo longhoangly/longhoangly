@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
+  {% include head.html %}
 
-{% include head.html %}
-
-<body class="bg-light text-dark ms-3 me-3">
-
+  <body class="bg-light text-dark ms-3 me-3">
     {% include header.html %}
 
     <div id="main" class="d-flex flex-row justify-content-center">
-        <div class="col-lg-8 m-2">
-            {{content}}
-        </div>
+      <div class="col-lg-8 m-2">
+        {{ content }}
+      </div>
     </div>
 
     {% include footer.html %}
-
-</body>
-
+  </body>
 </html>
