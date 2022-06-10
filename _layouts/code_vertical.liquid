@@ -12,6 +12,12 @@ layout: default
   {% endif %}
 </p>
 
-{{ content }}
+<div class="row">
+  <div class="col pe-1">
+    {{ content }}
+  </div>
 
-{% include js-executer.html %}
+  <div class="col pe-1">
+    {% include js-executer.liquid %}
+  </div>
+</div>

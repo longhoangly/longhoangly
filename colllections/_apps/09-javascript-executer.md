@@ -15,4 +15,4 @@ js: ["external/ace/ace"]
   {{ intro | markdownify }}
 </div>
 
-{% include js-executer.html %}
+{% include js-executer.liquid %}

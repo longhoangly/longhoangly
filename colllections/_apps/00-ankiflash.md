@@ -1,10 +1,10 @@
 --- 
-name: AnkiFlash
+name: AnkiFlash Addon
 link: https://ankiflash.com
 ---
 
 {% capture intro %}
-### AnkiFlash
+### AnkiFlash Addon
 <!-- separator -->
 - A tool to generate Anki cards to learn Vietnamese, English, Chinese, Japanese, French vocabularies automatically.
 <!-- separator -->
