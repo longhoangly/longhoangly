@@ -1,5 +1,5 @@
 ---
-title: Thanks | Long Ly App
+title: Thanks | QaTips
 ---
 
 ##### Thanks

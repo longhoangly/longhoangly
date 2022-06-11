@@ -1,5 +1,5 @@
 ---
-title: Blog | Long Ly App
+title: Blog | QaTips
 ---
 
 ##### Latest Posts

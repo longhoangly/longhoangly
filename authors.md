@@ -1,5 +1,5 @@
 ---
-title: Authors | Long Ly App
+title: Authors | QaTips
 ---
 
 ##### All authors on this blog!
