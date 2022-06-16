@@ -78,7 +78,7 @@
 
   $(document).ready(() => {
 
-      $("#execute").on("click", () => {
+      $("#execute").click(() => {
           let jsScript = editor.getValue()
           if (jsScript.length === 0) {
 
@@ -89,7 +89,7 @@
           eval(jsScript)
       })
 
-      $("#clearJs").on("click", () => {
+      $("#clearJs").click(() => {
           console.logs.length = 0
           console.errors.length = 0
           console.debugs.length = 0

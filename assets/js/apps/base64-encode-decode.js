@@ -1,18 +1,18 @@
 $(document).ready(() => {
 
-    $("#encode").on("click", () => {
+    $("#encode").click(() => {
 
         clearElementText("#encodeOutput")
         encodeBase64Handler()
     })
 
-    $("#clearEncode").on("click", () => {
+    $("#clearEncode").click(() => {
 
         clearElementText("#encodeInput")
         clearElementText("#encodeOutput")
     })
 
-    $("#copyEncode").on("click", () => {
+    $("#copyEncode").click(() => {
 
         if ($("#encodeOutput").val().length == 0) {
 
@@ -24,19 +24,19 @@ $(document).ready(() => {
         }
     })
 
-    $("#decode").on("click", () => {
+    $("#decode").click(() => {
 
         clearElementText("#decodeOutput")
         decodeBase64Handler()
     })
 
-    $("#clearDecode").on("click", () => {
+    $("#clearDecode").click(() => {
 
         clearElementText("#decodeInput")
         clearElementText("#decodeOutput")
     })
 
-    $("#copyDecode").on("click", () => {
+    $("#copyDecode").click(() => {
 
         if ($("#decodeOutput").val().length == 0) {
 

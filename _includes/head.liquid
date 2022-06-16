@@ -13,6 +13,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
   <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css">
   <link rel="stylesheet" href="{{ site.url }}/assets/css/tool.css">
 
@@ -24,23 +25,25 @@
   {% endif %}
 
   <!-- JS -->
-  <script defer type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script defer src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-  <script defer type="text/javascript" src="{{ site.url }}/assets/js/main.js"></script>
-  <script defer type="text/javascript" src="{{ site.url }}/assets/js/tool.js"></script>
+
+  <script defer type="module" src="{{ site.url }}/assets/js/main.js"></script>
+  <script defer type="module" src="{{ site.url }}/assets/js/tool.js"></script>
 
   <!-- Custom JS -->
-  {% if page.js %}
-    {% for js_file in page.js %}
-      <script defer type="text/javascript" src="{{ site.url }}/assets/js/{{ js_file }}.js"></script>
+  {% if page.js_url %}
+    {% for url in page.js_url %}
+      <script defer src="{{ url }}"></script>
     {% endfor %}
   {% endif %}
 
-  <!-- Custom Modules JS -->
+  <!-- Modules JS -->
   {% if page.module %}
-    {% for modul in page.module %}
-      <script type="module" src="{{ site.url }}/assets/js/module/{{ modul }}.js"></script>
+    {% for mod in page.module %}
+      <script type="module" src="{{ site.url }}/assets/js/{{ mod }}.js"></script>
     {% endfor %}
   {% endif %}
 

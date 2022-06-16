@@ -44,13 +44,18 @@
             >Apps</a
           >
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="https://ankiflash.com/" target="_blank">AnkiFlash Addon</a>
-            <div class="dropdown-divider"></div>
-
-            {% for app in site.apps %}
-              {% if app.name != "AnkiFlash Addon" %}
-                <a class="dropdown-item" href="{{ app.url }}">{{ app.name }}</a>
-              {% endif %}
+            {% assign apps = site.apps | sort: 'index' %}
+            {% for app in apps %}
+              <a
+                class="dropdown-item"
+                {% if app.link %}
+                  href="{{ app.link }}" target="_blank"
+                {% else %}
+                  href="{{ app.url }}"
+                {% endif %}
+              >
+                {{ app.name }}
+              </a>
 
               {% if app.break %}
                 <div class="dropdown-divider"></div>

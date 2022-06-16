@@ -1,6 +1,6 @@
 ---
 short_name: Long
-name: Long Ly H.
+name: Long Ly
 position: QA Enginner / QaTips.Dev owner
 ---
 
