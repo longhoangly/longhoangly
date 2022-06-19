@@ -1,7 +1,7 @@
 ---
 index: 5
 name: Random String Generator
-module: apps/random-string-generator
+module: ["ace.js", "apps/random-string"]
 break: true
 ---
 
@@ -9,11 +9,11 @@ break: true
 ### Generate Random String
 <!-- separator -->
 - This tool creates random strings from a list of given characters (letters and digits)
+<!-- separator -->
     - Maximum quantity of strings: 300
     - Minimum length of each string: 1
     - Maximum length of each string: 1000
 - Unique option to generate only unique strings
-<!-- separator -->
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">
@@ -99,7 +99,7 @@ break: true
 
   <div class="no-gutters mt-3">
     <label class="form-label" for="result"><strong>Generated</strong> random strings</label>
-    <textarea type="text" id="result" name="result"></textarea>
+    <div class="ace_editor" id="result" name="result"></div>
     <label id="counter" class="form-label" for="result">Character count: 0 | Word count: 0 | Line count: 0</label>
   </div>
 </div>

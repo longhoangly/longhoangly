@@ -11,7 +11,6 @@ $(document).ready(async () => {
         Common.setStorage("isNight", isNight);
         Main.setNavBarNightMode(isNight);
         Main.setBodyNightMode(isNight);
-        Main.setTextareaBgColor(isNight);
         Main.setFooterNightMode(isNight);
     });
 
@@ -19,7 +18,6 @@ $(document).ready(async () => {
     let isNight = (await Common.getStorage("isNight")) == "true" || false;
     Main.setNavBarNightMode(isNight);
     Main.setBodyNightMode(isNight);
-    Main.setTextareaBgColor(isNight);
     Main.setFooterNightMode(isNight);
 
     $("body").attr("style", "visibility: visible");
@@ -88,11 +86,6 @@ class Main {
         $footerLinks.toggleClass("text-dark", !isNight);
 
         $footerLinks.attr("data-mdb-ripple-color", isNight ? "light" : "dark");
-    }
-
-    static async setTextareaBgColor(isNight) {
-        let bgColor = isNight ? "#2e3338" : "#f0f2f4";
-        $("textarea").css("background-color", bgColor);
     }
 
     static async setButtonNightMode(isNight) {

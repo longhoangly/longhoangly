@@ -1,7 +1,6 @@
 ---
-name: JavaScript Executer
 index: 10
-js: ["external/ace/ace"]
+name: JavaScript Executer
 ---
 
 {% capture intro %}

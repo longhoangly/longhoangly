@@ -37,11 +37,11 @@ up and do right things.
 <br>
 - Jekyll Profile / Blog Template
 
-  - A profile / blog template built with Jekyll, Boostrap frameworks, and JQuery library. This template supports night
+  - A profile / blog template built with Jekyll, Boostrap, and JQuery. This template supports night
   mode and has a tab for blogging in case you want to share your thoughts to the world. It is maintained under Apache
   License 2.0. Feel free to fork if you see it matched your needs. [Thanks]
 
-  - Tech Stasks / Tools: Jekyll, Bootstrap, JQuery, Github Pages, Github Actions
+  - Tech: Jekyll, Bootstrap, JQuery, Github Pages, Github Actions
 
   - Github repo:
   <a href="https://github.com/longhoangly/longhoangly" target="_blank">_longhoangly.github.io/longhoangly_</a>
@@ -49,12 +49,12 @@ up and do right things.
 <br>
 - Học Nữa Học Mãi Channel
 
-  - I used this channel shares everything, what I learnt from professional work in software industry also from daily life.
+  - I used this channel for sharing everything, what I learnt from professional work in software industry also from daily life.
   [Thanks]
 
   - I also shared some instruction videos about how to learn vocabularies with Anki & AnkiFlash.
 
-  - More videos will be uploaded to this channel soon right after I finish the Jekyll profile / blog template.
+  - More videos will be uploaded to this channel soon...
 
   - Channel: <a href="https://www.youtube.com/channel/UCeHm_2bEbq4EmZ9aaAgn7_w" target="_blank">_Học Nữa Học Mãi_</a>
 
@@ -72,11 +72,9 @@ up and do right things.
 <br>
 - What's next?
 
-  - An AnkiFlash desktop version (Python), install as an add-on of Anki?
+  - More videos on Youtube channel to share more with you all...
 
-  - More videos on Youtube channel to share more with you all!
-
-  - Small / useful tools for processing text, strings and numbers. (longly.app)
+  - Tools for processing text, strings and numbers... (_QaTips.Dev_)
 
   - *To be continue...*
 
@@ -84,8 +82,9 @@ up and do right things.
 - Buy me a coffee
 
   - If you found my content is valuable for your study, or your work. Feel free to support me by buying me a coffee. Your
-  support will help me to have more dedicated time for projects above. [Thanks]
-
+  support will help me to have more dedicated time for projects above. [Thanks]  
+  
+  <br>
   <a href="https://www.buymeacoffee.com/longhoangly" target="_blank">
     <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=longhoangly&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff">
   </a>

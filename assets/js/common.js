@@ -230,11 +230,18 @@ class Common {
         return { aDiff: aDiff, bDiff: bDiff, common: common };
     }
 
-    static async setupEditor(editorId, maxLines = 15, minLines = 5) {
+    static async setupEditor(
+        editorId,
+        readonly = false,
+        mode = "text",
+        maxLines = 20,
+        minLines = 10
+    ) {
         let editor = ace.edit(editorId, {
             theme: "ace/theme/solarized_light",
-            mode: "ace/mode/text",
+            mode: `ace/mode/${mode}`,
             autoScrollEditorIntoView: true,
+            readOnly: readonly,
         });
 
         if (maxLines !== 0) {
@@ -246,8 +253,9 @@ class Common {
 
         let editorElement = document.getElementById(editorId);
         editorElement.style.fontSize = "16px";
-        editorElement.style.color = "#586E75";
-        editorElement.style.background = "lightyellow";
+        editorElement.style.color = "#374549";
+        editorElement.style.background = "#d3dcdf";
+        $(".ace_gutter").css("backgroundColor", "#b5c4c9");
 
         return editor;
     }
@@ -287,7 +295,11 @@ class Common {
         return str !== null ? str.replaceAll('"', '\\"') : str;
     }
 
-    static async copyTextToClipboard(selector) {
+    static async copyTextToClipboard(editor) {
+        navigator.clipboard.writeText(editor.getValue());
+    }
+
+    static async copyTextAreaToClipboard(selector) {
         let copyText = document.querySelector(selector);
         copyText.select();
         /* For mobile devices */
@@ -372,17 +384,6 @@ class Common {
         return base64Str;
     }
 
-    static async copyTextToClipboard(selector) {
-        let $temp = $("<textarea>");
-        let brRegex = /<br\s*[\/]?>/gi;
-
-        $("body").append($temp);
-        $temp.val($(selector).val().replace(brRegex, "\r\n")).select();
-
-        document.execCommand("copy");
-        $temp.remove();
-    }
-
     static async displayElement(selector, displayClass = "inline-flex") {
         let $element = $(selector);
         if ($element.length) {
@@ -397,10 +398,13 @@ class Common {
     static async hideElement(selector) {
         let $element = $(selector);
         if ($element.length) {
-            if ($element.attr("style").includes("visibility")) {
-                $element.attr("style", "visibility: hidden");
-            } else {
+            if (
+                $element.attr("style") === undefined ||
+                $element.attr("style").includes("display")
+            ) {
                 $element.attr("style", "display: none");
+            } else {
+                $element.attr("style", "visibility: hidden");
             }
         }
     }
@@ -408,9 +412,9 @@ class Common {
     static async clearElementText(selector) {
         let $element = $(selector);
         if ($element.length) {
-            $element.val("").trigger("change");
-            $element.text("").trigger("change");
-            $element.html("").trigger("change");
+            $element.val("");
+            $element.text("");
+            $element.html("");
         }
     }
 
@@ -431,7 +435,7 @@ class Common {
     }
 
     static async alertWebMsg(message, isSuccess, autoHide = true, timeout = 3) {
-        Common.alertMsg("#alert", message, isSuccess, autoHide, timeout);
+        await Common.alertMsg("#alert", message, isSuccess, autoHide, timeout);
     }
 
     static async alertIntroMsg(
@@ -440,11 +444,17 @@ class Common {
         autoHide = true,
         timeout = 3
     ) {
-        Common.alertMsg("#alertIntro", message, isSuccess, autoHide, timeout);
+        await Common.alertMsg(
+            "#alertIntro",
+            message,
+            isSuccess,
+            autoHide,
+            timeout
+        );
     }
 
-    static async calculateCounters(selector) {
-        let resultTxt = $(selector).val();
+    static async calculateCounters(editor, selectorId = "counter") {
+        let resultTxt = editor.getValue();
         let characterCount = resultTxt
             .split("")
             .filter((x) => x.replaceAll(/\s*/g, "") && Boolean).length;
@@ -457,7 +467,7 @@ class Common {
             wordCount += element.split(" ").filter(Boolean).length;
         });
 
-        $("#counter").text(
+        $(`#${selectorId}`).text(
             `Character count: ${characterCount} | Word count: ${wordCount} | Line count: ${lineCount}`
         );
     }

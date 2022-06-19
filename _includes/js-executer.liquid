@@ -1,9 +1,13 @@
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.6.0/ace.js"></script>
+<script defer type="module" src="{{ site.url }}/assets/js/apps/js-executer.js"></script>
+
 <div id="jsExecuter">
   <div class="tool-wrapper">
     <h3>JavaScript Executer</h3>
     <div class="col p-0">
       <label class="form-label" for="editor"><strong>Input your JavaScript code here</strong></label>
       <div class="textarea" id="editor" name="editor"></div>
+      <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
     </div>
 
     <button id="execute" type="button" class="btn btn-outline-dark my-2">Execute</button>
@@ -15,90 +19,3 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  var consoleOutput = ace.edit("consoleOutput")
-  consoleOutput.setTheme("ace/theme/solarized_light")
-  consoleOutput.session.setMode("ace/mode/text")
-  document.getElementById('consoleOutput').style.fontSize = "16px"
-  document.getElementById('consoleOutput').style.color = "#586E75"
-  consoleOutput.setReadOnly(true)
-  consoleOutput.setHighlightActiveLine(false)
-
-  $(window).on("load", () => {
-      if (consoleOutput) {
-          // Start Console Hooks
-          console.defaultLog = console.log.bind(console)
-          console.logs = []
-          console.log = function () {
-              // default & console.log()
-              console.defaultLog.apply(console, arguments)
-              // new & array data
-              console.logs.push(Array.from(arguments))
-              //Textarea logs
-              let currentLogs = consoleOutput.getValue().trim()
-              currentLogs = currentLogs.length > 0 ? currentLogs + "\n" : currentLogs
-              consoleOutput.setValue(currentLogs + Array.from(arguments).join(" "))
-          }
-
-          console.defaultError = console.error.bind(console)
-          console.errors = []
-          console.error = function () {
-              // default & console.error()
-              console.defaultError.apply(console, arguments)
-              // new & array data
-              console.errors.push(Array.from(arguments))
-              //Textarea logs
-              let currentLogs = consoleOutput.getValue().trim()
-              currentLogs = currentLogs.length > 0 ? currentLogs + "\n" : currentLogs
-              consoleOutput.setValue(currentLogs + Array.from(arguments).join(" "))
-          }
-
-          console.defaultDebug = console.debug.bind(console)
-          console.debugs = []
-          console.debug = function () {
-              // default & console.debug()
-              console.defaultDebug.apply(console, arguments)
-              // new & array data
-              console.debugs.push(Array.from(arguments))
-              //Textarea logs
-              let currentLogs = consoleOutput.getValue().trim()
-              currentLogs = currentLogs.length > 0 ? currentLogs + "\n" : currentLogs
-              consoleOutput.setValue(currentLogs + Array.from(arguments).join(" "))
-          }
-          // End Console Hooks
-      }
-  })
-
-  var editor = ace.edit("editor")
-  editor.setTheme("ace/theme/solarized_light")
-  editor.session.setMode("ace/mode/javascript")
-  document.getElementById('editor').style.fontSize = "16px"
-  document.getElementById('editor').style.color = "#586E75"
-
-  $(document).ready(() => {
-
-      $("#execute").click(() => {
-          let jsScript = editor.getValue()
-          if (jsScript.length === 0) {
-
-              consoleOutput.setValue("Could you please check your input? No JS code found!")
-              return
-          }
-          consoleOutput.setValue("")
-          eval(jsScript)
-      })
-
-      $("#clearJs").click(() => {
-          console.logs.length = 0
-          console.errors.length = 0
-          console.debugs.length = 0
-          editor.setValue("")
-          consoleOutput.setValue("")
-      })
-
-      editor.on("change", () => {
-          consoleOutput.setValue("")
-      })
-  })
-</script>

@@ -1,6 +1,8 @@
 import { Common } from "../common.js";
 
-$(document).ready(() => {
+$(document).ready(async () => {
+    var editor = await Common.setupEditor("result");
+
     let excepStorage = Common.getStorage("exceptions") || "";
     if (excepStorage.length > 0) {
         $("#exceptions").val(excepStorage);
@@ -23,38 +25,39 @@ $(document).ready(() => {
     });
 
     $("#convert").click(async () => {
-        let resultBox = $("#result").val();
-        if (resultBox.length == 0) {
-            alertWebMsg("Please check your input! No text input!", false);
+        let resultTxt = editor.getValue();
+        if (resultTxt.length == 0) {
+            Common.alertWebMsg("Please check your input! No text input!", false);
             return;
         }
 
         let orignalTxt = (await Common.getStorage("orignalTxt")) || "";
-        if (orignalTxt.toLowerCase() != resultBox.toLowerCase()) {
-            Common.setStorage("orignalTxt", resultBox);
+        if (orignalTxt.toLowerCase() != resultTxt.toLowerCase()) {
+            Common.setStorage("orignalTxt", resultTxt);
         }
 
         let desiredCase = $("input[name='desiredCase']:checked").val();
         if (desiredCase == CaseConverter.TEXT_CASES.titleCase) {
             let excepStorage = (await Common.getStorage("exceptions")) || "";
-            let excepBox = $("#exceptions").val();
+            let excepTxt = $("#exceptions").val();
 
             if (
                 excepStorage.length == 0 ||
-                excepStorage.length != excepBox.length
+                excepStorage.length != excepTxt.length
             ) {
-                Common.setStorage("exceptions", excepBox);
+                Common.setStorage("exceptions", excepTxt);
                 excepStorage = await Common.getStorage("exceptions");
             }
 
             $("#exceptions").val(excepStorage);
         }
-        CaseConverter.convertStringCase(desiredCase);
+
+        CaseConverter.convertStringCase(editor, desiredCase);
     });
 
     $("#original").click(async () => {
         let orignalTxt = (await Common.getStorage("orignalTxt")) || "";
-        $("#result").val(orignalTxt);
+        editor.setValue(orignalTxt);
     });
 });
 
@@ -73,31 +76,30 @@ class CaseConverter {
         for, from, in, into, like, mid, near, next, of, off, on, onto, out, over, pace, past, per, plus, pro, qua, \
         sans, save, than, till, to, unto, up, upon, via, vice, vs., with";
 
-    static async convertStringCase(desiredCase) {
-        let txtBox = $("#result").val();
+    static async convertStringCase(editor, desiredCase) {
+        let inputTxt = editor.getValue();
 
         switch (desiredCase) {
             case CaseConverter.TEXT_CASES.upperCase:
-                txtBox = txtBox.toLocaleUpperCase();
+                inputTxt = inputTxt.toLocaleUpperCase();
                 break;
             case CaseConverter.TEXT_CASES.sentenseCase:
-                txtBox = await CaseConverter.firstLetterUpper(txtBox);
+                inputTxt = await CaseConverter.firstLetterUpper(inputTxt);
                 break;
             case CaseConverter.TEXT_CASES.capitalizedCase:
-                txtBox = await CaseConverter.capitalizedCase(txtBox);
+                inputTxt = await CaseConverter.capitalizedCase(inputTxt);
                 break;
             case CaseConverter.TEXT_CASES.titleCase:
-                txtBox = await CaseConverter.titleCase(txtBox);
+                inputTxt = await CaseConverter.titleCase(inputTxt);
                 break;
             case CaseConverter.TEXT_CASES.inverseCase:
-                txtBox = await CaseConverter.inverseString(txtBox);
+                inputTxt = await CaseConverter.inverseString(inputTxt);
                 break;
             default:
-                // default is lower case
-                txtBox = txtBox.toLocaleLowerCase();
+                inputTxt = inputTxt.toLocaleLowerCase();
         }
 
-        $("#result").val(txtBox).trigger("change");
+        editor.setValue(inputTxt);
     }
 
     static async firstLetterUpper(string) {

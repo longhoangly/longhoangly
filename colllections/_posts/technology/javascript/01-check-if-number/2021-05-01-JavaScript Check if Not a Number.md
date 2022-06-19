@@ -1,13 +1,12 @@
 ---
 author: Long
-layout: code_vertical
-excerpt_separator: <!--more-->
-js: ["external/ace/ace"]
+layout: code_horizontal
+excerpt_separator: <!--short_desc-->
 ---
 
 There are multiple ways to check if a variable is a number in JavaScript and some common ways are...
+<!--short_desc-->
 
-<!--more-->
 - **isNaN( variable )** : This function name stands for "is Not a Number". If the variable is a number, it will return FALSE! Otherwise, it would be TRUE.
 
 - **typeof( operand )** : The typeof operator returns a string indicating the type of the unevaluated operand
@@ -45,7 +44,7 @@ While **match()** is only available for variables which declared in string type.
     // expected: "number" but received "string" 
     // => To fix this issue, we can use regular expression to check if the string is a number!  
     // regex to match a number (in string type)
-    matches = numberInStringType.match(/^\d+$/g);
+    let matches = numberInStringType.match(/^\d+$/g);
     isNumber = matches.length > 0;
     console.log("scenario 4 (fixed):", isNumber);
     // expected: true

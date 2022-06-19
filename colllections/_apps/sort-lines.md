@@ -1,18 +1,18 @@
 ---
 index: 6
 name: Sort Lines
-module: apps/sort-lines
+module: ["ace.js", "apps/sort-lines"]
 ---
 
 {% capture intro %}
 ### Sort Lines
 <!-- separator -->
 - This tool sorts all lines from an input text
+<!-- separator -->
 - There are two options for sorting:
     - Ascending
     - Descending
 - These sorting options can work with text or numbers
-<!-- separator -->
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">
@@ -30,7 +30,13 @@ module: apps/sort-lines
         <br>
 
         <label class="form-label" for="input"><strong>Input your text into this box</strong></label>
-        <textarea type="text" id="input" name="input"></textarea>
+        <div class="ace_editor" id="input" name="input"></div>
+        <label
+          id="counter"
+          class="form-label"
+          for="input"
+          >Character count: 0 | Word count: 0 | Line count: 0</label
+        >
       </div>
 
       <br>
@@ -47,22 +53,21 @@ module: apps/sort-lines
               value="ascending"
               checked
             >
-            <label class="form-check-label" for="ascending"> Ascending </label>
+            <label class="form-check-label" for="ascending">Ascending</label>
           </div>
 
           <div class="form-check form-check-inline me-3">
             <input class="form-check-input" type="radio" name="sorting" id="descending" value="descending">
-            <label class="form-check-label" for="descending"> Descending </label>
+            <label class="form-check-label" for="descending">Descending</label>
           </div>
         </form>
 
         <br>
         <label class="form-label" for="result"><strong>Result: output textbox with sorted lines</strong></label>
-        <textarea type="text" id="result" name="result" disabled></textarea>
+        <div class="ace_editor" id="result" name="result"></div>
       </div>
     </div>
 
-    <label id="counter" class="form-label" for="result">Character count: 0 | Word count: 0 | Line count: 0</label>
     <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
   </div>
 </div>

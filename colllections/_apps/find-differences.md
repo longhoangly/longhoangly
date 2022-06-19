@@ -1,9 +1,7 @@
 ---
 index: 8
 name: Find Differences
-module: ["apps/find-differences"]
-js_url: ["https://cdnjs.cloudflare.com/ajax/libs/ace/1.6.0/ace.js"]
-css: ["apps/find-differences"]
+module: ["ace.js", "apps/find-differences"]
 ---
 
 {% capture intro %}

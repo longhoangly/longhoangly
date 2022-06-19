@@ -1,18 +1,18 @@
 ---
 index: 4
 name: Random Number Generator
-module: apps/random-number-generator
+module: ["ace.js", "apps/random-number"]
 ---
 
 {% capture intro %}
 ### Generate Random Number
 <!-- separator -->
 - This tool creates random numbers within a range
+<!-- separator -->
   - Maximum quantity of number: 5000
   - Minimum value of the range: 0 
   - Maximum value of the range: 100000000000000000
   - Unique option to generate only unique numbers
-<!-- separator -->
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">
@@ -100,7 +100,7 @@ module: apps/random-number-generator
 
   <div class="no-gutters mt-3">
     <label class="form-label" for="result"><strong>Generated</strong> random numbers</label>
-    <textarea type="text" id="result" name="result"></textarea>
+    <div class="ace_editor" id="result" name="result"></div>
     <label id="counter" class="form-label" for="result">Character count: 0 | Word count: 0 | Line count: 0</label>
   </div>
 </div>

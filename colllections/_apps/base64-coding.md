@@ -1,7 +1,7 @@
 ---
-name: Base64 Encode Decode
 index: 9
-js: apps/base64-encode-decode
+name: Base64 Encode Decode
+module: ["ace.js", "apps/base64-coding"]
 break: true
 ---
 
@@ -9,10 +9,10 @@ break: true
 ### Base64 Encode Decode
 <!-- separator -->
 - This tool provides encode and decode Base64 strings
+<!-- separator -->
 - It supports two main charsets (UTF-8, UTF-16) and also has options
     - Encode / decode each line separately
     - Split encoded string into 76 character wide chunks
-<!-- separator -->
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">
@@ -66,7 +66,7 @@ break: true
     <div class="col pr-1">
       <div class="col p-0">
         <label class="form-label" for="encodeInput"><strong>Input your string here</strong></label>
-        <textarea type="text" id="encodeInput" name="encodeInput"></textarea>
+        <div class="ace_editor" id="encodeInput" name="encodeInput"></div>
       </div>
 
       <button id="encode" type="button" class="btn btn-outline-dark my-2">Encode</button>
@@ -75,14 +75,14 @@ break: true
 
       <div class="col p-0 mt-3">
         <label class="form-label" for="encodeOutput"><strong>Encoded base64 string</strong></label>
-        <textarea class="textarea-sm" type="text" id="encodeOutput" name="encodeOutput" disabled></textarea>
+        <div class="ace_editor" id="encodeOutput" name="encodeOutput"></div>
       </div>
     </div>
 
     <div class="col pl-1">
       <div class="col p-0">
         <label class="form-label" for="decodeInput"><strong>Input your encoded string here</strong></label>
-        <textarea type="text" id="decodeInput" name="decodeInput"></textarea>
+        <div class="ace_editor" id="decodeInput" name="decodeInput"></div>
       </div>
 
       <button id="decode" type="button" class="btn btn-outline-dark my-2">Decode</button>
@@ -91,7 +91,7 @@ break: true
 
       <div class="col p-0 mt-3">
         <label class="form-label" for="decodeOutput"><strong>Decoded base64 string</strong></label>
-        <textarea class="textarea-sm" type="text" id="decodeOutput" name="decodeOutput" disabled></textarea>
+        <div class="ace_editor" id="decodeOutput" name="decodeOutput"></div>
       </div>
     </div>
   </div>

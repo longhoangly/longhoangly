@@ -1,18 +1,17 @@
 ---
 index: 2
 name: Word Count
-module: ["apps/word-count"]
-js_url: ["https://cdnjs.cloudflare.com/ajax/libs/ace/1.6.0/ace.js"]
+module: ["ace.js", "apps/word-count"]
 ---
 
 {% capture intro %}
 ### Word Count
 <!-- separator -->
 - This tool counts characters, words, and lines for input text
+<!-- separator -->
 - Characters counted with and without spaces
 - It also provided a list of word density (15 most appeared words) 
   - This will help you to have a better sense when writing SEO articles
-<!-- separator -->
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">
@@ -66,7 +65,7 @@ js_url: ["https://cdnjs.cloudflare.com/ajax/libs/ace/1.6.0/ace.js"]
       <button id="clearCounters" type="button" class="btn btn-outline-dark my-2">Clear</button>
 
       <div class="no-gutters mt-3">
-        <label class="form-label" for="result">Input your text here!</label>
+        <label class="form-label" for="result"><strong>Input your text here!</strong></label>
         <div class="ace_editor" id="result" name="result"></div>
       </div>
     </div>

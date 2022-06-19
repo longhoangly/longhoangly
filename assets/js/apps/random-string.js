@@ -1,6 +1,8 @@
 import { Common } from "../common.js";
 
-$(document).ready(() => {
+$(document).ready(async () => {
+    var resultEditor = await Common.setupEditor("result");
+
     $("#generate").click(() => {
         let qty = $("#num").val() || 0;
         let characters = $("#characters").val();
@@ -9,13 +11,21 @@ $(document).ready(() => {
         let separator = $("input[name='separator']:checked").val();
         let isUnique = $("#unique").is(":checked");
 
-        Common.clearElementText("#result");
-        StringGenerator.generateRandomStrings(qty, characters, length, separator, isUnique);
+        resultEditor.setValue("");
+        StringGenerator.generateRandomStrings(
+            resultEditor,
+            qty,
+            characters,
+            length,
+            separator,
+            isUnique
+        );
     });
 });
 
 class StringGenerator {
     static async generateRandomStrings(
+        editor,
         qty,
         characters,
         length,
@@ -29,7 +39,7 @@ class StringGenerator {
             !length ||
             length == 0
         ) {
-            alertWebMsg(
+            Common.alertWebMsg(
                 "Please check your inputs, all fields are required!",
                 false
             );
@@ -54,13 +64,9 @@ class StringGenerator {
             }
         } while (qty > 0);
 
-        $("#result")
-            .val(
-                separator == "+++"
-                    ? strings.join("\n")
-                    : strings.join(separator)
-            )
-            .trigger("change");
+        editor.setValue(
+            separator == "+++" ? strings.join("\n") : strings.join(separator)
+        );
     }
 }
 

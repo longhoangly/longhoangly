@@ -1,22 +1,21 @@
 ---
-name: JSON Viewer / Editor
 index: 11
-js: ["external/jsoneditor.min", "external/lodash.min"]
-module: ["diff-wrapper", "json-viewer"]
-css: ["external/jsoneditor.min", "apps/jsoneditor.custom"]
+name: JSON Formatter
+module: ["jsoneditor.min.js", "apps/json-formater"]
+css: ["apps/jsoneditor.custom"]
 ---
 
 {% capture intro %}
-### JSON Viewer / Compare JSON
+### JSON Formatter
 <!-- separator -->
 - A simple viewer / editor to make your JSON more beautiful
+<!-- separator -->
 - Provide a toggle button to compare two JSON's
     - Click Compare button to highlight all diffs in Code editor view
     - Auto compare will run in Tree view
 - It also has a toggle button to switch between two main modes (on menu bar)
     - Code view
     - Tree view
-<!-- separator -->
 {% endcapture %}
 
 <div id="intro" class="tool-wrapper mb-4">
@@ -25,7 +24,7 @@ css: ["external/jsoneditor.min", "apps/jsoneditor.custom"]
 </div>
 
 <div class="tool-wrapper">
-  <h3>JSON Viewer / Compare JSON</h3>
+  <h3>JSON Formatter</h3>
 
   <div class="form-check form-check mb-2">
     <input
@@ -39,7 +38,7 @@ css: ["external/jsoneditor.min", "apps/jsoneditor.custom"]
   </div>
 
   <button id="compare" type="button" class="btn btn-outline-dark mb-2" style="display: none">Compare</button>
-  <button id="clearJson" type="button" class="btn btn-outline-dark mb-2" style="display: none">Clear</button>
+  <button id="clearJson" type="button" class="btn btn-outline-dark mb-2" style="display: none">Clear Comparation</button>
   <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
 
   <div class="row mb-4">

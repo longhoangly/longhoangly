@@ -24,13 +24,19 @@ $(document).ready(async () => {
         outEditor.setValue("");
         outEditor1.setValue("");
         outEditor2.setValue("");
-        $("#alert").attr("style", "display: none;");
+        Common.hideElement("#alert");
     });
 });
 
-$(window).on("load", async () => {
-    await Common.alertIntroMsg(Tool.INTRO_WARN_MSG, true, Tool.INTRO_SHOW_TIME);
-});
+// $(window).on("load", async () => {
+//     await Common.alertIntroMsg(
+//         Tool.INTRO_WARN_MSG,
+//         true,
+//         true,
+//         Tool.INTRO_SHOW_TIME
+//     );
+//     await Common.hideElement("#intro");
+// });
 
 class DifferencesFinder {
     static async findDifferences(editor1, editor2) {

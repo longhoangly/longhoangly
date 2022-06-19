@@ -3,7 +3,7 @@ import { Common } from "../common.js";
 $(document).ready(async () => {
     var resultEditor = await Common.setupEditor("result");
 
-    $("#result").on("change input DOMSubtreeModified", () => {
+    $("#result textarea").on("keyup paste", () => {
         WordCounter.calculateCounters(resultEditor);
         WordCounter.calculateKeywordDensity(resultEditor);
     });

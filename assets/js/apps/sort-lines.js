@@ -1,28 +1,30 @@
 import { Common } from "../common.js";
 
-$(document).ready(() => {
-    $("#input").on("change input", () => {
-        Common.clearElementText("#result");
-        LinesSorter.sortingHandler(true);
+$(document).ready(async () => {
+    var inputEditor = await Common.setupEditor("input");
+    var resultEditor = await Common.setupEditor("result");
+
+    $("#input textarea").on("keyup paste", () => {
+        resultEditor.setValue("");
+        LinesSorter.sortingHandler(inputEditor, resultEditor);
     });
 
     $("#clearSort").click(() => {
-        Common.clearElementText("#input");
-        Common.clearElementText("#result");
+        inputEditor.setValue("");
+        resultEditor.setValue("");
     });
 
     $("input[name='sorting']").on("change", () => {
-        LinesSorter.sortingHandler(true);
+        LinesSorter.sortingHandler(inputEditor, resultEditor);
     });
 });
 
 class LinesSorter {
-    static async sortingHandler(hasAlert = false) {
-        let strArray = $("#input")
-            .val()
+    static async sortingHandler(inputEditor, resultEditor, hasAlert = true) {
+        let strArray = inputEditor
+            .getValue()
             .split("\n")
             .filter((x) => x.trim() && Boolean);
-        console.log("strArray", strArray);
 
         if (strArray.length === 0) {
             if (hasAlert) {
@@ -35,7 +37,7 @@ class LinesSorter {
         }
 
         let sortedLines = await LinesSorter.sortLines(strArray);
-        $("#result").val(sortedLines.join("\n")).trigger("change");
+        resultEditor.setValue(sortedLines.join("\n"));
     }
 
     static async sortLines(strArray) {

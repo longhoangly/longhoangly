@@ -1,13 +1,14 @@
 ---
 index: 3
 name: Case Converter
-module: apps/case-converter
+module: ["ace.js", "apps/case-converter"]
 ---
 
 {% capture intro %}
 ### Case Converter
 <!-- separator -->
 - This tool converts the input text into a desired case
+<!-- separator -->
 - There are some cases supported:
     - lower case
     - UPPER CASE
@@ -15,7 +16,6 @@ module: apps/case-converter
     - Capitalized Case
     - Title Case (supported custom exceptions, input into textbox)
     - iNVERSE CASE
-<!-- separator -->
 {% endcapture %}
 
 <div class="tool-wrapper mb-4">
@@ -88,7 +88,7 @@ module: apps/case-converter
       for="result"
       >Input your text here! <strong>Converted</strong> case text replaces yours!</label
     >
-    <textarea type="text" id="result" name="result"></textarea>
+    <div class="ace_editor" id="result" name="result"></div>
     <label id="counter" class="form-label" for="result">Character count: 0 | Word count: 0 | Line count: 0</label>
   </div>
 </div>
