@@ -28,4 +28,4 @@ _Business domain_
 
 _Tech Stacks_
 
-- Visual Build Pro, .NET, Selenium, VBScript, MySQL, Oracle, SVN
+- Visual Build Pro, .NET (C#), Selenium, VBScript, MySQL, Oracle, SVN
