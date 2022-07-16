@@ -15,7 +15,7 @@ _Release manager_
 - Creates new commands for **_trinity_** - a Slack bot to support release process
 - Goes to Singapore to get knowledge transfers from previous release manager
 
-_Automation_
+_Automation Test_
 
 - Cooperates with QA team to create quality goals
 - Enhances the test framework, build more features

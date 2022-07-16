@@ -24,10 +24,10 @@ title: Résumé | QaTips
       Web: <a href="{{ site.url }}">{{ site.url }}</a><br>
       Phone: +84 947 222 600<br>
       Email: longhoangly [at] gmail.com<br>
-      Download:
+      Print:
       <a
-        href="https://drive.google.com/file/d/11ohreCpNSBPshCmPXwxacjv8n8YmL3Ta/view?usp=sharing"
-        target="_blank"
+        href="#"
+        onclick="window.print();"
         >PDF version</a
       >
     </div>
