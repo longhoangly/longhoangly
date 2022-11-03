@@ -1,5 +1,5 @@
 ---
-title: Blog | QaTips
+title: Blog | LongLy.Info
 ---
 
 ##### Latest Posts

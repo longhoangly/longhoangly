@@ -1,5 +1,5 @@
 ---
-title: Résumé | QaTips
+title: Résumé | LongLy.Info
 ---
 
 <div class="container">

@@ -1,5 +1,5 @@
 ---
-title: Authors | QaTips
+title: Authors | LongLy.Info
 ---
 
 ##### All authors on this blog!

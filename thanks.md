@@ -1,5 +1,5 @@
 ---
-title: Thanks | QaTips
+title: Thanks | LongLy.Info
 ---
 
 ##### Thanks

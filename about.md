@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About | QaTips
+title: About | LongLy.Info
 ---
 
 <div class="row justify-content-center">
@@ -9,7 +9,7 @@ title: About | QaTips
   </picture>
 </div>
 
-Hello! Welcome to the <a href="{{site.url}}">QaTips.Dev</a>. I’m Long Ly, a QA engineer who is living and working in Ho
+Hello! Welcome to the <a href="{{site.url}}">LongLy.Info</a>. I’m Long Ly, a QA engineer who is living and working in Ho
 Chi Minh city. To me, contribution is the most important thing in life, I always want to work and contribute my best to
 the world's growth of software industry. Although my contribution is small, but together we can make it bigger. Keep it
 up and do right things.
@@ -74,7 +74,7 @@ up and do right things.
 
   - More videos on Youtube channel to share more with you all...
 
-  - Tools for processing text, strings and numbers... (_QaTips.Dev_)
+  - Tools for processing text, strings and numbers... (_LongLy.Info_)
 
   - *To be continue...*
 

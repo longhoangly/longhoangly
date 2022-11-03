@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Home | QaTips
+title: Home | LongLy.Info
 ---
 
 <br>
-Hi! Welcome to the <a href="{{site.url}}">QaTips.Dev</a>
+Hi! Welcome to the <a href="{{site.url}}">LongLy.Info</a>
 
 This site has some useful tools for processing text, strings and numbers.
 
