@@ -15,11 +15,11 @@ the world's growth of software industry. Although my contribution is small, but 
 up and do right things.
 <br>
 
-##### Latest Work
+##### Latest Works
 
 - AnkiFlash Addon
 
-  - A _free tool_ (<a href="https://ankiflash.com/" target="_blank">_https://ankiflash.com/_</a>) to generate _Anki
+  - An _open source tool_ (<a href="https://ankiflash.com/" target="_blank">_https://ankiflash.com/_</a>) to generate _Anki
   flashcards_ for learning vocabularies in multiple languages such as _Vietnamese, English, Japanese, French, Chinese_.
 
   - Tech: Python3, PyQt6, Google Extension, Github, Web (HTML, CSS, JS)
@@ -29,8 +29,8 @@ up and do right things.
   the
   <a href="https://youtu.be/U0Nreg8kQK0" target="_blank">_instruction video._</a>
 
-  - If any question / concern or feedback about this project, please feel free to drop me a message via links in
-  <a href="#footer">_the footer below_</a>. Together, I believe we can go far.
+  - Repository:
+  <a href="https://github.com/longhoangly/ankiflash-importer" target="_blank">_longhoangly.github.io/ankiflash-importer_</a>
 
       ![AnkiFlash!]({{ site.url }}/assets/image/ankiflash_2.png "AnkiFlash Website"){:width="50%"}
 
@@ -43,7 +43,7 @@ up and do right things.
 
   - Tech: Jekyll, Bootstrap, JQuery, Github Pages, Github Actions
 
-  - Github repo:
+  - Repository:
   <a href="https://github.com/longhoangly/longhoangly" target="_blank">_longhoangly.github.io/longhoangly_</a>
 
 <br>
@@ -77,6 +77,9 @@ up and do right things.
   - Tools for processing text, strings and numbers... (_LongLy.Info_)
 
   - *To be continue...*
+
+  - If any question / concern or feedback, please feel free to drop me a message via links in
+  <a href="#footer">_the footer below_</a>. Together, I believe we can go far.
 
 <br>
 - Buy me a coffee

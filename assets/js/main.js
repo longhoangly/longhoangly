@@ -15,7 +15,7 @@ $(document).ready(async () => {
     });
 
     // Get dark mode for website based on local storage memory
-    let isNight = (await Common.getStorage("isNight")) == "true" || false;
+    let isNight = (await Common.getStorage("isNight")) == "true" || true;
     Main.setNavBarNightMode(isNight);
     Main.setBodyNightMode(isNight);
     Main.setFooterNightMode(isNight);

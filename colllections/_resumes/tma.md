@@ -12,8 +12,8 @@ I'm enthusiastic to learn programming languages, as well as automation framework
 
 _Manual Test_
 
-- Works with developers and BA team to clarify requirement
-- Develops test plan, test cases based on clarified requirement
+- Works with developers and BA team to clarify requirements
+- Develops test plan, test cases based on clarified requirements
 - Executes Web UI tests, also API tests
 - Reported defects and verifies the fixes
 - _Writes technical documents_

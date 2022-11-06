@@ -24,7 +24,7 @@ _Automation Test_
 
 _Business domain_
 
-- Demand Supply Chain
+- Demand & Supply Chain
 
 _Tech Stacks_
 

@@ -108,10 +108,7 @@ class Common {
 
         if (Common.AUTO_COMPLETE_FIELDS.includes(elementId)) {
             if (input !== undefined && input !== null && input.length > 6) {
-                let histories = await Common.getStorage(
-                    `${elementId}-history`,
-                    true
-                );
+                let histories = await Common.getStorage(`${elementId}-history`);
                 histories = histories.reverse();
 
                 if (
@@ -138,8 +135,7 @@ class Common {
             }
 
             let storageHistories = await Common.getStorage(
-                `${elementId}-history`,
-                true
+                `${elementId}-history`
             );
             console.log(elementId, "histories", storageHistories);
 
@@ -147,24 +143,17 @@ class Common {
         }
     }
 
-    static async getFieldValue(
-        storageKey,
-        defaultValue = "",
-        isObject = false
-    ) {
-        let storageValue = await Common.getStorage(storageKey, isObject);
-        if (!storageValue) {
-            await Common.setStorage(
-                storageKey,
-                isObject
-                    ? Common.convertObjectToBase64String(defaultValue)
-                    : defaultValue.replaceAll("\n", "+++"),
-                isObject
-            );
+    static async getFieldValue(key, defaultValue = "") {
+        let storageValue = await Common.getStorage(key);
+
+        if (
+            storageValue === undefined ||
+            ["routeDate", "rssDeliveryDate"].includes(key)
+        ) {
+            await Common.setStorage(key, defaultValue);
         }
 
-        let returnValue = await Common.getStorage(storageKey, isObject);
-        return isObject ? returnValue : returnValue.replaceAll("+++", "\n");
+        return await Common.getStorage(key);
     }
 
     static jsonStringifyWithIndents(str) {
@@ -337,51 +326,21 @@ class Common {
 
     static async removeStorage(keys) {
         for (const key of keys) {
-            console.debug("Removing storage key:", key);
+            Common.logInfo("Removing storage key:", key);
             localStorage.removeItem(key);
         }
-        console.debug("Removed all keys:", keys);
+        Common.logInfo("Removed all storage keys:", keys);
     }
 
-    static async getStorage(key, isObject = false) {
+    static async getStorage(key) {
         let value = localStorage.getItem(key);
-        if (isObject) {
-            return await Common.convertBase64StringToObject(value);
-        }
-
-        let isValidValue =
-            value !== "null" && value !== "undefined" && value !== undefined;
-        return isValidValue ? value : "";
+        Common.logInfo("Get storage...", key, value);
+        return value;
     }
 
-    static async convertBase64StringToObject(base64Str) {
-        console.debug("Base64 string:", base64Str);
-
-        let jsonStr = atob(base64Str);
-        console.debug("Json string:", jsonStr);
-
-        let isValidValue =
-            base64Str !== "null" &&
-            base64Str !== "undefined" &&
-            base64Str !== undefined;
-        return isValidValue ? JSON.parse(jsonStr) : [];
-    }
-
-    static async setStorage(key, value, isObject = false) {
-        if (isObject) {
-            value = await Common.convertObjectToBase64String(value);
-        }
+    static async setStorage(key, value) {
+        Common.logInfo("Saving storage...", key, value);
         localStorage.setItem(key, value);
-    }
-
-    static async convertObjectToBase64String(obj) {
-        let jsonStr = JSON.stringify(obj, null, 4);
-        console.debug("Json string:", jsonStr);
-
-        let base64Str = btoa(jsonStr);
-        console.debug("Base64 string:", base64Str);
-
-        return base64Str;
     }
 
     static async displayElement(selector, displayClass = "inline-flex") {
@@ -536,6 +495,75 @@ class Common {
             }
         }
         return { paths, jsonNodes };
+    }
+
+
+    static logSuccess(...args) {
+        console.log(
+            Common.#decorateLogMsg(args),
+            "color: #00FF00",
+            "[Logger]",
+            ...args
+        );
+    }
+
+    static logWarning(...args) {
+        console.log(
+            Common.#decorateLogMsg(args),
+            "color: #FFA500",
+            "[Logger]",
+            ...args
+        );
+    }
+
+    static logInfo(...args) {
+        console.log(
+            Common.#decorateLogMsg(args),
+            "color: #919191",
+            "[Logger]",
+            ...args
+        );
+    }
+
+    static logError(...args) {
+        console.log(
+            Common.#decorateLogMsg(args),
+            "color: red",
+            "[Logger]",
+            ...args
+        );
+    }
+
+    static #decorateLogMsg(args) {
+        let messageConfig = "%c%s ";
+
+        args.forEach((argument) => {
+            const type = typeof argument;
+            switch (type) {
+                case "bigint":
+                    messageConfig += "%o ";
+                    break;
+                case "number":
+                    messageConfig += "%o ";
+                    break;
+                case "boolean":
+                    messageConfig += "%o ";
+                    break;
+                case "string":
+                    messageConfig += "%s ";
+                    break;
+                case "object":
+                    messageConfig += "%o ";
+                    break;
+                case "undefined":
+                    messageConfig += "%o ";
+                    break;
+                default:
+                    messageConfig += "%o ";
+            }
+        });
+
+        return messageConfig;
     }
 }
 
