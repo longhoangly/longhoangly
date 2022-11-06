@@ -36,7 +36,7 @@ $(document).ready(() => {
         {
             mode: "code",
             onClassName: onClassName,
-            onChangeJSON: (j) => {
+            onChangeText: (j) => {
                 jsonRight = j;
                 jsonEditorLeft.refresh();
             },
@@ -51,7 +51,7 @@ $(document).ready(() => {
         {
             modes: ["code", "tree"],
             onClassName: onClassName,
-            onChangeJSON: (j) => {
+            onChangeText: (j) => {
                 jsonLeft = j;
                 jsonEditorRight.refresh();
             },
