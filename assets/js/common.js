@@ -156,9 +156,9 @@ class Common {
         return await Common.getStorage(key);
     }
 
-    static jsonStringifyWithIndents(str) {
+    static jsonToStringWithIndents(str) {
         try {
-            str = JSON.stringify(jsonToObject(str), null, 4);
+            str = JSON.stringify(stringToObject(str), null, 4);
         } catch (error) {
             console.warn(
                 "Error while formating json string...please check json format..."
@@ -168,27 +168,31 @@ class Common {
         }
     }
 
-    static jsonStringify(str) {
+    static jsonToString(json) {
         try {
-            str = JSON.stringify(jsonToObject(str));
+            if (typeof json === "object") {
+                json = JSON.stringify(json);
+            } else {
+                json = JSON.stringify(JSON.parse(json));
+            }
         } catch (error) {
-            console.warn(
-                "Error while formating json string...please check json format..."
+            Common.logWarning(
+                "Error while converting json object to string...please check json format..."
             );
         } finally {
-            return str;
+            return json;
         }
     }
 
-    static jsonToObject(jsonStr) {
+    static stringToObject(jsonStr) {
         try {
             jsonStr = JSON.parse(jsonStr);
         } catch (error) {
-            console.warn(
-                "Error while converting json object...please check json format..."
+            Common.logWarning(
+                "Error while converting string to json object...please check json format..."
             );
         } finally {
-            return [jsonStr];
+            return jsonStr;
         }
     }
 
@@ -252,9 +256,9 @@ class Common {
     static randomNumericId(length) {
         let random = "";
         for (let i = 0; i < length; i++) {
-            let characters = i === 0 ? "123456789" : "0123456789";
-            random += characters.charAt(
-                Math.floor(Math.random() * characters.length)
+            let numbers = i === 0 ? "123456789" : "0123456789";
+            random += numbers.charAt(
+                Math.floor(Math.random() * numbers.length)
             );
         }
 
@@ -496,7 +500,6 @@ class Common {
         }
         return { paths, jsonNodes };
     }
-
 
     static logSuccess(...args) {
         console.log(

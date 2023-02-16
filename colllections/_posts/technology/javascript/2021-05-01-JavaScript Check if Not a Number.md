@@ -4,7 +4,7 @@ layout: code_horizontal
 excerpt_separator: <!--short_desc-->
 ---
 
-There are multiple ways to check if a variable is a number in JavaScript and some common ways are...
+There are multiple ways to check if a variable is a number in JavaScript and here are some common ways.
 <!--short_desc-->
 
 - **isNaN( variable )** : This function name stands for "is Not a Number". If the variable is a number, it will return FALSE! Otherwise, it would be TRUE.

@@ -8,11 +8,11 @@ css: ["apps/jsoneditor.custom"]
 {% capture intro %}
 ### JSON Formatter
 <!-- separator -->
-- A simple viewer / editor to make your JSON more beautiful
+- A simple viewer / editor to make your JSON readable and more beautiful
 <!-- separator -->
 - Provide a toggle button to compare two JSON's
-    - Click Compare button to highlight all diffs in Code editor view
     - Auto compare will run in Tree view
+    - Click Compare button to switch to Tree view and do comparation
 - It also has a toggle button to switch between two main modes (on menu bar)
     - Code view
     - Tree view
