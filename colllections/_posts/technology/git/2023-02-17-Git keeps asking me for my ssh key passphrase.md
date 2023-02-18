@@ -5,8 +5,7 @@ tags: ["git"]
 excerpt_separator: <!--short_desc-->
 ---
 
-Usually, when we use Git via SSH, we don't need to enter passphrase all the time.  
-But sometime, it keeps asking you to enter the passphrase. Here is how I resolved it.
+Usually, when we use Git via SSH, we don't need to enter passphrase all the time. But sometime, it keeps asking you to enter the passphrase. Here is how I resolved it.
 <!--short_desc-->
 
 Git keep asking you to enter the passphrase because the SSH key was not added to the SSH agent yet.  
