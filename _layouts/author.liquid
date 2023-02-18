@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <h1>{{ page.name }}</h1>
 <br>
 
@@ -12,10 +11,12 @@ layout: default
 
 <h2>Posts</h2>
 <ul>
-  {% assign filtered_posts = site.posts | where: "author", page.short_name %}
+  {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
   {% for post in filtered_posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
+    {% unless post.tags contains 'draft' %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a> [{{ post.date | date_to_string }}]
+      </li>
+    {% endunless %}
   {% endfor %}
 </ul>

@@ -1,10 +1,12 @@
 ---
 author: Long
 layout: post
+tags: ["git"]
 excerpt_separator: <!--short_desc-->
 ---
 
-After upgrading the MacOS to new version, I cannot execute git commands with an error. Here is how I resolved it.
+After upgrading the MacOS to new version, I cannot execute git commands with an error "xcrun: error: invalid active developer path". 
+Here is how I resolved it.
 <!--short_desc-->
 
 Below error returned while executing any git command.
@@ -24,8 +26,8 @@ Below error returned while executing any git command.
 This error is related to Command Line tools path is reset during upgrading. We need to execute XCode commands to set it back.
 
 ```
-    xcode-select --install
-    sudo xcode-select -s /Library/Developer/CommandLineTools/
+    # xcode-select --install
+    # sudo xcode-select -s /Library/Developer/CommandLineTools
 ```
 
 We can also use XCode UI application to set it up.
@@ -39,4 +41,4 @@ We can also use XCode UI application to set it up.
 
 Hope this helps and save time for you.
 
-Source: <a href="https://stackoverflow.com/questions/64489433/xcrun-error-invalid-active-developer-path-problem-after-zsh-update-for-flutte" target="_blank">_StackOverflow_</a>
+References: <a href="https://stackoverflow.com/questions/64489433/xcrun-error-invalid-active-developer-path-problem-after-zsh-update-for-flutte" target="_blank">_StackOverflow_</a>

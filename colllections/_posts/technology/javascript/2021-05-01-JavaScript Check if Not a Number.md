@@ -1,6 +1,7 @@
 ---
 author: Long
 layout: code_horizontal
+tags: ["javascript"]
 excerpt_separator: <!--short_desc-->
 ---
 
