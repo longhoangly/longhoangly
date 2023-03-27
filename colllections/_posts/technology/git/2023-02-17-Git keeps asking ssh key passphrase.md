@@ -62,4 +62,5 @@ It will ask you to enter the passphrase just once.
 
 Hope this helps and save time for you.
 
-References: <a href="https://stackoverflow.com/questions/10032461/git-keeps-asking-me-for-my-ssh-key-passphrase" target="_blank">_StackOverflow_</a>
+###### References:
+<a href="https://stackoverflow.com/questions/10032461/git-keeps-asking-me-for-my-ssh-key-passphrase" target="_blank">_StackOverflow_</a>

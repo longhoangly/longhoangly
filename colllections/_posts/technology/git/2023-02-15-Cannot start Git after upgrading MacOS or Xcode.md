@@ -41,4 +41,5 @@ We can also use XCode UI application to set it up.
 
 Hope this helps and save time for you.
 
-References: <a href="https://stackoverflow.com/questions/64489433/xcrun-error-invalid-active-developer-path-problem-after-zsh-update-for-flutte" target="_blank">_StackOverflow_</a>
+###### References:
+<a href="https://stackoverflow.com/questions/64489433/xcrun-error-invalid-active-developer-path-problem-after-zsh-update-for-flutte" target="_blank">_StackOverflow_</a>
