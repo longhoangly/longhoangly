@@ -1,7 +1,8 @@
-import { Common } from "../common.js";
+import { Common } from "../base/common.js";
+import { Tool } from "../tool.js";
 
 $(document).ready(async () => {
-    var editor = await Common.setupEditor("result");
+    var editor = await Tool.setupEditor("result");
 
     let excepStorage = Common.getStorage("exceptions") || "";
     if (excepStorage.length > 0) {
@@ -16,18 +17,21 @@ $(document).ready(async () => {
     $("input[name='desiredCase']").on("change", () => {
         let desiredCase = $("input[name='desiredCase']:checked").val();
         if (desiredCase == CaseConverter.TEXT_CASES.titleCase) {
-            Common.displayElement("#exceptions-wrapper");
-            Common.displayElement("#exceptionReset");
+            Tool.displayElement("#exceptions-wrapper");
+            Tool.displayElement("#exceptionReset");
         } else {
-            Common.hideElement("#exceptions-wrapper");
-            Common.hideElement("#exceptionReset");
+            Tool.hideElement("#exceptions-wrapper");
+            Tool.hideElement("#exceptionReset");
         }
     });
 
     $("#convert").click(async () => {
         let resultTxt = editor.getValue();
         if (resultTxt.length == 0) {
-            Common.alertWebMsg("Please check your input! No text input!", false);
+            Common.displayUiAlert(
+                "Please check your input! No text input!",
+                false
+            );
             return;
         }
 
@@ -61,7 +65,7 @@ $(document).ready(async () => {
     });
 });
 
-class CaseConverter {
+export class CaseConverter {
     static TEXT_CASES = {
         lowerCase: "lower case",
         upperCase: "UPPER CASE",

@@ -1,7 +1,8 @@
-import { Common } from "../common.js";
+import { Common } from "../base/common.js";
+import { Tool } from "../tool.js";
 
 $(document).ready(async () => {
-    var resultEditor = await Common.setupEditor("result");
+    var resultEditor = await Tool.setupEditor("result");
 
     $("#generate").click(() => {
         let qty = $("#num").val() || 0;
@@ -23,7 +24,7 @@ $(document).ready(async () => {
     });
 });
 
-class StringGenerator {
+export class StringGenerator {
     static async generateRandomStrings(
         editor,
         qty,
@@ -39,7 +40,7 @@ class StringGenerator {
             !length ||
             length == 0
         ) {
-            Common.alertWebMsg(
+            Common.displayUiAlert(
                 "Please check your inputs, all fields are required!",
                 false
             );
@@ -69,5 +70,3 @@ class StringGenerator {
         );
     }
 }
-
-export { StringGenerator };

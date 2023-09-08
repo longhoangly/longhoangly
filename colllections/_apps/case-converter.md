@@ -1,9 +1,9 @@
 ---
 index: 3
 name: Case Converter
-module: ["ace.js", "apps/case-converter"]
+css: ["tool.css"]
+jss: ["ace.js", "tool.js", "apps/case-converter.js"]
 ---
-
 {% capture intro %}
 ### Case Converter
 <!-- separator -->

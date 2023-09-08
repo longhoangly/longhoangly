@@ -1,10 +1,9 @@
 ---
 index: 11
 name: JSON Formatter
-module: ["jsoneditor.min.js", "apps/json-formater"]
-css: ["apps/jsoneditor.custom"]
+css: ["tool.css", "apps/jsoneditor.custom.css"]
+jss: ["jsoneditor.js", "tool.js", "apps/json-formater.js"]
 ---
-
 {% capture intro %}
 ### JSON Formatter
 <!-- separator -->
@@ -38,7 +37,9 @@ css: ["apps/jsoneditor.custom"]
   </div>
 
   <button id="compare" type="button" class="btn btn-outline-dark mb-2" style="display: none">Compare</button>
-  <button id="clearJson" type="button" class="btn btn-outline-dark mb-2" style="display: none">Clear Comparation</button>
+  <button id="clearJson" type="button" class="btn btn-outline-dark mb-2" style="display: none">
+    Clear Comparation
+  </button>
   <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
 
   <div class="row mb-4">

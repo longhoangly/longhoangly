@@ -1,9 +1,9 @@
 ---
 index: 2
 name: Word Count
-module: ["ace.js", "apps/word-count"]
+css: ["tool.css"]
+jss: ["ace.js", "tool.js", "apps/word-count.js"]
 ---
-
 {% capture intro %}
 ### Word Count
 <!-- separator -->

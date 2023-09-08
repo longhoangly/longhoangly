@@ -1,10 +1,5 @@
 url: https://longly.info
-
 content_separator: "<!-- separator -->"
-
-sass:
-    sass_dir: assets/css
-    style: compressed
 
 collections_dir: colllections
 collections:
@@ -18,7 +13,7 @@ collections:
 
 defaults:
     - scope:
-          path: ""
+          path: "" # an empty string here means all files in the project
           type: "authors"
       values:
           layout: "author"
@@ -38,8 +33,11 @@ plugins:
     - jekyll-seo-tag
 
 markdown: kramdown
-syntax_highlighter: rouge
+highlighter: rouge
+
 kramdown:
     input: GFM
+    math_engine: mathjax
+    syntax_highlighter: rouge
     syntax_highlighter_opts:
         default_lang: html

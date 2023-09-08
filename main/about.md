@@ -5,7 +5,7 @@ title: About | LongLy.Info
 
 <div class="row justify-content-center">
   <picture class="m-4" style="max-width:20%">
-    <img src="{{site.url}}/assets/image/avatar_2.jpg" class="rounded-circle img-thumbnail shadow" alt="Long Ly">
+    <img src="{{site.url}}/assets/image/main/avatar_2.jpg" class="rounded-circle img-thumbnail shadow" alt="Long Ly">
   </picture>
 </div>
 
@@ -32,7 +32,7 @@ up and do right things.
   - Repository:
   <a href="https://github.com/longhoangly/ankiflash-importer" target="_blank">_longhoangly.github.io/ankiflash-importer_</a>
 
-      ![AnkiFlash!]({{ site.url }}/assets/image/ankiflash_2.png "AnkiFlash Website"){:width="50%"}
+      ![AnkiFlash!]({{ site.url }}/assets/image/youtube/ankiflash_2.png "AnkiFlash Website"){:width="50%"}
 
 <br>
 - Jekyll Profile / Blog Template

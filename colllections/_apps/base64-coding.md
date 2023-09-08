@@ -1,10 +1,10 @@
 ---
 index: 9
 name: Base64 Encode Decode
-module: ["ace.js", "apps/base64-coding"]
+css: ["tool.css"]
+jss: ["ace.js", "tool.js", "apps/base64-coding.js"]
 break: true
 ---
-
 {% capture intro %}
 ### Base64 Encode Decode
 <!-- separator -->
@@ -96,5 +96,5 @@ break: true
     </div>
   </div>
 
-  <div id="alert" class="alert mt-2" role="alert" style="display: none"></div>
+  <div id="alert" class="alert" role="alert" style="display: none"></div>
 </div>

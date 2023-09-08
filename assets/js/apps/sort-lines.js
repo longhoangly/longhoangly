@@ -1,8 +1,9 @@
-import { Common } from "../common.js";
+import { Common } from "../base/common.js";
+import { Tool } from "../tool.js";
 
 $(document).ready(async () => {
-    var inputEditor = await Common.setupEditor("input");
-    var resultEditor = await Common.setupEditor("result");
+    var inputEditor = await Tool.setupEditor("input");
+    var resultEditor = await Tool.setupEditor("result");
 
     $("#input textarea").on("keyup paste", () => {
         resultEditor.setValue("");
@@ -19,7 +20,7 @@ $(document).ready(async () => {
     });
 });
 
-class LinesSorter {
+export class LinesSorter {
     static async sortingHandler(inputEditor, resultEditor, hasAlert = true) {
         let strArray = inputEditor
             .getValue()
@@ -28,7 +29,7 @@ class LinesSorter {
 
         if (strArray.length === 0) {
             if (hasAlert) {
-                Common.alertWebMsg(
+                Common.displayUiAlert(
                     "Please check your input! No text input!",
                     false
                 );
@@ -58,7 +59,7 @@ class LinesSorter {
                     strArray.sort();
                     strArray.reverse();
                 }
-                console.log("sort descending", strArray);
+                Common.logWarning("sort descending", strArray);
                 break;
 
             default:
@@ -69,11 +70,9 @@ class LinesSorter {
                 } else {
                     strArray.sort();
                 }
-                console.log("sort ascending", strArray);
+                Common.logWarning("sort ascending", strArray);
         }
 
         return strArray;
     }
 }
-
-export { LinesSorter };

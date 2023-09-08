@@ -2,12 +2,12 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ site.url }}">LongLy.Info</a>
     <button
-      id="changeToggle"
+      id="menuCollapsed"
       class="btn btn-outline-dark navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
+      data-bs-target="#navbarMenu"
+      aria-controls="navbarMenu"
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
@@ -15,10 +15,10 @@
       <i class="bi bi-list"></i>
     </button>
 
-    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+    <div id="navbarMenu" class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto">
-        {% assign firstItems = site.data.navigation | where: "section", "Home" %}
-        {% for item in firstItems %}
+        {% assign homeItems = site.data.navigation | where: 'section', 'Home' %}
+        {% for item in homeItems %}
           <li
             {% if page.url == item.link %}
               class="nav-item active"
@@ -64,8 +64,8 @@
           </div>
         </li>
 
-        {% assign thirdItems = site.data.navigation | where: "section", "Others" %}
-        {% for item in thirdItems %}
+        {% assign otherItems = site.data.navigation | where: 'section', 'Others' %}
+        {% for item in otherItems %}
           <li
             {% if page.url == item.link %}
               class="nav-item active"

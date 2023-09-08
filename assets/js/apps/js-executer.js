@@ -1,6 +1,7 @@
-import { Common } from "../common.js";
+import { Common } from "../base/common.js";
+import { Tool } from "../tool.js";
 
-var consoleOutput = await Common.setupEditor("consoleOutput", true);
+var consoleOutput = await Tool.setupEditor("consoleOutput", true);
 consoleOutput.setHighlightActiveLine(true);
 
 $(window).on("load", async () => {
@@ -57,7 +58,7 @@ $(window).on("load", async () => {
 });
 
 $(document).ready(async () => {
-    var editor = await Common.setupEditor("editor", false, "javascript");
+    var editor = await Tool.setupEditor("editor", false, "javascript");
 
     $("#execute").click(() => {
         let jsScript = editor.getValue();
@@ -71,7 +72,7 @@ $(document).ready(async () => {
         try {
             eval(jsScript);
         } catch (error) {
-            Common.alertWebMsg(error, false);
+            Common.displayUiAlert(error, false);
         }
     });
 

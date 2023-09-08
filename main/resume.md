@@ -11,7 +11,7 @@ title: Résumé | LongLy.Info
         </div>
         <div class="col-12 col-md-4">
           <img
-            src="{{site.url}}/assets/image/avatar_2.jpg"
+            src="{{site.url}}/assets/image/main/avatar_2.jpg"
             class="img-thumbnail shadow"
             style="width: 60%;"
             alt="Long Ly"

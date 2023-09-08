@@ -19,7 +19,7 @@ Feel free to give it a try and send me messages if any suggestion. Thanks!
     {% assign apps = site.apps | sort: 'index' %}
     {% for app in apps %}
       {% assign idx = app.index %}
-      <div class="col border p-2 pb-0">
+      <div class="col border border-secondary p-2 pb-0">
         <a
           {% if app.link %}
             href="{{ app.link }}" target="_blank"

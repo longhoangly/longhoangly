@@ -1,198 +1,195 @@
 root: .
-
 extends: :nothing
-
 require: []
 
 include_categories: []
-
 exclude_categories: []
 
 ignore:
-  - node_modules/*
+    - node_modules/*
 
 ConvertIncludeToRender:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 LiquidTag:
-  enabled: true
-  ignore: []
-  min_consecutive_statements: 5
+    enabled: true
+    ignore: []
+    min_consecutive_statements: 5
 
 MissingTemplate:
-  enabled: true
-  ignore: []
-  ignore_missing: []
+    enabled: true
+    ignore: []
+    ignore_missing: []
 
 NestedSnippet:
-  enabled: true
-  ignore: []
-  max_nesting_level: 3
+    enabled: true
+    ignore: []
+    max_nesting_level: 3
 
 RequiredLayoutThemeObject:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 SpaceInsideBraces:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 SyntaxError:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 TemplateLength:
-  enabled: true
-  ignore: []
-  max_length: 600
-  # Exclude content of {% schema %} in line count
-  exclude_schema: true
-  # Exclude content of {% stylesheet %} in line count
-  exclude_stylesheet: true
-  # Exclude content of {% javascript %} in line count
-  exclude_javascript: true
+    enabled: true
+    ignore: []
+    max_length: 600
+    # Exclude content of {% schema %} in line count
+    exclude_schema: true
+    # Exclude content of {% stylesheet %} in line count
+    exclude_stylesheet: true
+    # Exclude content of {% javascript %} in line count
+    exclude_javascript: true
 
 UnknownFilter:
-  enabled: false
-  ignore: []
+    enabled: false
+    ignore: []
 
 UnusedAssign:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 UnusedSnippet:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 MatchingSchemaTranslations:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 MatchingTranslations:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 DefaultLocale:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 TranslationKeyExists:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 ValidHTMLTranslation:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 ValidJson:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 ValidSchema:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 MissingRequiredTemplateFiles:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 UndefinedObject:
-  enabled: false
-  ignore: []
-  exclude_snippets: true
+    enabled: false
+    ignore: []
+    exclude_snippets: true
 
 RequiredDirectories:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 DeprecatedFilter:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 DeprecateLazysizes:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 DeprecateBgsizes:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 MissingEnableComment:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 ParserBlockingJavaScript:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 ParserBlockingScriptTag:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 AssetSizeJavaScript:
-  enabled: false
-  threshold_in_bytes: 10_000
-  ignore: []
+    enabled: false
+    threshold_in_bytes: 10_000
+    ignore: []
 
 AssetSizeCSS:
-  enabled: false
-  threshold_in_bytes: 100_000
-  ignore: []
+    enabled: false
+    threshold_in_bytes: 100_000
+    ignore: []
 
 AssetSizeCSSStylesheetTag:
-  enabled: false
-  threshold_in_bytes: 100_000
-  ignore: []
+    enabled: false
+    threshold_in_bytes: 100_000
+    ignore: []
 
 ImgWidthAndHeight:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 RemoteAsset:
-  enabled: false
-  ignore: []
+    enabled: false
+    ignore: []
 
 AssetUrlFilters:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 ContentForHeaderModification:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 ImgLazyLoading:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 HtmlParsingError:
-  enabled: true
-  ignore: []
+    enabled: true
+    ignore: []
 
 AssetSizeAppBlockJavaScript:
-  enabled: false
-  ignore: []
-  threshold_in_bytes: 10_000
+    enabled: false
+    ignore: []
+    threshold_in_bytes: 10_000
 
 AssetSizeAppBlockCSS:
-  enabled: false
-  ignore: []
-  threshold_in_bytes: 100_000
+    enabled: false
+    ignore: []
+    threshold_in_bytes: 100_000
 
 AppBlockValidTags:
-  enabled: false
-  ignore: []
+    enabled: false
+    ignore: []
 
 PaginationSize:
-  enabled: true
-  ignore: []
-  min_size: 1
-  max_size: 50
+    enabled: true
+    ignore: []
+    min_size: 1
+    max_size: 50
 
 DeprecatedGlobalAppBlockType:
-  enabled: true
+    enabled: true
 
 SchemaJsonFormat:
-  enabled: true
-  start_level: 0
-  indent: '  '
+    enabled: true
+    start_level: 0
+    indent: "  "

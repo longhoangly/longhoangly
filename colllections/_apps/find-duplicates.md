@@ -1,9 +1,9 @@
 ---
 index: 7
 name: Find Duplicates
-module: ["ace.js", "apps/find-duplicates"]
+css: ["tool.css"]
+jss: ["ace.js", "tool.js", "apps/find-duplicates.js"]
 ---
-
 {% capture intro %}
 ### Find Duplicates
 <!-- separator -->

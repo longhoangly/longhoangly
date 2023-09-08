@@ -1,19 +1,19 @@
-- name: Home
-  link: /
-  section: Home
+# - name: Home
+#   link: /
+#   section: Home
 
 - name: Blog
-  link: /blog.html
+  link: /main/blog.html
   section: Others
 
 - name: About
-  link: /about.html
-  section: Others
-
-- name: Thanks
-  link: /thanks.html
+  link: /main/about.html
   section: Others
 
 - name: Résumé
-  link: /resume.html
+  link: /main/resume.html
+  section: Others
+
+- name: Thanks
+  link: /main/thanks.html
   section: Others

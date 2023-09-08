@@ -1,12 +1,12 @@
-import { Common } from "../common.js";
+import { Common } from "../base/common.js";
 import { Tool } from "../tool.js";
 
 $(document).ready(async () => {
-    var inEditor1 = await Common.setupEditor("inTxt1");
-    var inEditor2 = await Common.setupEditor("inTxt2");
-    var outEditor = await Common.setupEditor("outTxt");
-    var outEditor1 = await Common.setupEditor("outTxt1");
-    var outEditor2 = await Common.setupEditor("outTxt2");
+    var inEditor1 = await Tool.setupEditor("inTxt1");
+    var inEditor2 = await Tool.setupEditor("inTxt2");
+    var outEditor = await Tool.setupEditor("outTxt");
+    var outEditor1 = await Tool.setupEditor("outTxt1");
+    var outEditor2 = await Tool.setupEditor("outTxt2");
 
     $("#find").click(async () => {
         let diffs = await DifferencesFinder.findDifferences(
@@ -24,21 +24,11 @@ $(document).ready(async () => {
         outEditor.setValue("");
         outEditor1.setValue("");
         outEditor2.setValue("");
-        Common.hideElement("#alert");
+        Tool.hideElement("#alert");
     });
 });
 
-// $(window).on("load", async () => {
-//     await Common.alertIntroMsg(
-//         Tool.INTRO_WARN_MSG,
-//         true,
-//         true,
-//         Tool.INTRO_SHOW_TIME
-//     );
-//     await Common.hideElement("#intro");
-// });
-
-class DifferencesFinder {
+export class DifferencesFinder {
     static async findDifferences(editor1, editor2) {
         let inLines1 = editor1
             .getValue()
@@ -61,22 +51,18 @@ class DifferencesFinder {
             inLines2.length > 0
         ) {
             if (inLines1.length !== inLines2.length) {
-                alertWebMsg(
+                Common.displayUiAlert(
                     "Not mached!! Two lists have different lengths!!",
-                    false,
                     false
                 );
             } else if (diffs.aDiff.size === 0 && diffs.bDiff.size === 0) {
-                alertWebMsg("Yay, all matched.", true, false);
+                Common.displayUiAlert("Yay, all matched.", true, false);
             } else {
-                alertWebMsg(
+                Common.displayUiAlert(
                     "Not matched!! Two lists have the same length, but there are different!!",
-                    false,
                     false
                 );
             }
         }
     }
 }
-
-export { DifferencesFinder };

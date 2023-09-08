@@ -1,7 +1,8 @@
-import { Common } from "../common.js";
+import { Common } from "../base/common.js";
+import { Tool } from "../tool.js";
 
 $(document).ready(async () => {
-    var resultEditor = await Common.setupEditor("result");
+    var resultEditor = await Tool.setupEditor("result");
 
     $("#result textarea").on("keyup paste", () => {
         WordCounter.calculateCounters(resultEditor);
@@ -15,7 +16,7 @@ $(document).ready(async () => {
     });
 });
 
-class WordCounter {
+export class WordCounter {
     static async calculateCounters(editor) {
         let resultTxt = editor.getValue();
         let characterCountWoSpace = resultTxt
@@ -40,7 +41,7 @@ class WordCounter {
 
     static async calculateKeywordDensity(editor) {
         let resultTxt = editor.getValue();
-        console.log("duplicates", resultTxt.split("\n"));
+        Common.logWarning("input words", resultTxt.split("\n"));
         await WordCounter.setKeywordDensity(resultTxt.split("\n"));
     }
 
@@ -85,5 +86,3 @@ class WordCounter {
         $("#densityTable").html(tableBody);
     }
 }
-
-export { WordCounter };

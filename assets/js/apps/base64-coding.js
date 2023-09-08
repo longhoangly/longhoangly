@@ -1,10 +1,11 @@
-import { Common } from "../common.js";
+import { Common } from "../base/common.js";
+import { Tool } from "../tool.js";
 
 $(document).ready(async () => {
-    var encodeInput = await Common.setupEditor("encodeInput");
-    var encodeOutput = await Common.setupEditor("encodeOutput");
-    var decodeInput = await Common.setupEditor("decodeInput");
-    var decodeOutput = await Common.setupEditor("decodeOutput");
+    var encodeInput = await Tool.setupEditor("encodeInput");
+    var encodeOutput = await Tool.setupEditor("encodeOutput");
+    var decodeInput = await Tool.setupEditor("decodeInput");
+    var decodeOutput = await Tool.setupEditor("decodeOutput");
 
     $("#encode").click(() => {
         encodeOutput.setValue("");
@@ -18,10 +19,10 @@ $(document).ready(async () => {
 
     $("#copyEncode").click(() => {
         if (encodeOutput.getValue().length == 0) {
-            Common.alertWebMsg("No encoded string!", false);
+            Common.displayUiAlert("No encoded string!", false);
         } else {
-            Common.copyTextToClipboard(encodeOutput);
-            Common.alertWebMsg(
+            Common.copyEditorTextToClipboard(encodeOutput);
+            Common.displayUiAlert(
                 "Encoded string copied into the clipboard.",
                 true
             );
@@ -40,10 +41,10 @@ $(document).ready(async () => {
 
     $("#copyDecode").click(() => {
         if (decodeOutput.getValue().length == 0) {
-            Common.alertWebMsg("No decoded string!", false);
+            Common.displayUiAlert("No decoded string!", false);
         } else {
-            Common.copyTextToClipboard(decodeOutput);
-            Common.alertWebMsg(
+            Common.copyEditorTextToClipboard(decodeOutput);
+            Common.displayUiAlert(
                 "Decoded string copied into the clipboard.",
                 true
             );
@@ -67,13 +68,13 @@ $(document).ready(async () => {
     });
 });
 
-class Base64Encoder {
+export class Base64Encoder {
     static async encodeBase64Handler(encodeInput, encodeOutput) {
         let charset = $("input[name='charset']:checked").val();
         let input = encodeInput.getValue();
 
         if (input.length === 0) {
-            Common.alertWebMsg(
+            Common.displayUiAlert(
                 "Please check your input! No text input!",
                 false
             );
@@ -96,8 +97,8 @@ class Base64Encoder {
             encodeOutput.setValue(split76 ? chunks.join("\n") : encoded);
         } else {
             let inputs = input.split("\n");
-            let outputs = [];
 
+            let outputs = [];
             for (let i = 0; i < inputs.length; i++) {
                 let encoded = await Base64Encoder.encodeBase64String(
                     charset,
@@ -106,7 +107,7 @@ class Base64Encoder {
                 outputs.push(encoded);
             }
 
-            encodeOutput.getValue(outputs.join("\n"));
+            encodeOutput.setValue(outputs.join("\n"));
         }
     }
 
@@ -118,7 +119,7 @@ class Base64Encoder {
         try {
             encoded = btoa(asciiInput);
         } catch (err) {
-            Common.alertWebMsg(
+            Common.displayUiAlert(
                 "Looks like input string does not have UTF-8 charset. Would you try UTF-16 charset?",
                 false
             );
@@ -132,7 +133,7 @@ class Base64Encoder {
         let input = decodeInput.getValue();
 
         if (input.length === 0) {
-            Common.alertWebMsg(
+            Common.displayUiAlert(
                 "Please check your input! No text input!",
                 false
             );
@@ -174,7 +175,7 @@ class Base64Encoder {
         try {
             decoded = atob(input);
         } catch (err) {
-            Common.alertWebMsg(
+            Common.displayUiAlert(
                 "Looks like input string does not have UTF-8 charset. Would you try UTF-16 charset?",
                 false
             );
@@ -209,5 +210,3 @@ class Base64Encoder {
         }
     }
 }
-
-export { Base64Encoder };

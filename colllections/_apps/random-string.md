@@ -1,10 +1,10 @@
 ---
 index: 5
 name: Random String Generator
-module: ["ace.js", "apps/random-string"]
+css: ["tool.css"]
+jss: ["ace.js", "tool.js", "apps/random-string.js"]
 break: true
 ---
-
 {% capture intro %}
 ### Generate Random String
 <!-- separator -->

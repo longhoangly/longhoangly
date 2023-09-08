@@ -1,9 +1,9 @@
 ---
 index: 4
 name: Random Number Generator
-module: ["ace.js", "apps/random-number"]
+css: ["tool.css"]
+jss: ["ace.js", "tool.js", "apps/random-number.js"]
 ---
-
 {% capture intro %}
 ### Generate Random Number
 <!-- separator -->

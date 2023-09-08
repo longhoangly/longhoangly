@@ -1,9 +1,9 @@
 ---
 index: 8
 name: Find Differences
-module: ["ace.js", "apps/find-differences"]
+css: ["tool.css"]
+jss: ["ace.js", "tool.js", "apps/find-differences.js"]
 ---
-
 {% capture intro %}
 ### Find Differences
 <!-- separator -->

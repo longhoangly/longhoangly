@@ -26,6 +26,7 @@ gem owner GEMNAME -r old_owner@owner.test      # Remove an owner
 ```sh
 gem install GEMNAME -v VERSION                  # Install from rubygems.org
 gem install GEMNAME -v '>= 0.14.0, < 0.14.4'    # Install from rubygems.org
+gem uninstall GEMNAME                           # Uninstall a gem
 
 gem list                    # List local gems
 gem which rake              # Point to where lib/rake.rb is

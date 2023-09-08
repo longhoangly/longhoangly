@@ -1,9 +1,9 @@
 ---
 index: 6
 name: Sort Lines
-module: ["ace.js", "apps/sort-lines"]
+css: ["tool.css"]
+jss: ["ace.js", "tool.js", "apps/sort-lines.js"]
 ---
-
 {% capture intro %}
 ### Sort Lines
 <!-- separator -->
