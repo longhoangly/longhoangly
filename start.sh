@@ -1,4 +1,3 @@
-bundle exec jekyll serve --livereload
+# ssh-add --apple-use-keychain
 
-# Token Github Page
-# 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
+bundle exec jekyll serve --livereload

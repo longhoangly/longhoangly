@@ -8,6 +8,6 @@ sudo gem install shopify-cli
 
 brew install libxml2 libxslt
 
-sudo gem install nokogiri --platform=ruby -- --use-system-libraries
+sudo gem install nokogiri --platform=ruby
 
 shopify version
