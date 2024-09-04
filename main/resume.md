@@ -23,7 +23,7 @@ title: Résumé | LongLy.Info
     <div class="col-12 col-md-4 mt-2">
       Web: <a href="{{ site.url }}">{{ site.url }}</a><br>
       Phone: +84 947 222 600<br>
-      Email: longhoangly [at] gmail.com<br>
+      Email: longhoangly@gmail.com<br>
       Print:
       <a
         href="#"
