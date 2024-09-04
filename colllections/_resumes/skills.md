@@ -3,9 +3,9 @@ type: skills
 index: 1
 ---
 
-_**Languages**_: Java, JavaScript, Python, Bash, Golang, C#, Perl, VBScript
+_**Languages**_: Java, JavaScript, HTML, CSS, Python, Bash, Golang, C#, Perl, VBScript
 
-_**Automation**_: Horus, Serenity, Selenium, Appium, SpecFlow, Cucumber, AWS Device Farm, BrowserStack
+_**Automation**_: Horus, Leto, Serenity, Selenium, Appium, Cucumber, AWS Device Farm, BrowserStack, SpecFlow
 
 _**Cloud Services**_: AWS, GCP, Aone
 

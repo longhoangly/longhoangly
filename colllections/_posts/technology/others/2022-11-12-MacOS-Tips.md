@@ -1,7 +1,7 @@
 ---
 author: Long
 layout: post
-tags: ["draft"]
+tags: ["others"]
 excerpt_separator: <!--short_desc-->
 ---
 
