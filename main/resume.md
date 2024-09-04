@@ -36,17 +36,6 @@ title: Résumé | LongLy.Info
 
   <div class="row no-gutters mt-4">
     <div class="col-12 col-md-8 pe-5">
-      <b>CURRENT STATUS</b>
-      {% assign experiences = site.resumes | where: "type", "status" | sort: 'index' | reverse %}
-      {% for experience in experiences %}
-        <hr>
-        <div style="font-weight: bold; margin-top: 4px;">{{ experience.title }}</div>
-        <div>{{ experience.company | upcase }}</div>
-        <div style="font-weight: lighter;">{{ experience.timeline }} | {{ experience.based }}</div>
-        <p>{{ experience.content | markdownify }}</p>
-      {% endfor %}
-      <br>
-
       <b>EXPERIENCE</b>
       {% assign experiences = site.resumes | where: "type", "experience" | sort: 'index' | reverse %}
       {% for experience in experiences %}
