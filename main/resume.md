@@ -24,12 +24,12 @@ title: Résumé | LongLy.Info
       Web: <a href="{{ site.url }}">{{ site.url }}</a><br>
       Phone: +84 947 222 600<br>
       Email: longhoangly@gmail.com<br>
-      Print:
-      <a
-        href="#"
-        onclick="window.print();"
-        >PDF version</a
-      >
+      <span id="pdfBtn">
+        Print:
+        <a href="#" onclick="pdfVersion();">
+            PDF version
+        </a>
+      </span>
     </div>
 
   </div>
@@ -78,3 +78,13 @@ title: Résumé | LongLy.Info
   </div>
 </div>
 <br>
+
+<script type="text/javascript">
+  function pdfVersion(){
+    document.getElementById("pdfBtn").style.display = "none";
+    document.getElementById("header").style.display = "none";
+    document.getElementById("footer").style.display = "none";
+  }
+
+  pdfVersion();
+</script>
