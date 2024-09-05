@@ -78,13 +78,3 @@ title: Résumé | LongLy.Info
   </div>
 </div>
 <br>
-
-<script type="text/javascript">
-  function pdfVersion(){
-    document.getElementById("pdfBtn").style.display = "none";
-    document.getElementById("header").style.display = "none";
-    document.getElementById("footer").style.display = "none";
-  }
-
-  pdfVersion();
-</script>
