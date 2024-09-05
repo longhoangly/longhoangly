@@ -2,13 +2,15 @@
 title: Résumé | LongLy.Info
 ---
 
-<div class="container">
+<div class="container resume">
   <div class="row no-gutters">
+
     <div class="col-12 col-md-8">
       <div class="row no-gutters">
         <div class="col-12 col-md-8">
           <h1 style="font-size:90px">Long Ly</h1>
         </div>
+
         <div class="col-12 col-md-4">
           <img
             src="{{site.url}}/assets/image/main/avatar_2.jpg"
@@ -39,6 +41,12 @@ title: Résumé | LongLy.Info
       <b>EXPERIENCE</b>
       {% assign experiences = site.resumes | where: "type", "experience" | sort: 'index' | reverse %}
       {% for experience in experiences %}
+        {% if experience.company == "KMS Technology" %}
+          {% for i in (1..14) %}
+            <br>
+          {% endfor %}
+        {% endif %}
+
         <hr>
         <div style="font-weight: bold; margin-top: 4px;">{{ experience.title }}</div>
         <div>{{ experience.company | upcase }}</div>
