@@ -42,7 +42,7 @@ title: Résumé | LongLy.Info
       {% assign experiences = site.resumes | where: "type", "experience" | sort: 'index' | reverse %}
       {% for experience in experiences %}
         {% if experience.company == "KMS Technology" %}
-          {% for i in (1..14) %}
+          {% for i in (1..8) %}
             <br>
           {% endfor %}
         {% endif %}
