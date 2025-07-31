@@ -3,7 +3,7 @@ type: experience
 index: 4
 title: Senior Automation QA
 company: Lazada Group
-timeline: May 2020 - May 2024
+timeline: May 2020 - Present
 based: Ho Chi Minh City
 ---
 

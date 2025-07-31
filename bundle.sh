@@ -1,13 +1,13 @@
-sudo bundle clean --force
+bundle clean --force
 
-sudo bundle install
+bundle install
 
-sudo bundle update
+bundle update
 
-sudo gem install shopify-cli
+gem install shopify-cli
 
 brew install libxml2 libxslt
 
-sudo gem install nokogiri --platform=ruby
+gem install nokogiri --platform=ruby
 
 shopify version

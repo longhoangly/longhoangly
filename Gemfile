@@ -18,5 +18,4 @@ gem "webrick", "~> 1.7"
 gem "pathutil", "~> 0.16.2"
 gem "rouge", "~> 3.26.0"
 
-# using sudo gem install shopify-cli instead
 # gem "shopify-cli"

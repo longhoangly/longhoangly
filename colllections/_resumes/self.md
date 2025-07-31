@@ -3,8 +3,13 @@ type: intro
 index: 1
 ---
 
-A QA engineer who is living and working in Ho Chi Minh city. I love coding, testing and making sure products released with the best quality.
+Results-oriented QA professional with 10+ years of hands-on expertise in automation testing, performance testing, and manual testing across web, mobile, and API platforms.  
 
-I have been testing software products in various types such as websites, mobile, API applications.
+Proven track record in:  
+ - Designing and maintaining scalable automation frameworks  
+ - Managing end-to-end testing pipelines in CI/CD environments  
+ - Driving quality architecture across fast-paced teams  
+ - Leading initiatives that improve quality metrics and reduce manual testing efforts  
+ - Testing and delivering quality for large-scale distributed systems across e-commerce, logistics, and digital platforms
 
-I can perform manual tests as well as write automation test scripts, run performance tests, and write tool to support for manual testing. If you want to cooperate with me or any question to me, feel free to drop me an email.
+Well-versed in tools and frameworks such as Selenium, Appium, Java, JavaScript, C#, Golang, Bash, Jenkins, GitLab, AWS, and more.  

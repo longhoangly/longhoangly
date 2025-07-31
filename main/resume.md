@@ -1,5 +1,5 @@
 ---
-title: Résumé | LongLy.Info
+title: Résumé | Long Ly
 ---
 
 <div class="container resume">
@@ -23,30 +23,25 @@ title: Résumé | LongLy.Info
     </div>
 
     <div class="col-12 col-md-4 mt-2">
-      Web: <a href="{{ site.url }}">{{ site.url }}</a><br>
       Phone: +84 947 222 600<br>
-      Email: longhoangly@gmail.com<br>
-      <span id="pdfBtn">
-        Print:
-        <a href="#" onclick="pdfVersion();">
-            PDF version
-        </a>
-      </span>
+      Email: longhoangly [at] gmail.com<br>
+      Linkedin: <a href="https://www.linkedin.com/in/longhoangly">longhoangly</a><br>
+      Location: Vietnam
     </div>
 
   </div>
 
   <div class="row no-gutters mt-4">
     <div class="col-12 col-md-8 pe-5">
+      {% assign intros = site.resumes | where: "type", "intro" | sort: 'index' | reverse %}
+      {% for intro in intros %}
+        <p>{{ intro.content | markdownify }}</p>
+      {% endfor %}
+      <br>
+
       <b>EXPERIENCE</b>
       {% assign experiences = site.resumes | where: "type", "experience" | sort: 'index' | reverse %}
       {% for experience in experiences %}
-        {% if experience.company == "KMS Technology" %}
-          {% for i in (1..8) %}
-            <br>
-          {% endfor %}
-        {% endif %}
-
         <hr>
         <div style="font-weight: bold; margin-top: 4px;">{{ experience.title }}</div>
         <div>{{ experience.company | upcase }}</div>
@@ -56,14 +51,6 @@ title: Résumé | LongLy.Info
     </div>
 
     <div class="col-12 col-md-4">
-      <b>MYSELF</b>
-      <hr>
-      {% assign intros = site.resumes | where: "type", "intro" | sort: 'index' | reverse %}
-      {% for intro in intros %}
-        <p>{{ intro.content | markdownify }}</p>
-      {% endfor %}
-      <br>
-
       <b>ACADEMICS</b>
       <hr>
       {% assign academics = site.resumes | where: "type", "academic" | sort: 'index' | reverse %}
