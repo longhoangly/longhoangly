@@ -8,17 +8,17 @@ title: Résumé | Long Ly
     <div class="col-12 col-md-8">
       <div class="row no-gutters">
         <div class="col-12 col-md-8">
-          <h1 style="font-size:90px">Long Ly</h1>
+          <h1 style="font-size:100px">Long Ly</h1>
         </div>
 
-        <div class="col-12 col-md-4">
+        <!-- <div class="col-12 col-md-4">
           <img
             src="{{site.url}}/assets/image/main/avatar_2.jpg"
             class="img-thumbnail shadow"
             style="width: 60%;"
             alt="Long Ly"
           >
-        </div>
+        </div> -->
       </div>
     </div>
 

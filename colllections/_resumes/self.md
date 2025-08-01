@@ -5,7 +5,7 @@ index: 1
 
 Results-oriented QA professional with 10+ years of hands-on expertise in automation testing, performance testing, and manual testing across web, mobile, and API platforms.  
 
-Proven track record in:  
+Proven track record in:
  - Designing and maintaining scalable automation frameworks  
  - Managing end-to-end testing pipelines in CI/CD environments  
  - Driving quality architecture across fast-paced teams  

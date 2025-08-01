@@ -3,16 +3,14 @@ type: skills
 index: 1
 ---
 
-_**Languages**_: Java, JavaScript, HTML, CSS, Python, Bash, Golang, C#, Perl, VBScript
-
-_**Automation**_: Horus, Leto, Serenity, Selenium, Appium, Cucumber, AWS Device Farm, BrowserStack, SpecFlow
-
-_**Cloud Services**_: AWS, GCP, Aone
-
-_**CI/CD**_: Github, Jenkins, SonarCloud, Aone
-
-_**Storages**_: MS SQL, MySQL, Oracle, BigQuery, DynamoDB
-
-_**OS**_: MacOS, Linux (RedHat / Ubuntu), MS Windows
-
-_**Others**_: Jira, Testrail, Qtest
+**Languages:** Java, JavaScript, C#, Bash, Perl, Golang, VBScript  
+  
+**Test Automation:** Selenium, Appium, Serenity, SpecFlow, ATS (TMA), Horus, Leto  
+  
+**CI/CD:** Github, Jenkins, SonarCloud, Aone (Jira-like)  
+  
+**Cloud:** AWS, GCP, BrowserStack, Caroufarm   
+  
+**Databases:** MySQL, Oracle, DynamoDB, BigQuery  
+  
+**Other:** Jira, Testrail, Qtest, Trinity (Slack bot)
