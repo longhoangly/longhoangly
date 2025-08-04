@@ -8,7 +8,9 @@ Results-oriented QA professional with 12+ years of hands-on expertise in automat
 ###### Proven track record in:
  - Designing and maintaining scalable automation frameworks  
  - Managing end-to-end testing pipelines in CI/CD environments  
+ - Achieved 2nd place in Lazada Hackathon (30+ international teams)  
  - Driving quality architecture across fast-paced teams  
+ - Led performance and automation testing across distributed microservices
  - Leading initiatives that improve quality metrics and reduce manual testing efforts  
  - Testing and delivering quality for large-scale distributed systems across e-commerce, logistics, and digital platforms
 
