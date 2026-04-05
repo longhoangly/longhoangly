@@ -1,11 +1,9 @@
 ---
 author: Long
 layout: post
-tags: ["ankiflash"]
+tags: ["ankiflash", "draft"]
 excerpt_separator: <!--short_desc-->
 ---
-# AnkiFlash Privacy Policy
-<!--short_desc-->
 
 AnkiFlash (including the AnkiFlash Generator Chrome Extension and the AnkiFlash Add-on for Anki) is owned and operated by **Long Ly**, a developer from Vietnam. This policy outlines our commitment to your privacy through a "Privacy by Design" approach: **No Collection, No Accounts, No Tracking.**
 

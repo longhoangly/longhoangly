@@ -1,11 +1,9 @@
 ---
 author: Long
 layout: post
-tags: ["ankiflash"]
+tags: ["ankiflash", "draft"]
 excerpt_separator: <!--short_desc-->
 ---
-# TERMS OF USE (ĐIỀU KHOẢN SỬ DỤNG)
-<!--short_desc-->
 
 By using the TikTok Auto Uploader (the "App"), you agree to these Terms of Use.
 

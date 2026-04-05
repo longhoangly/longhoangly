@@ -1,11 +1,9 @@
 ---
 author: Long
 layout: post
-tags: ["ankiflash"]
+tags: ["ankiflash", "draft"]
 excerpt_separator: <!--short_desc-->
 ---
-# AnkiFlash Terms of Use 
-<!--short_desc-->
 
 ### 1. Acceptance of Terms
 By installing or using the AnkiFlash extension or add-on, you agree to be bound by these Terms of Use and our Privacy Policy. If you do not agree, please discontinue use and remove the software from your device.

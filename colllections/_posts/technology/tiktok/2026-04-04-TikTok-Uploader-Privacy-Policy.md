@@ -1,11 +1,9 @@
 ---
 author: Long
 layout: post
-tags: ["tiktok_uploader"]
+tags: ["tiktok_uploader", "draft"]
 excerpt_separator: <!--short_desc-->
 ---
-# PRIVACY POLICY (CHÍNH SÁCH BẢO MẬT)
-<!--short_desc-->
 
 This Privacy Policy applies to the TikTok Auto Uploader application (hereinafter referred to as the "App"). 
 
