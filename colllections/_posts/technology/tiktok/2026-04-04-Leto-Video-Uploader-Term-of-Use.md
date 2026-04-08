@@ -5,7 +5,7 @@ tags: ["ankiflash", "draft"]
 excerpt_separator: <!--short_desc-->
 ---
 
-By using the TikTok Auto Uploader (the "App"), you agree to these Terms of Use.
+By using the Leto Video Uploader (the "App"), you agree to these Terms of Use.
 
 1. Personal Use Only
 This App is a personal utility tool designed to automate local workflows. It is not intended for commercial distribution or Software-as-a-Service (SaaS) business models.
@@ -22,7 +22,7 @@ The developer of this App shall not be held liable for any damages, account susp
 5. Changes to Terms
 We reserve the right to modify these terms at any time. Continued use of the App constitutes acceptance of the new terms.
 
-Also see the [Privacy Policy](https://longly.info/2026/04/04/TikTok-Uploader-Privacy-Policy.html)
+Also see the [Privacy Policy](https://longly.info/2026/04/04/Leto-Video-Uploader-Privacy-Policy.html)
 
 ---
 

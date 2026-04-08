@@ -5,7 +5,7 @@ tags: ["tiktok_uploader", "draft"]
 excerpt_separator: <!--short_desc-->
 ---
 
-This Privacy Policy applies to the TikTok Auto Uploader application (hereinafter referred to as the "App"). 
+This Privacy Policy applies to the Leto Video Uploader application (hereinafter referred to as the "App"). 
 
 1. Purpose of the App
 The App is a local, personal automation script developed strictly to assist the creator in uploading their own video files to their own TikTok account via the official TikTok Content Posting API.
@@ -25,4 +25,4 @@ If you have any questions regarding this Privacy Policy, please contact the deve
 
 ---
 
-Also see the [Terms of Use](https://longly.info/2026/04/04/TikTok-Uploader-Term-of-Use.html)
+Also see the [Terms of Use](https://longly.info/2026/04/04/Leto-Video-Uploader-Term-of-Use.html)
